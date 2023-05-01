@@ -1,9 +1,10 @@
 import React from 'react';
+import PlacesPhotoSlider from "./components/placesSection/PlacesPhotoSlider";
 
 function App() {
   return (
     <div className="App">
-      <h1 className="test">App is working</h1>
+      <PlacesPhotoSlider/>
     </div>
   );
 }

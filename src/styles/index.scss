@@ -28,3 +28,11 @@ body {
     background: $background-color;
   }
 }
+
+img{
+  width: 100%;
+  border-radius: inherit;
+}
+
+@import "places/placePhotoSlider";
+@import "places/placeInfoSection";
