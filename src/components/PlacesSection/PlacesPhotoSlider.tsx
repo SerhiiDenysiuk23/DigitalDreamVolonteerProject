@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styles from "./placesSection.module.scss"
 import {useSlider} from "../../hooks/useSlider";
+import ArrowSliderBtn from "../../elements/ArrowSliderBtn/ArrowSliderBtn";
 
 const PlacesPhotoSlider = () => {
     const photos = [
@@ -14,8 +15,8 @@ const PlacesPhotoSlider = () => {
     return (
         <section className={styles.placePhotos}>
             <div className={styles.placePhotos__slider}>
-                <div onClick={prevPhoto} className={`${styles.arrow} ${styles.arrow__left}`}/>
-                <div onClick={nextPhoto} className={`${styles.arrow} ${styles.arrow__right}`}/>
+                <ArrowSliderBtn direction={"left"} handleOnClick={prevPhoto}/>
+                <ArrowSliderBtn direction={"right"} handleOnClick={nextPhoto}/>
                 <img src={currentPhoto} alt=""/>
             </div>
         </section>
