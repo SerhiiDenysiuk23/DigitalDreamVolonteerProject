@@ -1,0 +1,44 @@
+.block {
+  width: 278px;
+  padding: 40px 30px;
+  border-radius: 20px;
+  background-color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.pictureWrapper {
+  width: 218px;
+  height: 218px;
+  margin-bottom: 23px;
+  border-radius: 17px;
+  overflow: hidden;
+  background-color: #b4bec2;
+}
+
+.picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  margin-bottom: 12px;
+}
+
+.paragraph {
+  margin-bottom: 20px;
+}
+
+.socialLinks {
+  display: flex;
+  align-self: center;
+  gap: 8px;
+
+  & li {
+    height: 36px;
+    width: 36px;
+    padding: 8px;
+  }
+}
