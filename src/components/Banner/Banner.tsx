@@ -2,6 +2,7 @@ import React from "react";
 import style from "./Banner.module.scss";
 import BurgerMenu from "../../elements/BurgerMenu/BurgerMenu";
 import HeaderLogo from "../../elements/HeaderLogo/HeaderLogo";
+import BannerDescription from "../../elements/BannerDescription/BannerDescription";
 
 const Banner = () => {
   return (
@@ -10,6 +11,7 @@ const Banner = () => {
         <HeaderLogo />
         <BurgerMenu />
       </header>
+      <BannerDescription />
     </section>
   );
 };
