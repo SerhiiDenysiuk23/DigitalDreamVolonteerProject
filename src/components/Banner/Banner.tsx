@@ -3,6 +3,7 @@ import style from "./Banner.module.scss";
 import BurgerMenu from "../../elements/BurgerMenu/BurgerMenu";
 import HeaderLogo from "../../elements/HeaderLogo/HeaderLogo";
 import BannerDescription from "../../elements/BannerDescription/BannerDescription";
+import BannerBackground from "../../elements/BannerBackground/BannerBackground";
 
 const Banner = () => {
   return (
@@ -11,6 +12,7 @@ const Banner = () => {
         <HeaderLogo />
         <BurgerMenu />
       </header>
+      <BannerBackground />
       <BannerDescription />
     </section>
   );
