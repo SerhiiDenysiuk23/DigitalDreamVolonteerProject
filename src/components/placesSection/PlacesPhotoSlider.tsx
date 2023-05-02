@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import styles from "./placePhotoSlider.module.scss"
 
 const PlacesPhotoSlider = () => {
     const photos = [
@@ -21,13 +22,13 @@ const PlacesPhotoSlider = () => {
     const photoUrl = photos[currentPhotoIndex];
 
     return (
-        <div className="placePhotos">
-            <div className="placePhotos__slider">
-                <div onClick={goToPreviousPhoto} className="arrow arrow__left"/>
-                <div onClick={goToNextPhoto} className="arrow arrow__right"/>
+        <section className={styles.placePhotos}>
+            <div className={styles.placePhotos__slider}>
+                <div onClick={goToPreviousPhoto} className={`${styles.arrow} ${styles.arrow__left}`}/>
+                <div onClick={goToNextPhoto} className={`${styles.arrow} ${styles.arrow__right}`}/>
                 <img src={photoUrl} alt=""/>
             </div>
-        </div>
+        </section>
     );
 };
 

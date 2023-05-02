@@ -1,38 +1,95 @@
 @import "variables";
+@import url(https://fonts.googleapis.com/css?family=Hind:300,regular,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Outfit:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Bebas+Neue:regular);
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
-ul,ol{
+
+ul,
+ol {
   list-style-type: none;
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+    monospace;
 }
 
 body {
-  background: black;
+  background: $dark-background;
+  padding: 10px;
 }
 
-.App{
-  .test{
-    background: $background-color;
-  }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  font-style: normal;
+  font-family: Hind, sans-serif;
+  color: $dark-background;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2{
+  font-size: 59px;
+}
+
+h3 {
+  font-size: 34px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+// custom p classes
+.p-small {
+  font-family: Outfit, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.p-middle {}
+
+.p-large {
+  font-family: Outfit, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+
+}
+// custom p classes
+
+section {
+  background: $background-color;
+  border-radius: 20px;
+  padding: 50px;
 }
 
 img{
   width: 100%;
   border-radius: inherit;
 }
-
-@import "places/placePhotoSlider";
-@import "places/placeInfoSection";
