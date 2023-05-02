@@ -1,0 +1,21 @@
+.header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 440px;
+}
+
+.logo-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  span {
+    white-space: nowrap;
+    font-size: 40px;
+    font-weight: 400;
+    font-family: Bebas Neue, serif;
+  }
+}
