@@ -1,4 +1,4 @@
-import styles from "./index.module.scss";
+import styles from "./InfoBlock.module.scss";
 
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
