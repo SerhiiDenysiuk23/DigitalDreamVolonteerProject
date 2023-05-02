@@ -26,7 +26,7 @@ button {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -48,6 +48,7 @@ h5 {
 
 h1 {
   font-size: 70px;
+  line-height: 63.41px;
 }
 
 h2{
@@ -66,20 +67,20 @@ h5 {
   font-size: 20px;
 }
 
-// custom p classes
-.p-small {
+p{
   font-family: Outfit, sans-serif;
   font-size: 14px;
   font-weight: 400;
 }
 
-.p-middle {}
+// custom p classes
+
+.p-middle {
+}
 
 .p-large {
-  font-family: Outfit, sans-serif;
   font-size: 18px;
   font-weight: 500;
-
 }
 // custom p classes
 
@@ -87,9 +88,28 @@ section {
   background: $background-color;
   border-radius: 20px;
   padding: 50px;
+  overflow: hidden;
 }
+
 
 img{
   width: 100%;
   border-radius: inherit;
+
+.app {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+// classes to hide and show elements
+.hidden{
+display: none;
+}
+
+.visible{
+display: block;
 }

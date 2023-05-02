@@ -1,12 +1,11 @@
-import React from 'react';
-import PlacesPhotoSlider from "./components/placesSection/PlacesPhotoSlider";
-import PlaceInfo from "./components/placesSection/PlaceInfo";
+
+import React from "react";
+import Banner from "./components/Banner/Banner";
 
 function App() {
   return (
-    <div className="App">
-      {/*<PlacesPhotoSlider/>*/}
-      {/*  <PlaceInfo/>*/}
+    <div className="app">
+      <Banner />
     </div>
   );
 }
