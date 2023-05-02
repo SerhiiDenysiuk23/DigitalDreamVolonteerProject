@@ -62,9 +62,12 @@ h4 {
   font-size: 20px;
 }
 
+p{
+  font-family: Outfit, sans-serif;
+}
+
 // custom p classes
 .p-small {
-  font-family: Outfit, sans-serif;
   font-size: 14px;
   font-weight: 400;
 }
@@ -72,10 +75,8 @@ h4 {
 .p-middle {}
 
 .p-large {
-  font-family: Outfit, sans-serif;
   font-size: 18px;
   font-weight: 500;
-
 }
 // custom p classes
 
@@ -85,8 +86,20 @@ section {
   padding: 50px;
 }
 
-.App {
-  .test {
-    background: $background-color;
-  }
+.app {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+// classes to hide and show elements
+.hidden{
+display: none;
+}
+
+.visible{
+display: block;
 }
