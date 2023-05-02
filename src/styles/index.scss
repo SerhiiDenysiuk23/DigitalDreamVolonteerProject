@@ -94,3 +94,12 @@ section {
   flex-direction: column;
   gap: 10px;
 }
+
+// classes to hide and show elements
+.hidden{
+display: none;
+}
+
+.visible{
+display: block;
+}
