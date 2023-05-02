@@ -1,0 +1,24 @@
+.wrapperButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 367px;
+    height: 60px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.buttonDonate {
+    width: 139px;
+    height: 48px;
+    background: #101010;
+    border-radius: 14px;
+    color: white;
+    margin: 10px;
+}
+
+.buttonInfo {
+    font-size: 14px;
+    margin: 10px;
+}

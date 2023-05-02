@@ -1,11 +1,11 @@
 .block {
+  display: flex;
+  flex-direction: column;
+
   width: 278px;
   padding: 40px 30px;
   border-radius: 20px;
   background-color: #ffffff;
-
-  display: flex;
-  flex-direction: column;
 }
 
 .pictureWrapper {
