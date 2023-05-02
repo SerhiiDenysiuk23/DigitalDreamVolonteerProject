@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import styles from "./placePhotoSlider.module.scss"
+import styles from "./placesSection.module.scss"
 import {useSlider} from "../../hooks/useSlider";
 
 const PlacesPhotoSlider = () => {
     const photos = [
+        '/tmpData/img.png',
         '/tmpData/img_1.png',
         '/tmpData/img_2.png',
         '/tmpData/img_3.png',

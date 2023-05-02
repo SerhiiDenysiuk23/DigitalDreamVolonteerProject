@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from "./placeInfoSection.module.scss"
+import styles from "./placesSection.module.scss"
+import PlaceChangeSlider from "./PlaceChangeSlider";
 
 const PlaceInfo = () => {
 
@@ -12,6 +13,7 @@ const PlaceInfo = () => {
             <h2>Tunnel of Love</h2>
             <p className="p-large">{description}</p>
             <a className={styles.geo} href={"geo:"+geo}>{geo}</a>
+            <PlaceChangeSlider/>
         </section>
     );
 }

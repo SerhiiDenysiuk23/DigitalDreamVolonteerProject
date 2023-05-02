@@ -1,16 +1,18 @@
 import {useState} from "react";
 
-export const useSlider = (initPhotoUrlList: string[]) => {
+export const useSlider = (initPhotoUrlList: string[], photosPerSlide: number = 1) => {
     const [photos, setPhotos] = useState<string[]>(initPhotoUrlList)
     const [state, setState] = useState(0)
 
+    const slidesCount = Math.ceil(photos.length / photosPerSlide);
+
     const prevPhoto = () => {
-        const newIndex = (state - 1 + photos.length) % photos.length;
+        const newIndex = (state - 1 + slidesCount) % slidesCount;
         setState(newIndex);
     };
 
     const nextPhoto = () => {
-        const newIndex = (state + 1) % photos.length;
+        const newIndex = (state + 1) % slidesCount;
         setState(newIndex);
     };
 
@@ -18,12 +20,17 @@ export const useSlider = (initPhotoUrlList: string[]) => {
         setState(index)
     }
 
-    const currentPhoto = photos[state]
+    const getCurrentSlidePhotos = () => {
+        const startIndex = state * photosPerSlide;
+        const endIndex = startIndex + photosPerSlide;
+        return photos.slice(startIndex, endIndex);
+    };
 
     return {
         prevPhoto,
         nextPhoto,
         changePhoto,
-        currentPhoto
+        currentPhotoList: getCurrentSlidePhotos(),
+        currentPhoto: getCurrentSlidePhotos()[0]
     }
 }

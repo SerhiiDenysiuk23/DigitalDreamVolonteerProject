@@ -5,8 +5,8 @@ import PlaceInfo from "./components/placesSection/PlaceInfo";
 function App() {
   return (
     <div className="App">
-      <PlacesPhotoSlider/>
-        {/*<PlaceInfo/>*/}
+      {/*<PlacesPhotoSlider/>*/}
+      {/*  <PlaceInfo/>*/}
     </div>
   );
 }
