@@ -1,35 +1,35 @@
 @import "../../styles/variables";
 
-.arrow {
-  position: absolute;
-  cursor: pointer;
-  color: black;
-  width: 42px;
-  height: 42px;
-  background: white;
-  border-radius: 12px;
-  &:after {
-    position: absolute;
-    font-size: 28px;
-    top: 50%;
-  }
-  &__right {
-    right: 0;
-    &:after {
-      content: "‹";
-      right: 50%;
-      transform: translate(50%, -50%) scaleX(-1);
-    }
-  }
-  &__left {
-    left: 0;
-    &:after {
-      content: "‹";
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
-}
+//.arrow {
+//  position: absolute;
+//  cursor: pointer;
+//  color: black;
+//  width: 42px;
+//  height: 42px;
+//  background: white;
+//  border-radius: 12px;
+//  &:after {
+//    position: absolute;
+//    font-size: 28px;
+//    top: 50%;
+//  }
+//  &__right {
+//    right: 0;
+//    &:after {
+//      content: "‹";
+//      right: 50%;
+//      transform: translate(50%, -50%) scaleX(-1);
+//    }
+//  }
+//  &__left {
+//    left: 0;
+//    &:after {
+//      content: "‹";
+//      left: 50%;
+//      transform: translate(-50%, -50%);
+//    }
+//  }
+//}
 
 .placePhotos {
   max-width: 1107px;
@@ -44,7 +44,7 @@
       object-fit: cover;
     }
 
-    .arrow {
+    .arrowSliderBtn {
       color: white;
       width: 15%;
       top: 0;
@@ -91,22 +91,20 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-
-
   }
   &__slideElem{
     width: 195px;
   }
 
-  .arrow {
-    top: 50%;
-    transform: translateY(-50%);
-    &__right {
-      right: -21px;
-    }
-    &__left {
-      left: -21px;
-    }
-  }
+  //.arrow {
+  //  top: 50%;
+  //  transform: translateY(-50%);
+  //  &__right {
+  //    right: -21px;
+  //  }
+  //  &__left {
+  //    left: -21px;
+  //  }
+  //}
 }
 
