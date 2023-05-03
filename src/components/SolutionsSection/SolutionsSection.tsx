@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {CSSProperties} from 'react';
+import SolutionsSlider from "./SolutionsSlider";
+import SolutionsDescription from "./SolutionsDescription";
+
+const flexStyle: CSSProperties = {
+    display: "flex",
+    justifyContent: "space-evenly",
+    margin: "91px 0 137px"
+}
 
 const SolutionsSection = () => {
     return (
-        <div>
-
-        </div>
+        <section className={"solution-section"}>
+            <h3>Do you know about Ukrainian SOLUTIONS?</h3>
+            <div style={flexStyle}>
+                <SolutionsSlider/>
+                <SolutionsDescription/>
+            </div>
+        </section>
     );
 };
 
