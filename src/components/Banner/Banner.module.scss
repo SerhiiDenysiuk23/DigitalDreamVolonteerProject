@@ -3,11 +3,29 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 116px;
+    background: linear-gradient(180deg, #000000 -62.07%, rgba(0, 0, 0, 0) 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 4;
+  }
 
   &__header {
     display: flex;
+    width: 93%;
+    max-width: 1820px;
+    left: 50%;
     justify-content: space-between;
     z-index: 5;
+    position: fixed;
+    top: 40px;
+    transform: translateX(-50%);
   }
 }
