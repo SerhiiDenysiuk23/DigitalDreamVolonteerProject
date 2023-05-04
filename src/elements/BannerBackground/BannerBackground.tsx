@@ -9,6 +9,7 @@ const BannerBackground = () => {
   const [landlImg, setLandImg] = useState(state.girlImages);
 
   const cloudsContainerRef = useRef<HTMLDivElement>(null);
+  const cloudsContainerRef2 = useRef<HTMLDivElement>(null);
 
   const addOpacity = (n: number): void => {
     const updatedGirl = [...state.girlImages];
@@ -27,6 +28,18 @@ const BannerBackground = () => {
     setGirlImg(updatedGirl);
     setLandImg(updatedlandscape);
   };
+
+  useEffect(() => {
+    if (cloudsContainerRef2.current) {
+      gsap.from(cloudsContainerRef2.current.children, {
+        opacity: 0,
+        scale: 0,
+        ease: "elastic.out(1.2, 0.3)",
+        duration: 2,
+        delay:1
+      });
+    }
+  }, []);
 
   useEffect(() => {
     if (cloudsContainerRef.current) {
@@ -63,7 +76,7 @@ const BannerBackground = () => {
             }}
           ></div>
         ))}
-        <div>
+        <div ref={cloudsContainerRef2}>
           {state.wreathOfGirl.map((item) => (
             <a
               key={item.id}
@@ -76,7 +89,7 @@ const BannerBackground = () => {
             </a>
           ))}
         </div>
-        <div ref={cloudsContainerRef} >
+        <div ref={cloudsContainerRef}>
           {state.clouds.map((cloud) => (
             <div key={cloud.id} className={`${style[cloud.className]} `}>
               <img src={cloud.src} alt={cloud.className} />

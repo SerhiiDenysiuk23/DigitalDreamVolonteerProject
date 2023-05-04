@@ -33,39 +33,39 @@ const BurgerMenu = () => {
         </button>
       </div>
       {isOpen && (
-        <nav className={`${style.nav} ${isOpen ? style.openMenu : ""}`}>
-          <div className={style.burger}>
-            <button onClick={toggleMenu}>
-              <img src="/assets/burger.svg" alt="burger" />
-            </button>
-          </div>
+        <div className={style.nav__container}>
+          <nav className={`${style.nav} ${isOpen ? style.openMenu : ""}`}>
+            <div onClick={toggleMenu} className={style.burger}>
+              <span></span>
+            </div>
 
-          <ul>
-            <li onClick={toggleMenu}>
-              <img src="/assets/logo.svg" alt="" />
-              <h2>Art</h2>
-            </li>
-            <li onClick={toggleMenu}>
-              <img src="/assets/logo.svg" alt="" />
-              <h2>Places</h2>
-            </li>
-            <li onClick={toggleMenu}>
-              <img src="/assets/logo.svg" alt="" />
-              <h2>Film</h2>
-            </li>
-            <li onClick={toggleMenu}>
-              <img src="/assets/logo.svg" alt="" />
-              <h2>Music</h2>
-            </li>
-            <li onClick={toggleMenu}>
-              <img src="/assets/logo.svg" alt="" />
-              <h2>Brand</h2>
-            </li>
-            <li onClick={toggleMenu}>
-              <h2>Our team</h2>
-            </li>
-          </ul>
-        </nav>
+            <ul>
+              <li onClick={toggleMenu}>
+                <img src="/assets/logo.svg" alt="" />
+                <h2>Art</h2>
+              </li>
+              <li onClick={toggleMenu}>
+                <img src="/assets/logo.svg" alt="" />
+                <h2>Places</h2>
+              </li>
+              <li onClick={toggleMenu}>
+                <img src="/assets/logo.svg" alt="" />
+                <h2>Film</h2>
+              </li>
+              <li onClick={toggleMenu}>
+                <img src="/assets/logo.svg" alt="" />
+                <h2>Music</h2>
+              </li>
+              <li onClick={toggleMenu}>
+                <img src="/assets/logo.svg" alt="" />
+                <h2>Brand</h2>
+              </li>
+              <li onClick={toggleMenu}>
+                <h2>Our team</h2>
+              </li>
+            </ul>
+          </nav>
+        </div>
       )}
     </div>
   );
