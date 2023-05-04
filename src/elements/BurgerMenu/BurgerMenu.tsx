@@ -41,11 +41,29 @@ const BurgerMenu = () => {
           </div>
 
           <ul>
-            <li onClick={toggleMenu}>1</li>
-            <li onClick={toggleMenu}>2</li>
-            <li onClick={toggleMenu}>3</li>
-            <li onClick={toggleMenu}>4</li>
-            <li onClick={toggleMenu}>5</li>
+            <li onClick={toggleMenu}>
+              <img src="/assets/logo.svg" alt="" />
+              <h2>Art</h2>
+            </li>
+            <li onClick={toggleMenu}>
+              <img src="/assets/logo.svg" alt="" />
+              <h2>Places</h2>
+            </li>
+            <li onClick={toggleMenu}>
+              <img src="/assets/logo.svg" alt="" />
+              <h2>Film</h2>
+            </li>
+            <li onClick={toggleMenu}>
+              <img src="/assets/logo.svg" alt="" />
+              <h2>Music</h2>
+            </li>
+            <li onClick={toggleMenu}>
+              <img src="/assets/logo.svg" alt="" />
+              <h2>Brand</h2>
+            </li>
+            <li onClick={toggleMenu}>
+              <h2>Our team</h2>
+            </li>
           </ul>
         </nav>
       )}
