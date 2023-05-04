@@ -48,6 +48,7 @@ const BannerBackground = () => {
         x: 100,
         duration: 1,
         stagger: 0.5,
+        delay:1.5
       });
     }
   }, []);
