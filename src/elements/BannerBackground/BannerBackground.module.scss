@@ -7,8 +7,9 @@
 
   .landscapes {
     position: absolute;
+    right: 0;
     height: 100%;
-    width: 100%;
+    width: 777px;
 
     .landscape {
       position: absolute;
@@ -32,6 +33,7 @@
 
     .hover__girl {
       position: absolute;
+      // background-color: blue;
       right: 0;
       width: 100%;
       height: 100%;
@@ -45,23 +47,18 @@
     }
 
     .girlArt {
-      
     }
 
     .girlFilm {
-      
     }
 
     .girlBrend {
-      
     }
 
     .girlPlaces {
-      
     }
 
     .girlMusic {
-      
     }
   }
 
@@ -93,9 +90,20 @@
     width: 500px;
     height: 500px;
   }
-
+  // .iconsContainer{
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: red;
+  // }
   .icons {
     position: absolute;
+    max-width: 50px;
+    max-height: 63px;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
 
   .art {
@@ -115,11 +123,11 @@
 
   .places {
     top: 26%;
-    left: 60%;
+    left: 61%;
   }
 
   .music {
-    top: 40%;
-    left: 61%;
+    top: 41%;
+    left: 62%;
   }
 }
