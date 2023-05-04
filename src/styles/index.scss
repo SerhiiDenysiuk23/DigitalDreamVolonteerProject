@@ -116,4 +116,10 @@ display: none;
   display: block;
 }
 
-@import "../components/SolutionsSection/SolutionsSection";
+//li.slick-active{
+//  img {
+//    border: #015BBB 2px solid;
+//  }
+//}
+
+@import "../components/SolutionsSection/SolutionsSection.module";
