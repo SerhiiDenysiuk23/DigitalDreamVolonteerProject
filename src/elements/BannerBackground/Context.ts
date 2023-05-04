@@ -109,9 +109,9 @@ let initState: InitialState = {
     },
   ],
   clouds: [
-    { src: "/assets/Clouds/cloud3of3.png", id: 3, className: "cloudLarge" },
-    { src: "/assets/Clouds/cloud2of3.png", id: 2, className: "cloudMiddle" },
     { src: "/assets/Clouds/cloud1of3.png", id: 1, className: "cloudLittle" },
+    { src: "/assets/Clouds/cloud2of3.png", id: 2, className: "cloudMiddle" },
+    { src: "/assets/Clouds/cloud3of3.png", id: 3, className: "cloudLarge" },
   ],
 };
 
