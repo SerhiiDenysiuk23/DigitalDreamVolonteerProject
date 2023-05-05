@@ -1,0 +1,32 @@
+.arrowSliderBtn {
+  position: absolute;
+  cursor: pointer;
+  color: black;
+  width: 42px;
+  height: 42px;
+  background: white;
+  border-radius: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  &:after {
+    position: absolute;
+    font-size: 28px;
+    top: 50%;
+  }
+  &__right {
+    right: -21px;
+    &:after {
+      content: "‹";
+      right: 50%;
+      transform: translate(50%, -50%) scaleX(-1);
+    }
+  }
+  &__left {
+    left: -21px;
+    &:after {
+      content: "‹";
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

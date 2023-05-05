@@ -1,0 +1,26 @@
+.wrapperDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 706px;
+    height: 201px;
+}
+
+.supportList {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    width: 706px;
+    height: 100px;
+}
+
+.listItem {
+    display: flex;
+    width: 322px;
+
+    & p {
+        font-size: 18px;
+        margin: 0 0 0 10px;
+    }
+
+}

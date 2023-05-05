@@ -12,6 +12,7 @@
 a {
   text-decoration: none;
   color: inherit;
+  font-family: Hind, sans-serif;
 }
 
 ul,
@@ -92,6 +93,11 @@ section {
 }
 
 
+img {
+  width: 100%;
+  border-radius: inherit;
+}
+
 .app {
   margin: 0 auto;
   width: 100%;
@@ -106,6 +112,8 @@ section {
 display: none;
 }
 
-.visible{
-display: block;
+.visible {
+  display: block;
 }
+
+@import "../components/SolutionsSection/SolutionsSection";
