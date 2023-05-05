@@ -8,7 +8,7 @@ const HeaderLogo = () => {
         <img src="/assets/logo.svg" alt="" />
         <span>UA DNA</span>
       </div>
-      <p className={style["p-small"]}>
+      <p>
         Web-project about Ukrainian culture that will make you fall in live with
         Ukraine
       </p>
