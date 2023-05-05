@@ -8,10 +8,10 @@ import SolutionsSection from "./components/SolutionsSection/SolutionsSection";
 function App() {
   return (
     <div className="app">
-      {/*<Banner />*/}
-      {/*  <PlaceInfo/>*/}
-      {/*  <PlacesPhotoSlider/>*/}
-        <SolutionsSection/>
+      <Banner />
+      <SolutionsSection/>
+      <PlaceInfo/>
+        <PlacesPhotoSlider/>
     </div>
   );
 }

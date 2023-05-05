@@ -1,37 +1,41 @@
 import React from 'react';
-import {useSlider} from "../../hooks/useSlider";
+import Slider, {Settings} from "react-slick";
+import styles from "./SolutionsSection.module.scss";
 import ArrowSliderBtn from "../../elements/ArrowSliderBtn/ArrowSliderBtn";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const SolutionsSlider = () => {
     const photos = [
-        '/tmpData/img.png',
-        '/tmpData/img_1.png',
-        '/tmpData/img_2.png',
-        '/tmpData/img_3.png',
-        '/tmpData/img_4.png'
+        '/assets/background.png',
+        '/assets/background1.png',
+        '/assets/background2.png',
+        '/assets/background3.png',
+        '/assets/background4.png'
     ];
 
-    const {currentPhoto, prevPhoto, nextPhoto, changePhoto} = useSlider(photos)
+    const settings: Settings = {
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: <ArrowSliderBtn direction={"left"}/>,
+        nextArrow: <ArrowSliderBtn direction={"right"}/>,
+        dots: true,
+        dotsClass: styles.solutionSliderPagination,
+        customPaging(index: number): JSX.Element {
+            return <img src={photos[index]}/>
+        }
+    };
 
     return (
-        <div className={"solution-slider"}>
-            <div className={"solution-slider__elem"}>
-                <ArrowSliderBtn direction={"left"} handleOnClick={prevPhoto}/>
-                <ArrowSliderBtn direction={"right"} handleOnClick={nextPhoto}/>
-                <img src={currentPhoto} alt=""/>
-            </div>
-            <div className={"solution-slider-nav"}>
-                {
-                    photos.map((item: string, index: number) =>
-                        <div
-                            onClick={()=>{changePhoto(index)}}
-                            key={item}
-                            className={`solution-slider-nav__elem ${item == currentPhoto ? "solution-slider-nav__elem__active" : ""}`}>
-                            <img src={item} alt=""/>
-                        </div>)
-                }
-            </div>
-        </div>
+        <Slider className={styles.solutionSlider} {...settings}>
+            {
+                photos.map((value: string) =>
+                    <div key={value} className={styles.solutionSlider__elem}>
+                        <img src={value} alt=""/>
+                    </div>)
+            }
+        </Slider>
     );
 };
 
