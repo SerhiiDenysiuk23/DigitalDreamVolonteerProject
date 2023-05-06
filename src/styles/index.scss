@@ -47,7 +47,7 @@ h5 {
 }
 
 h1 {
-  font-size: 70px;
+  font-size: calc(40px + (70 - 40) * ((100vw - 744px) / (1920 - 744)));
   line-height: 63.41px;
 }
 
@@ -63,7 +63,7 @@ h4 {
   font-size: 20px;
 }
 
-p{
+p {
   font-family: Outfit, sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -79,7 +79,7 @@ p{
 section {
   background: $background-color;
   border-radius: 20px;
-  padding: 50px;
+  padding: calc(30px + (50 - 30) * ((100vw - 744px) / (1920 - 744)));
   overflow: hidden;
 }
 
@@ -93,10 +93,29 @@ section {
 }
 
 // classes to hide and show elements
-.hidden{
-display: none;
+.hidden {
+  display: none;
 }
 
-.visible{
-display: block;
+.visible {
+  display: block;
+}
+
+// Media queries
+@media (max-width:746px) {
+  h1 {
+    line-height: 60px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .p-large {
+    font-size: 16px;
+  }
 }
