@@ -12,6 +12,7 @@
 a {
   text-decoration: none;
   color: inherit;
+  font-family: Hind, sans-serif;
 }
 
 ul,
@@ -26,7 +27,7 @@ button {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -51,15 +52,19 @@ h1 {
   line-height: 63.41px;
 }
 
-h2 {
-  font-size: 34px;
+h2{
+  font-size: 59px;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 34px;
 }
 
 h4 {
+  font-size: 24px;
+}
+
+h5 {
   font-size: 20px;
 }
 
@@ -70,6 +75,10 @@ p {
 }
 
 // custom p classes
+
+.p-middle {
+}
+
 .p-large {
   font-size: 18px;
   font-weight: 500;
@@ -81,6 +90,12 @@ section {
   border-radius: 20px;
   padding: calc(30px + (50 - 30) * ((100vw - 744px) / (1920 - 744)));
   overflow: hidden;
+}
+
+
+img {
+  width: 100%;
+  border-radius: inherit;
 }
 
 .app {
@@ -101,6 +116,7 @@ section {
   display: block;
 }
 
+
 // Media queries
 @media (max-width:746px) {
   h1 {
@@ -119,3 +135,6 @@ section {
     font-size: 16px;
   }
 }
+
+@import "../components/SolutionsSection/SolutionsSection";
+

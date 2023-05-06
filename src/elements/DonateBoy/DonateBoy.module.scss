@@ -1,0 +1,14 @@
+.wrapperDonateBoy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 0;
+
+
+    & img {
+        width: 1480px;
+        height: 1120px;
+        margin: 0px 0px 245px 200px;
+    }
+}
