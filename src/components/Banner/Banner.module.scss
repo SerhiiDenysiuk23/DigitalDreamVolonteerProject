@@ -20,13 +20,14 @@
 
   &__header {
     display: flex;
-    width: 93%;
-    max-width: 1820px;
+    width: 100%;
+    padding: 40px 50px 0 50px;
+    max-width: 1920px;
     left: 50%;
     justify-content: space-between;
     z-index: 5;
     position: fixed;
-    top: 40px;
+    top: 0;
     transform: translateX(-50%);
   }
 }
