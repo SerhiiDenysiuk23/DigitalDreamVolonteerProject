@@ -103,7 +103,7 @@ const BannerBackground = () => {
         </div>
         <div ref={cloudsContainerRef}>
           {state.clouds.map((cloud) => (
-            <div key={cloud.id} className={`${style[cloud.className]} `}>
+            <div key={cloud.id} className={`${style[cloud.className]} ${style.clouds}`}>
               <img src={cloud.src} alt={cloud.className} />
             </div>
           ))}
