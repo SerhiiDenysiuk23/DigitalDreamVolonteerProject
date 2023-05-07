@@ -3,12 +3,13 @@ import "./ArrowSliderBtn.scss"
 
 interface PropType {
     direction: "left" | "right",
-    handleOnClick(): void
+    btnType?: "" | "big" | "shifted"
+    onClick?(): void
 }
 
-const ArrowSliderBtn: FC<PropType> = ({direction, handleOnClick}) => {
+const ArrowSliderBtn: FC<PropType> = ({direction, onClick, btnType = ""}) => {
     return (
-        <div onClick={handleOnClick} className={`arrowSliderBtn arrowSliderBtn__${direction}`}/>
+        <div onClick={onClick} className={`arrowSliderBtn arrowSliderBtn__${direction} ${btnType}`}/>
     );
 };
 

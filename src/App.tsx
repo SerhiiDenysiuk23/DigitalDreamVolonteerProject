@@ -9,12 +9,19 @@ import DonateSectionSecond from "./components/DonateSectionSecond/DonateSectionS
 function App() {
   return (
     <div className="app">
+
+      <Banner />
+      <SolutionsSection/>
+      <PlaceInfo/>
+        <PlacesPhotoSlider/>
+
       {/*<Banner />*/}
       {/*  <PlaceInfo/>*/}
       {/*  <PlacesPhotoSlider/>*/}
       <SolutionsSection />
       {/* <DonateSection />
       <DonateSectionSecond /> */}
+
     </div>
   );
 }
