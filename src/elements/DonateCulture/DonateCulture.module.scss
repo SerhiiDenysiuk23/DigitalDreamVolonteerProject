@@ -1,0 +1,65 @@
+.donateCulture {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+    min-height: 876px;
+}
+
+.infoCulture {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+
+    & h1 {
+        font-size: 35px;
+    }
+
+    & p {
+        font-size: 26px;
+    }
+}
+
+.headerCulture {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35%;
+
+    & h3 {
+        line-height: 120%;
+    }
+}
+
+.descriptionCulture {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 50%;
+
+    & p {
+        font-size: 16px;
+    }
+}
+
+
+.locationCulture {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20%;
+
+    & p {
+        font-size: 16px;
+    }
+}
+
+.location {
+    display: flex;
+    width: 240px;
+    justify-content: space-between;
+
+    & img {
+        width: 8%;
+    }
+}
