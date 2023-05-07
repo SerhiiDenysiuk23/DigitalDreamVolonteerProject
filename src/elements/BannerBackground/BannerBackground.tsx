@@ -43,6 +43,15 @@ const BannerBackground = () => {
 
   useEffect(() => {
     if (cloudsContainerRef.current) {
+
+      gsap.from(cloudsContainerRef.current.children, {
+        opacity: 0,
+        x: 100,
+        duration: 1,
+        stagger: 0.5,
+        delay: 1.5,
+      });
+
       const timeline = gsap.timeline({ repeat: -1, yoyo: true });
       timeline
         .from(cloudsContainerRef.current.children, {
@@ -60,6 +69,7 @@ const BannerBackground = () => {
           duration: 1,
           stagger: 0.5,
         });
+
     }
   }, []);
 
