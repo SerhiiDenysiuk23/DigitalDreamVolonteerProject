@@ -43,6 +43,7 @@ const BannerBackground = () => {
 
   useEffect(() => {
     if (cloudsContainerRef.current) {
+
       gsap.from(cloudsContainerRef.current.children, {
         opacity: 0,
         x: 100,
@@ -50,8 +51,28 @@ const BannerBackground = () => {
         stagger: 0.5,
         delay: 1.5,
       });
+
+      const timeline = gsap.timeline({ repeat: -1, yoyo: true });
+      timeline
+        .from(cloudsContainerRef.current.children, {
+          opacity: 0,
+          x: 100,
+          duration: 1,
+          stagger: 0.5,
+        })
+        .to({}, { duration: 5 })
+        // .to(cloudsContainerRef.current.children, { duration: 3, yoyo: true, ease: "elastic.out(2.5, 0.4)" })
+        // .to({}, { duration: 5, y: "+=50", yoyo: true })
+        .to(cloudsContainerRef.current.children, {
+          opacity: 0,
+          x: 100,
+          duration: 1,
+          stagger: 0.5,
+        });
+
     }
   }, []);
+
   return (
     <div className={style.bannerBackground}>
       <div className={style.landscapes}>
@@ -92,7 +113,7 @@ const BannerBackground = () => {
         </div>
         <div ref={cloudsContainerRef}>
           {state.clouds.map((cloud) => (
-            <div key={cloud.id} className={`${style[cloud.className]} `}>
+            <div key={cloud.id} className={`${style[cloud.className]} ${style.clouds}`}>
               <img src={cloud.src} alt={cloud.className} />
             </div>
           ))}

@@ -16,6 +16,7 @@
   padding: 15px;
   cursor: pointer;
   position: relative;
+  z-index: 5;
 
   span {
     font-family: "Hind";
@@ -26,59 +27,38 @@
     text-align: right;
     color: $dark-background;
   }
-}
-
-.nav__container {
-  position: fixed;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-}
-.nav {
-  width: 506px;
-  display: none;
-  position: relative;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  padding: 100px 80px;
-  background: #ffffff;
-  border: 4px solid #000000;
-  border-radius: 16px;
 
   .burger {
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
     display: block;
-    position: absolute;
-    right: -15px;
-    top: -15px;
-    background: #ffffff;
-    border: 0.5px solid #101010;
-    border-radius: 8px;
-    cursor: pointer;
 
     span {
-      position: absolute;
+      display: block;
+      position: relative;
       top: 50%;
       left: 50%;
       width: 24px;
       height: 3px;
       background: #000000;
-      
-      transform: translate(-50%, -50%);
       border-radius: 10px;
+      transform: translate(-50%, -50%);
 
       &::after {
         content: "";
         position: absolute;
+        left: 0;
         height: 3px;
         width: 100%;
         background: #000000;
         bottom: 8px;
         border-radius: 10px;
       }
+
       &::before {
         content: "";
         position: absolute;
+        left: 0;
         height: 3px;
         width: 100%;
         background: #000000;
@@ -86,56 +66,221 @@
         border-radius: 10px;
       }
     }
-  }
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    transition: all 0.2s ease;
-    gap: 10px;
+    &.cross {
+      span {
+        height: 0px;
+        width: 18px;
 
-    li {
-      display: flex;
-      gap: 16px;
-      width: 48%;
-      padding: 5px;
-      cursor: pointer;
-    }
+        &::after {
+          bottom: -1.5px;
+          transition: all 0.5s ease-in-out;
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+        }
 
-    li:hover {
-      background-color: $background-color;
+        &::before {
+          top: -1.5px;
+          transition: all 0.5s ease-in-out;
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+        }
+      }
     }
   }
 }
 
-.openMenu {
-  display: block;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  .burger {
+.nav__container {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transition: all 0.4s ease-in-out;
+  pointer-events: none;
+  opacity: 0;
+
+  .leftHalf {
+    width: 50%;
+    background-color: #151515;
+    transform: translateX(-100%);
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rightHalf {
+    background-color: #151515;
+    width: 50%;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+  }
+
+  &.openMenu {
+    opacity: 1;
+    pointer-events: visible;
+
+    .leftHalf {
+      transform: translateX(0%);
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .rightHalf {
+      transform: translateX(0%);
+      position: relative;
+
+      .landscape {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: right;
+        background-repeat: no-repeat;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+  }
+
+  .nav__icon {
     width: 40px;
     height: 40px;
-    display: block;
-    position: absolute;
-    right: -15px;
-    top: -15px;
-    background: #ffffff;
-    border: 0.5px solid #101010;
-    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    span {
-      background: #ffffff;
-
-      &::after {
-        transform: rotate(45deg);
-        bottom: 0px;
-      }
-      &::before {
-        transform: rotate(-45deg);
-        top: 0px;
-      }
+    img {
+      max-width: 100%;
+      max-height: 100%;
     }
   }
+
+  .icons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    text-transform: capitalize;
+    color: #c0c0c0;
+  }
 }
+
+// .nav {
+//   width: 506px;
+//   display: none;
+//   position: relative;
+//   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+//   padding: 100px 80px;
+//   background: #ffffff;
+//   border: 4px solid #000000;
+//   border-radius: 16px;
+
+//   .burger {
+//     width: 40px;
+//     height: 40px;
+//     display: block;
+//     position: absolute;
+//     right: -15px;
+//     top: -15px;
+//     background: #ffffff;
+//     border: 0.5px solid #101010;
+//     border-radius: 8px;
+//     cursor: pointer;
+
+//     span {
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       width: 24px;
+//       height: 3px;
+//       background: #000000;
+
+//       transform: translate(-50%, -50%);
+//       border-radius: 10px;
+
+//       &::after {
+//         content: "";
+//         position: absolute;
+//         height: 3px;
+//         width: 100%;
+//         background: #000000;
+//         bottom: 8px;
+//         border-radius: 10px;
+//       }
+//       &::before {
+//         content: "";
+//         position: absolute;
+//         height: 3px;
+//         width: 100%;
+//         background: #000000;
+//         top: 8px;
+//         border-radius: 10px;
+//       }
+//     }
+//   }
+
+//   ul {
+//     display: flex;
+//     flex-wrap: wrap;
+//     transition: all 0.2s ease;
+//     gap: 10px;
+
+//     li {
+//       display: flex;
+//       gap: 16px;
+//       width: 48%;
+//       padding: 5px;
+//       cursor: pointer;
+//     }
+
+//     li:hover {
+//       background-color: $background-color;
+//     }
+//   }
+// }
+
+// .openMenu {
+//   display: block;
+//   position: absolute;
+//   top: 45%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   .burger {
+//     width: 40px;
+//     height: 40px;
+//     display: block;
+//     position: absolute;
+//     right: -15px;
+//     top: -15px;
+//     background: #ffffff;
+//     border: 0.5px solid #101010;
+//     border-radius: 8px;
+
+//     span {
+//       background: #ffffff;
+
+//       &::after {
+//         transform: rotate(45deg);
+//         bottom: 0px;
+//       }
+//       &::before {
+//         transform: rotate(-45deg);
+//         top: 0px;
+//       }
+//     }
+//   }
+// }
