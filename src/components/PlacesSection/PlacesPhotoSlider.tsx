@@ -23,7 +23,7 @@ const PlacesPhotoSlider = () => {
     };
 
     return (
-        <section className={styles.placePhotos}>
+        <div className={`${styles.placePhotos} main-block` }>
             <Slider className={styles.placePhotos__slider} {...settings}>
                 {
                     photos.map(item =>
@@ -33,7 +33,7 @@ const PlacesPhotoSlider = () => {
                     )
                 }
             </Slider>
-        </section>
+        </div>
     );
 };
 

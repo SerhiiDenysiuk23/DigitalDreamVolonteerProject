@@ -5,7 +5,7 @@ import DonateInfo from "../../elements/DonateInfoBlock/DonateInfoBlock";
 
 const DonateSection = () => {
   return (
-    <section className={style.donateSection}>
+    <section className={`${style.donateSection} main-block`}>
       <DonateBoy />
       <DonateInfo />
     </section>

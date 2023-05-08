@@ -1,6 +1,7 @@
 import React, {CSSProperties} from 'react';
 import SolutionsDescription from "./SolutionsDescription";
 import SolutionsSlider from "./SolutionsSlider";
+import styles from './SolutionsSection.module.scss'
 
 const flexStyle: CSSProperties = {
     display: "flex",
@@ -11,13 +12,13 @@ const flexStyle: CSSProperties = {
 
 const SolutionsSection = () => {
     return (
-        <section className={"solution-section"}>
+        <div className={`${styles.solutionSection} main-block`}>
             <h3>Do you know about Ukrainian SOLUTIONS?</h3>
             <div style={flexStyle}>
                 <SolutionsSlider/>
                 <SolutionsDescription/>
             </div>
-        </section>
+        </div>
     );
 };
 

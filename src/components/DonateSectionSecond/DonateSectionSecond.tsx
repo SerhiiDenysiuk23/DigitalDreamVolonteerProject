@@ -6,7 +6,7 @@ import DonateCulture from "../../elements/DonateCulture/DonateCulture";
 
 const DonateSectionSecond = () => {
   return (
-    <div className={style.donateSectionSecond}>
+    <div className={`${style.donateSectionSecond}`}>
       <DonateCulture />
       <DonateShevchenko />
     </div>

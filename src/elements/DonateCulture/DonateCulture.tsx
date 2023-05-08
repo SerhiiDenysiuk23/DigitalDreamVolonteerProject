@@ -5,7 +5,7 @@ import DonateButton from "../DonateButton/DonateButton";
 
 const DonateCulture = () => {
   return (
-    <section className={style.donateCulture}>
+    <div className={`${style.donateCulture} main-block`}>
       <div className={style.infoCulture}>
         <div className={style.headerCulture}>
           <h3>
@@ -40,7 +40,7 @@ const DonateCulture = () => {
         </div>
         <DonateButton />
       </div>
-    </section>
+    </div>
   );
 };
 

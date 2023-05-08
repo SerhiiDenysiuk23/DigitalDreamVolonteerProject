@@ -9,6 +9,7 @@ import SolutionsSection from "./components/SolutionsSection/SolutionsSection";
 
 import DonateSection from "./components/DonateSection/DonateSection";
 import DonateSectionSecond from "./components/DonateSectionSecond/DonateSectionSecond";
+import MiddleSlider from "./components/MiddleSlider/MiddleSlider";
 
 function App() {
   return (
@@ -24,11 +25,9 @@ function App() {
       {/* <ExamplesList type="musicians" /> */}
       {/* <InfoBlock type="author" /> */}
       {/* <InfoBlock type="musician" /> */}
-
-      {/* <DonateSection /> */}
-      {/* <DonateSectionSecond /> */}
-      {/* <DonateSection /> */}
-      {/* <DonateSectionSecond /> */}
+        <MiddleSlider/>
+       <DonateSection />
+       <DonateSectionSecond />
     </div>
   );
 }

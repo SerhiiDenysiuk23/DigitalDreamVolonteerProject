@@ -7,7 +7,7 @@ import BannerBackground from "../../elements/BannerBackground/BannerBackground";
 
 const Banner = () => {
   return (
-    <section className={style.banner}>
+    <section className={`${style.banner} main-block`}>
       <header className={style.banner__header}>
         <HeaderLogo />
         <BurgerMenu />

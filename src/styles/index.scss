@@ -86,6 +86,10 @@ p {
 // custom p classes
 
 section {
+
+}
+
+.main-block{
   background: $background-color;
   border-radius: 20px;
   padding: calc(30px + (50 - 30) * ((100vw - 744px) / (1920 - 744)));
@@ -121,7 +125,6 @@ img {
       border-radius: 50px;
       background-color: black;
     }
-  }
 }
 
 
@@ -159,5 +162,5 @@ img {
   .p-large {
     font-size: 16px;
   }
-
+}
 
