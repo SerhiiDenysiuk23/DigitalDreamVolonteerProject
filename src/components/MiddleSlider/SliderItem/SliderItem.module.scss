@@ -1,0 +1,23 @@
+.container {
+    width: 318px;
+    height: 284px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+
+    .art_image {
+
+        border-radius: 12px;
+    }
+
+    .description {
+        font-family: 'Hind';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 100%;
+        color: #101010;
+        margin-top: 10px;
+    }
+}

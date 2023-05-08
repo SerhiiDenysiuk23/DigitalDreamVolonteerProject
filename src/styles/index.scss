@@ -89,4 +89,12 @@ section {
   .test {
     background: $background-color;
   }
+
+  .middle-slider-container{
+    .active{
+      width: 40px;
+      border-radius: 50px;
+      background-color: black;
+    }
+  }
 }
