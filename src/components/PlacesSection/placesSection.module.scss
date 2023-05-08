@@ -1,0 +1,41 @@
+@import "../../styles/variables";
+
+.placePhotos {
+  max-width: 1147px;
+  background: $background-color;
+  padding: 20px;
+  .imgContainer{
+    height: 760px;
+    border-radius: 20px;
+  }
+  &__slider {
+    border-radius: inherit;
+    height: 100%;
+    z-index: 100;
+  }
+}
+
+.placeInfo{
+  max-width: 743px;
+  .geo{
+    display: block;
+    margin: 30px 0 94px;
+    color: #015BBB;
+    text-decoration: underline;
+  }
+  &__slider{
+    margin: 0 -10px;
+  }
+  .slideElem{
+    height: 283px;
+    width: 195px;
+    padding: 0 15px;
+    border-radius: 20px;
+  }
+}
+
+img{
+  object-fit: cover;
+  height: 100%;
+}
+
