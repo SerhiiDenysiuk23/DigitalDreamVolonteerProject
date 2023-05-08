@@ -1,21 +1,27 @@
 .block {
   display: flex;
   flex-direction: column;
-
   width: 278px;
-  height: calc(691px + 80px);
   padding: 40px 30px;
   border-radius: 20px;
   background-color: #ffffff;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .pictureWrapper {
+  min-width: 218px;
+  min-height: 218px;
   width: 218px;
   height: 218px;
   margin-bottom: 23px;
   border-radius: 17px;
   overflow: hidden;
   background-color: #b4bec2;
+
+  &.musician {
+    border-radius: 100%;
+  }
 }
 
 .picture {
@@ -26,6 +32,14 @@
 
 .title {
   margin-bottom: 12px;
+
+  &.band {
+    margin-bottom: 7px;
+  }
+}
+
+.subtitle {
+  margin-bottom: 7px;
 }
 
 .paragraph {

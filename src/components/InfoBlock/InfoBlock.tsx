@@ -2,13 +2,10 @@ import styles from "./InfoBlock.module.scss";
 
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { data } from "./data";
 
 interface InfoBlockProps {
-  data: {
-    title: string;
-    picture: string;
-    description: string;
-  };
+  type: "author" | "musician" | "band";
 }
 
 let formatParagraph: (text: string) => string[];
@@ -16,28 +13,30 @@ let formatParagraph: (text: string) => string[];
 formatParagraph = (text) => {
   const fragments = text.split(".").map((element, index, array) => {
     if (index % 2 === 0) {
-      return `${element + "."}${array[index + 1]}`;
+      return `${element}.${array[index + 1] || ""}`;
     } else return "";
   });
+  console.log(fragments);
 
-  return fragments.filter((el) => el !== "");
+  return fragments.filter((el) => el !== "" && el !== ".");
 };
 
-export const InfoBlock = ({ data }: InfoBlockProps) => {
-  const { title, picture, description } = data;
+export const InfoBlock = ({ type }: InfoBlockProps) => {
+  const { name, picture, description } = data;
   return (
     <div className={styles.block}>
-      <div className={styles.pictureWrapper}>
+      <div className={`${styles.pictureWrapper} ${styles[type]}`}>
         <img
-          alt={`${title}`}
+          alt={`${name}`}
           src={picture}
           className={styles.picture}
           loading="lazy"
         />
       </div>
-      <h3 className={styles.title}>{title}</h3>
+      <h4 className={`${styles.title} ${styles[type]}`}>{name}</h4>
+      {/* {subtitle && <h5 className={styles.subtitle}>{subtitle}</h5>} */}
       {formatParagraph(description).map((fragment) => (
-        <p className={`p-small ${styles.paragraph}`}>{fragment}</p>
+        <p className={`p-small ${styles.paragraph}`}>{fragment.slice(0, -1)}</p>
       ))}
       <ul className={styles.socialLinks}>
         <li>
