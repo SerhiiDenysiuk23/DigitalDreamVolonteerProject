@@ -52,7 +52,7 @@ h1 {
   line-height: 63.41px;
 }
 
-h2{
+h2 {
   font-size: 59px;
 }
 
@@ -92,7 +92,6 @@ section {
   overflow: hidden;
 }
 
-
 img {
   width: 100%;
   border-radius: inherit;
@@ -116,14 +115,13 @@ img {
   display: block;
 }
 
+::-webkit-scrollbar {
+  width: 4px;
+}
 
-//li.slick-active{
-//  img {
-//    border: #015BBB 2px solid;
-//  }
-//}
-
-@import "../components/SolutionsSection/SolutionsSection.module";
+::-webkit-scrollbar-thumb {
+  background: #dfdfdf;
+}
 
 
 // Media queries
@@ -144,7 +142,3 @@ img {
     font-size: 16px;
   }
 }
-
-@import "../components/SolutionsSection/SolutionsSection";
-
-
