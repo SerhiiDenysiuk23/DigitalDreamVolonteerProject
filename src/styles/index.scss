@@ -116,10 +116,13 @@ display: none;
   display: block;
 }
 
-//li.slick-active{
-//  img {
-//    border: #015BBB 2px solid;
-//  }
-//}
+
+.solution-slider{
+  li.slick-active{
+    img {
+      border: #015BBB 2px solid;
+    }
+  }
+}
 
 @import "../components/SolutionsSection/SolutionsSection.module";
