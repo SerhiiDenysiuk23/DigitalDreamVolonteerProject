@@ -52,7 +52,7 @@ h1 {
   line-height: 63.41px;
 }
 
-h2{
+h2 {
   font-size: 59px;
 }
 
@@ -92,7 +92,6 @@ section {
   overflow: hidden;
 }
 
-
 img {
   width: 100%;
   border-radius: inherit;
@@ -116,6 +115,16 @@ img {
   display: block;
 }
 
+.middle-slider-container{
+    .active{
+      width: 40px;
+      border-radius: 50px;
+      background-color: black;
+    }
+  }
+}
+
+
 .solution-slider{
   li.slick-active{
     img {
@@ -124,7 +133,13 @@ img {
   }
 }
 
-@import "../components/SolutionsSection/SolutionsSection.module";
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dfdfdf;
+}
 
 
 // Media queries
@@ -144,16 +159,5 @@ img {
   .p-large {
     font-size: 16px;
   }
-
-  .middle-slider-container{
-    .active{
-      width: 40px;
-      border-radius: 50px;
-      background-color: black;
-    }
-  }
-}
-
-@import "../components/SolutionsSection/SolutionsSection";
 
 
