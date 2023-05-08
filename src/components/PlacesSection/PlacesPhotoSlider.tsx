@@ -18,7 +18,7 @@ const PlacesPhotoSlider = () => {
         slidesToScroll: 1,
         fade: true,
         prevArrow: <ArrowSliderBtn btnType={"big"} direction={"left"}/>,
-        nextArrow: <ArrowSliderBtn btnType={"big"} direction={"right"}/>,
+        nextArrow: <ArrowSliderBtn btnType={"big"} direction={"right"}/>
 
     };
 
