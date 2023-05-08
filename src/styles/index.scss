@@ -48,7 +48,7 @@ h5 {
 }
 
 h1 {
-  font-size: 70px;
+  font-size: calc(40px + (70 - 40) * ((100vw - 744px) / (1920 - 744)));
   line-height: 63.41px;
 }
 
@@ -70,7 +70,7 @@ h5 {
 
 p {
   font-family: Outfit, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
 }
 
@@ -88,7 +88,7 @@ p {
 section {
   background: $background-color;
   border-radius: 20px;
-  padding: 50px;
+  padding: calc(30px + (50 - 30) * ((100vw - 744px) / (1920 - 744)));
   overflow: hidden;
 }
 
@@ -123,4 +123,22 @@ img {
   background: #dfdfdf;
 }
 
-@import "../components/SolutionsSection/SolutionsSection";
+
+// Media queries
+@media (max-width:746px) {
+  h1 {
+    line-height: 60px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .p-large {
+    font-size: 16px;
+  }
+}

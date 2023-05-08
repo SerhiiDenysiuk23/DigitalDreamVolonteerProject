@@ -18,6 +18,10 @@
     display: flex;
     width: 322px;
 
+    & i {
+        margin: 3px 0 0 0;
+    }
+
     & p {
         font-size: 18px;
         margin: 0 0 0 10px;
