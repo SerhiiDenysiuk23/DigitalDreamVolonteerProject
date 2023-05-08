@@ -21,7 +21,7 @@ const SolutionsSlider = () => {
         prevArrow: <ArrowSliderBtn direction={"left"}/>,
         nextArrow: <ArrowSliderBtn direction={"right"}/>,
         dots: true,
-        dotsClass: styles.solutionSliderPagination,
+        dotsClass: `${styles.solutionSliderPagination} solution-slider`,
         customPaging(index: number): JSX.Element {
             return <img src={photos[index]}/>
         }
