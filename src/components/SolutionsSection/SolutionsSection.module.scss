@@ -1,5 +1,11 @@
 .solutionSection{
   width: 1400px;
+  img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+  }
 }
 
 .solutionDescription{
