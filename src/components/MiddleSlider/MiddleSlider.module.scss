@@ -1,0 +1,33 @@
+.container {
+    width: 1095px;
+    background: #fff;
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 15px;
+
+
+    .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .paginator {
+        width: 180px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .slide {
+        
+        width: 100%;
+
+    }
+
+    .slider {
+        margin: 0 -10px;
+
+
+    }
+}
