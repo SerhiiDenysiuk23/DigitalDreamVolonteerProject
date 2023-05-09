@@ -23,9 +23,57 @@
     & img {
         width: 30%;
     }
+
+    & p {
+        font-size: 18px;
+    }
 }
+
+
+.buttonDonate:hover .heartFlag {
+    animation: pulse 2.4s ease infinite;
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+
+        10% {
+            transform: scale(1.1);
+        }
+
+        20% {
+            transform: scale(1);
+        }
+
+        30% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+}
+
 
 .buttonInfo {
     font-size: 16px;
     margin: 10px;
+}
+
+@media (max-width:1280px) {
+    .wrapperButton {
+        width: 320px;
+    }
+
+    .buttonDonate {
+        width: 250px;
+    }
+}
+
+@media (max-width:768px) {
+    .wrapperButton {
+        margin: 0 0 0 130px;
+    }
 }

@@ -10,3 +10,26 @@
 .donateSubheader {
     font-size: 18px;
 }
+
+
+@media (max-width:1280px) {
+    .wrapperDonateHeader {
+        align-items: center;
+        text-align: center;
+    }
+
+    .donateHeader {
+        font-size: 42px;
+    }
+}
+
+@media (max-width:768px) {
+    .wrapperDonateHeader {
+        margin: 0 300px 40px 100px;
+    }
+
+    .donateHeader {
+        font-size: 36px;
+        width: 500px;
+    }
+}
