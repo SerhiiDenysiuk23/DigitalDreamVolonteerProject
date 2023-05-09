@@ -3,5 +3,20 @@
     flex-direction: column;
     justify-content: space-between;
     width: 706px;
-    height: 531px;
+    height: 530px;
+}
+
+@media (max-width:1280px) {
+    .wrapperDonate {
+        align-items: center;
+        height: 720px;
+        justify-content: space-around;
+
+    }
+}
+
+@media (max-width:768px) {
+    .wrapperDonate {
+        align-items: center;
+    }
 }

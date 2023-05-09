@@ -13,7 +13,7 @@ const DonateDetails = () => {
       <div className={style.supportList}>
         <div className={style.listItem}>
           <i>
-            <FaShieldAlt />
+            <img src="/assets/icons/shield.svg" alt="" />
           </i>
           <p>
             Protection and preservation of cultural values ​​that injured,
@@ -22,7 +22,7 @@ const DonateDetails = () => {
         </div>
         <div className={style.listItem}>
           <i>
-            <FaPalette />
+            <img src="/assets/icons/palette.svg" alt="" />
           </i>
           <p>
             Support for the activities of cultural and artistic institutions
@@ -30,13 +30,13 @@ const DonateDetails = () => {
         </div>
         <div className={style.listItem}>
           <i>
-            <FaLightbulb />
+            <img src="/assets/icons/idea.svg" alt="" />
           </i>
           <p>Support for creative industries</p>
         </div>
         <div className={style.listItem}>
           <i>
-            <MdOutlineHomeMax />
+            <img src="/assets/icons/television.svg" alt="" />
           </i>
           <p>Support for television and radio broadcasting</p>
         </div>
