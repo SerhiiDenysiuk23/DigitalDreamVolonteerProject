@@ -18,7 +18,7 @@ export const MusicSection = () => {
 
   return (
     <Section>
-      <InfoBlock type="author" id={activeId} />
+      <InfoBlock type="musician" id={activeId} />
       <MiddleSlider />
       <ExamplesList
         type="musicisans"
