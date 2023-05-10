@@ -86,7 +86,9 @@ p {
 // custom p classes
 
 section {
-
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .main-block{
