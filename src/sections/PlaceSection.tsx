@@ -1,11 +1,6 @@
 import React, {CSSProperties} from 'react';
-import PlacesPhotoSlider from "./PlacesPhotoSlider";
-import PlaceInfo from "./PlaceInfo";
-
-// const sectionStyle: CSSProperties = {
-//     display: "flex",
-//     justifyContent: "space-between"
-// }
+import PlacesPhotoSlider from "../components/Places/PlacesPhotoSlider";
+import PlaceInfo from "../components/Places/PlaceInfo";
 
 const PlaceSection = () => {
     return (

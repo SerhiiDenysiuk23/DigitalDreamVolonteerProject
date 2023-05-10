@@ -1,15 +1,15 @@
 import React from "react";
-import Banner from "./components/Banner/Banner";
+import Banner from "./sections/Banner/Banner";
 
-// import { ExamplesList } from "./components/ExamplesList/ExamplesList";
+// import { ArtistList } from "./components/ArtistList/ArtistList";
 // import { InfoBlock } from "./components/InfoBlock/InfoBlock";
 
-import DonateSection from "./components/DonateSection/DonateSection";
-import DonateSectionSecond from "./components/DonateSectionSecond/DonateSectionSecond";
+import DonateSection from "./sections/DonateSection/DonateSection";
+import DonateSectionSecond from "./sections/DonateSectionSecond/DonateSectionSecond";
 import MiddleSlider from "./components/MiddleSlider/MiddleSlider";
-import { MusicSection } from "./components/MusicSection/MusicSection";
-import PlaceSection from "./components/PlacesSection/PlaceSection";
-import SolutionsSection from "./components/SolutionsSection/SolutionsSection";
+import { MusicSection } from "./sections/MusicSection";
+import PlaceSection from "./sections/PlaceSection";
+import SolutionsSection from "./sections/SolutionsSection";
 
 function App() {
   return (
