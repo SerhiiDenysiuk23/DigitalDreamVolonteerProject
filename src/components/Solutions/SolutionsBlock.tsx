@@ -10,9 +10,9 @@ const flexStyle: CSSProperties = {
     borderRadius: "inherit"
 }
 
-const SolutionsSection = () => {
+const SolutionsBlock = () => {
     return (
-        <div className={`${styles.solutionSection} main-block`}>
+        <div className={`${styles.solutionBlock} main-block`}>
             <h3>Do you know about Ukrainian SOLUTIONS?</h3>
             <div style={flexStyle}>
                 <SolutionsSlider/>
@@ -22,4 +22,4 @@ const SolutionsSection = () => {
     );
 };
 
-export default SolutionsSection;
+export default SolutionsBlock;
