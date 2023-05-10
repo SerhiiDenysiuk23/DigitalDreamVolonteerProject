@@ -29,53 +29,53 @@ const BannerBackground = () => {
     setLandImg(updatedlandscape);
   };
 
-  useEffect(() => {
-    if (wreathRef.current) {
-      gsap.from(wreathRef.current.children, {
-        opacity: 0,
-        scale: 0,
-        ease: "elastic.out(1.2, 0.3)",
-        duration: 2,
-        delay: 1,
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (wreathRef.current) {
+  //     gsap.from(wreathRef.current.children, {
+  //       opacity: 0,
+  //       scale: 0,
+  //       ease: "elastic.out(1.2, 0.3)",
+  //       duration: 2,
+  //       delay: 1,
+  //     });
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    if (cloudsContainerRef.current) {
-      const tl = gsap.timeline({ repeat: -1 });
+  // useEffect(() => {
+  //   if (cloudsContainerRef.current) {
+  //     const tl = gsap.timeline({ repeat: -1 });
 
-      tl.from(cloudsContainerRef.current.children, {
-        opacity: 0,
-        x: 100,
-        duration: 3,
-        stagger: 0.5,
-        delay: 1.5,
-      });
+  //     tl.from(cloudsContainerRef.current.children, {
+  //       opacity: 0,
+  //       x: 100,
+  //       duration: 3,
+  //       stagger: 1,
+  //       delay: 2,
+  //     });
 
-      tl.to(cloudsContainerRef.current.children, {
-        opacity: 0,
-        x: 100,
-        duration: 3,
-        stagger: 0.5,
-      });
+  //     tl.to(cloudsContainerRef.current.children, {
+  //       opacity: 0,
+  //       x: 100,
+  //       duration: 5,
+  //       stagger: 1,
+  //     });
 
-      tl.addLabel("reverse");
+  //     tl.addLabel("reverse");
 
-      tl.to(
-        cloudsContainerRef.current.children,
-        {
-          opacity: 1,
-          x: 0,
-          duration: 3,
-          stagger: 0.5,
-          yoyo: true,
-          repeat: -1,
-        },
-        "reverse"
-      );
-    }
-  }, []);
+  //     tl.to(
+  //       cloudsContainerRef.current.children,
+  //       {
+  //         opacity: 0.7,
+  //         x: 0,
+  //         duration: 3,
+  //         stagger: 1,
+  //         yoyo: true,
+  //         repeat: -1,
+  //       },
+  //       "reverse"
+  //     );
+  //   }
+  // }, []);
 
   return (
     <div className={style.bannerBackground}>
