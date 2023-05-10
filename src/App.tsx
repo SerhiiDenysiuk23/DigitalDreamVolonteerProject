@@ -10,24 +10,20 @@ import SolutionsSection from "./components/SolutionsSection/SolutionsSection";
 import DonateSection from "./components/DonateSection/DonateSection";
 import DonateSectionSecond from "./components/DonateSectionSecond/DonateSectionSecond";
 import MiddleSlider from "./components/MiddleSlider/MiddleSlider";
+import { MusicSection } from "./components/MusicSection/MusicSection";
 
 function App() {
   return (
     <div className="app">
-    
+
       <Banner />
       <SolutionsSection />
       <PlaceInfo />
       <PlacesPhotoSlider />
-
-      
-      {/* <ExamplesList type="authors" /> */}
-      {/* <ExamplesList type="musicians" /> */}
-      {/* <InfoBlock type="author" /> */}
-      {/* <InfoBlock type="musician" /> */}
-        <MiddleSlider/>
-       <DonateSection />
-       <DonateSectionSecond />
+      <MiddleSlider />
+      <MusicSection />
+      <DonateSection />
+      <DonateSectionSecond />
     </div>
   );
 }
