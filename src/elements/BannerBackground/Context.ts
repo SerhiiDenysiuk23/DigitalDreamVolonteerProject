@@ -38,31 +38,31 @@ let initState: InitialState = {
   wreathOfGirl: [
     {
       id: 1,
-      src: "/assets/flowers-icons/art.png",
+      src: "/assets/flowers-icons/art.svg",
       href: "#art",
       className: "art",
     },
     {
       id: 2,
-      src: "/assets/flowers-icons/film.png",
+      src: "/assets/flowers-icons/film.svg",
       href: "#film",
       className: "film",
     },
     {
       id: 3,
-      src: "/assets/flowers-icons/brend.png",
+      src: "/assets/flowers-icons/brend.svg",
       href: "#brend",
       className: "brend",
     },
     {
       id: 4,
-      src: "/assets/flowers-icons/places_.png",
+      src: "/assets/flowers-icons/places.svg",
       href: "#places",
       className: "places",
     },
     {
       id: 5,
-      src: "/assets/flowers-icons/music.png",
+      src: "/assets/flowers-icons/music.svg",
       href: "#music",
       className: "music",
     },
