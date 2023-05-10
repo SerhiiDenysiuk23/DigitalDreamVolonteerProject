@@ -103,18 +103,26 @@
   height: 100vh;
   top: 0;
   left: 0;
-  transition: all 0.4s ease-in-out;
   pointer-events: none;
   opacity: 0;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
 
   .leftHalf {
     width: 50%;
     background-color: #151515;
     transform: translateX(-100%);
-    transition: all 0.5s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
   }
 
   .rightHalf {
@@ -122,6 +130,10 @@
     width: 50%;
     transform: translateX(100%);
     transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
   }
 
   &.openMenu {
@@ -150,6 +162,10 @@
         background-position: right;
         background-repeat: no-repeat;
         transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
       }
     }
   }
@@ -171,6 +187,16 @@
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    padding: 10px;
+
+    &:hover {
+      scale: 1.2;
+      transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+    }
   }
 
   h3 {
