@@ -1,4 +1,4 @@
-import styles from "./ExamplesList.module.scss";
+import styles from "./ArtistList.module.scss";
 import React from "react";
 
 interface ExamplesListProps {
@@ -12,7 +12,7 @@ interface ExamplesListProps {
   }[]
 }
 
-export const ExamplesList = ({ type, onClick, data }: ExamplesListProps) => {
+export const ArtistList = ({ type, onClick, data }: ExamplesListProps) => {
   const [activeAuthor, setActiveAuthor] = React.useState<number>(0);
   return (
     <div className={styles.block}>
