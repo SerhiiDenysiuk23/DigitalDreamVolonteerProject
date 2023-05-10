@@ -1,11 +1,12 @@
 import styles from "./InfoBlock.module.scss";
 
-import { FaTelegramPlane } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { data } from "./data";
+import { BsWikipedia } from "react-icons/bs";
+import { useQuery } from "@apollo/client";
+import { getExampleInfo } from "../MusicSection/queries";
 
 interface InfoBlockProps {
   type: "author" | "musician" | "band";
+  id: string
 }
 
 let formatParagraph: (text: string) => string[];
@@ -21,30 +22,28 @@ formatParagraph = (text) => {
   return fragments.filter((el) => el !== "" && el !== ".");
 };
 
-export const InfoBlock = ({ type }: InfoBlockProps) => {
-  const { name, picture, description } = data;
+export const InfoBlock = ({ type, id }: InfoBlockProps) => {
+  const q = useQuery(getExampleInfo, {
+    variables: { artistId: id },
+  });
+
   return (
     <div className={styles.block}>
       <div className={`${styles.pictureWrapper} ${styles[type]}`}>
         <img
-          alt={`${name}`}
-          src={picture}
+          alt={`${q.data?.artist.name || ''}`}
+          // src={picture}
           className={styles.picture}
           loading="lazy"
         />
       </div>
-      <h4 className={`${styles.title} ${styles[type]}`}>{name}</h4>
+      <h4 className={`${styles.title} ${styles[type]}`}>{q.data?.artist.name || ''}</h4>
       {/* {subtitle && <h5 className={styles.subtitle}>{subtitle}</h5>} */}
-      {formatParagraph(description).map((fragment) => (
+      {formatParagraph(q.data?.artist.description || '').map((fragment) => (
         <p className={`p-small ${styles.paragraph}`}>{fragment.slice(0, -1)}</p>
       ))}
       <ul className={styles.socialLinks}>
-        <li>
-          <FaTelegramPlane size="100%" />
-        </li>
-        <li>
-          <IoLogoWhatsapp size="100%" />
-        </li>
+        {q.data?.artist.links.map((l: string) => <a key={l} href={l}><BsWikipedia size={30} /></a>)}
       </ul>
     </div>
   );
