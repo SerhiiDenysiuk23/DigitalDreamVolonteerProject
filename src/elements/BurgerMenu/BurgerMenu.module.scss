@@ -13,10 +13,26 @@
   background: #ffffff;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  padding: 15px;
+  padding: 15px 17px 14px 15px;
   cursor: pointer;
   position: relative;
   z-index: 5;
+
+  &:hover {
+    .burger {
+      scale: 1.1;
+
+      span {
+        &::after {
+          bottom: 7px;
+        }
+
+        &::before {
+          top: 7px;
+        }
+      }
+    }
+  }
 
   span {
     font-family: "Hind";
@@ -30,8 +46,9 @@
 
   .burger {
     width: 24px;
-    height: 24px;
+    height: 19px;
     display: block;
+    transition: all 0.1s ease-in-out;
 
     span {
       display: block;
@@ -51,7 +68,7 @@
         height: 3px;
         width: 100%;
         background: #000000;
-        bottom: 8px;
+        bottom: 6px;
         border-radius: 10px;
       }
 
@@ -62,7 +79,7 @@
         height: 3px;
         width: 100%;
         background: #000000;
-        top: 8px;
+        top: 6px;
         border-radius: 10px;
       }
     }
