@@ -1,6 +1,8 @@
 .wrapperDonateHeader {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 28%;
 }
 
 .donateHeader {
@@ -25,7 +27,8 @@
 
 @media (max-width:768px) {
     .wrapperDonateHeader {
-        margin: 0 300px 40px 100px;
+        width: 65%;
+        margin: 0 100px 40px 100px;
     }
 
     .donateHeader {
