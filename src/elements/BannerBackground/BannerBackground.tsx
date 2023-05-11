@@ -1,15 +1,11 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React, { useContext, useState } from "react";
 import style from "./BannerBackground.module.scss";
 import { Context } from "./Context";
-import gsap from "gsap";
 
 const BannerBackground = () => {
   const state = useContext(Context);
   const [girlImg, setGirlImg] = useState(state.girlImages);
   const [landlImg, setLandImg] = useState(state.girlImages);
-
-  const cloudsContainerRef = useRef<HTMLDivElement>(null);
-  const wreathRef = useRef<HTMLDivElement>(null);
 
   const addOpacity = (n: number): void => {
     const updatedGirl = [...state.girlImages];
@@ -28,54 +24,6 @@ const BannerBackground = () => {
     setGirlImg(updatedGirl);
     setLandImg(updatedlandscape);
   };
-
-  useEffect(() => {
-    if (wreathRef.current) {
-      gsap.from(wreathRef.current.children, {
-        opacity: 0,
-        scale: 0,
-        ease: "elastic.out(1.2, 0.3)",
-        duration: 2,
-        delay: 1,
-      });
-    }
-  }, []);
-
-  useEffect(() => {
-    if (cloudsContainerRef.current) {
-      const tl = gsap.timeline({ repeat: -1 });
-
-      tl.from(cloudsContainerRef.current.children, {
-        opacity: 0,
-        x: 100,
-        duration: 3,
-        stagger: 0.5,
-        delay: 1.5,
-      });
-
-      tl.to(cloudsContainerRef.current.children, {
-        opacity: 0,
-        x: 100,
-        duration: 3,
-        stagger: 0.5,
-      });
-
-      tl.addLabel("reverse");
-
-      tl.to(
-        cloudsContainerRef.current.children,
-        {
-          opacity: 1,
-          x: 0,
-          duration: 3,
-          stagger: 0.5,
-          yoyo: true,
-          repeat: -1,
-        },
-        "reverse"
-      );
-    }
-  }, []);
 
   return (
     <div className={style.bannerBackground}>
@@ -102,7 +50,7 @@ const BannerBackground = () => {
             }}
           ></div>
         ))}
-        <div ref={wreathRef}>
+        <div>
           {state.wreathOfGirl.map((item) => (
             <a
               key={item.id}
@@ -115,7 +63,7 @@ const BannerBackground = () => {
             </a>
           ))}
         </div>
-        <div ref={cloudsContainerRef}>
+        <div className={style.clouds__container}>
           {state.clouds.map((cloud) => (
             <div
               key={cloud.id}
