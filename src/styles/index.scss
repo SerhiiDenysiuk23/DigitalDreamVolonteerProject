@@ -55,11 +55,11 @@ h1 {
 }
 
 h2 {
-  font-size: 59px;
+  font-size: calc(40px + (49 - 40) * ((100vw - 744px) / (1920 - 744)));
 }
 
 h3 {
-  font-size: 34px;
+  font-size: calc(24px + (34 - 24) * ((100vw - 744px) / (1920 - 744)));
 }
 
 h4 {
@@ -67,12 +67,12 @@ h4 {
 }
 
 h5 {
-  font-size: 20px;
+  font-size: calc(16px + (20 - 16) * ((100vw - 744px) / (1920 - 744)));
 }
 
 p {
   font-family: Outfit, sans-serif;
-  font-size: 16px;
+  font-size: calc(14px + (16 - 14) * ((100vw - 744px) / (1920 - 744)));
   font-weight: 400;
 }
 
@@ -81,7 +81,7 @@ p {
 .p-middle {}
 
 .p-large {
-  font-size: 18px;
+  font-size: calc(16px + (18 - 16) * ((100vw - 744px) / (1920 - 744)));
   font-weight: 500;
 }
 
@@ -91,7 +91,6 @@ section {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  max-height: 780px;
 }
 
 .main-block {
