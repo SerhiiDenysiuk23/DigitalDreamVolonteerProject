@@ -77,13 +77,13 @@ p {
 
 // custom p classes
 
-.p-middle {
-}
+.p-middle {}
 
 .p-large {
   font-size: 18px;
   font-weight: 500;
 }
+
 // custom p classes
 
 section {
@@ -93,8 +93,11 @@ section {
   max-height: 780px;
 }
 
-.main-block{
-  background: $background-color;
+.main-block {
+  background-color: $background-color;
+  background-image: url(../../public/assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 20px;
   padding: calc(30px + (50 - 30) * ((100vw - 744px) / (1920 - 744)));
   overflow: hidden;
@@ -118,17 +121,17 @@ section {
   display: block;
 }
 
-.middle-slider-container{
-    .active{
-      width: 40px;
-      border-radius: 50px;
-      background-color: black;
-    }
+.middle-slider-container {
+  .active {
+    width: 40px;
+    border-radius: 50px;
+    background-color: black;
+  }
 }
 
 
-.solution-slider{
-  li.slick-active{
+.solution-slider {
+  li.slick-active {
     img {
       border: #015BBB 2px solid;
     }
@@ -162,4 +165,3 @@ section {
     font-size: 16px;
   }
 }
-
