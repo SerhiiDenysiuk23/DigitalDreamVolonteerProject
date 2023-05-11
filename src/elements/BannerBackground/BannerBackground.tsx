@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React, { useContext, useState } from "react";
 import style from "./BannerBackground.module.scss";
 import { Context } from "./Context";
 
@@ -63,7 +63,7 @@ const BannerBackground = () => {
             </a>
           ))}
         </div>
-        <div>
+        <div className={style.clouds__container}>
           {state.clouds.map((cloud) => (
             <div
               key={cloud.id}
