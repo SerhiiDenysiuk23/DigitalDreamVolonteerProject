@@ -38,7 +38,9 @@ const DonateCulture = () => {
           <img src="/assets/icons/iconLocation.png" alt="" />
           <p>Velyka Zhytomyrska Street, 11</p>
         </div>
-        <DonateButton />
+        <div className={style.locationButton}>
+          <DonateButton />
+        </div>
       </div>
     </div>
   );
