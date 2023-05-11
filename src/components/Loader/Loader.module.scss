@@ -1,0 +1,37 @@
+.loader {
+  background-image: url(../../../public/assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 110vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+
+  img {
+    animation: rotate 2s linear infinite;
+    -webkit-animation: rotate 2s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
