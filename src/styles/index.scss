@@ -119,9 +119,9 @@ section {
 
 .middle-slider-container{
     .active{
-      width: 40px;
-      border-radius: 50px;
-      background-color: black;
+      width: 40px !important;
+      border-radius: 50px !important;
+      background-color: black !important;
     }
 }
 
