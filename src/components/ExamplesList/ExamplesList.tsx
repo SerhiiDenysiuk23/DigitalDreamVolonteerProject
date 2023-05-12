@@ -31,7 +31,7 @@ export const ExamplesList = ({ type, onClick, data }: ExamplesListProps) => {
               <img src={item.picture} alt={`${item.name}`} loading="lazy" />
             </div>
             <div style={{ whiteSpace: "nowrap", overflow: "hidden" }}>
-              <h5 className={`title ${styles[type]}`}>{item.name}</h5>
+              <h5 className={`${styles.title} ${styles[type]}`}>{item.name}</h5>
               {item.description && (
                 <p className={`p-small ${styles.description}`}>
                   {item.description}
