@@ -8,12 +8,17 @@ const PlaceInfo = () => {
     const geo = "Q22V+6H Клевань, Рівненська область, Україна"
 
     return (
-        <div className={`${styles.placeInfo} main-block`}>
+        <div className={`${styles.placeInfoContainer} main-block`}>
             <h3>Do you know about Ukrainian MUSIC?</h3>
-            <h2>Tunnel of Love</h2>
-            <p className="p-large">{description}</p>
-            <a className={styles.geo} href={"geo:"+geo}>{geo}</a>
-            <PlaceChangeSlider/>
+
+            <div className={styles.placeInfo}>
+                <div>
+                    <h2>Tunnel of Love</h2>
+                    <p className="p-large">{description}</p>
+                    <a className={styles.geo} href={"geo:" + geo}>{geo}</a>
+                </div>
+                <PlaceChangeSlider/>
+            </div>
         </div>
     );
 }

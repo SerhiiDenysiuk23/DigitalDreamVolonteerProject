@@ -55,6 +55,8 @@ h1 {
 }
 
 h2 {
+  //font-size: 49px;
+  //line-height: 59px;
   font-size: calc(40px + (49 - 40) * ((100vw - 744px) / (1920 - 744)));
 }
 
@@ -85,6 +87,12 @@ p {
   font-weight: 500;
 }
 
+
+.p-18-hind{
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Hind, sans-serif;
+}
 // custom p classes
 
 section {
@@ -153,9 +161,9 @@ section {
     line-height: 60px;
   }
 
-  h2 {
-    font-size: 24px;
-  }
+  //h2 {
+  //  font-size: 24px;
+  //}
 
   p {
     font-size: 14px;

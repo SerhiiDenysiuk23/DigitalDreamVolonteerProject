@@ -10,7 +10,11 @@ const SolutionsSection = () => {
     return (
         <section>
             <SolutionsBlock/>
-            <ArtistList type={"authors"} onClick={()=>{}} data={data?.artists ?? []}/>
+            {
+                window.innerWidth > 1024 &&
+                <ArtistList type={"authors"} onClick={() => {
+                }} data={data?.artists ?? []}/>
+            }
         </section>
     );
 };
