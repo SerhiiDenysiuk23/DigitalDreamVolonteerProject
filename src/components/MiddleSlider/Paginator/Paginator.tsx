@@ -1,25 +1,39 @@
 import style from './Paginator.module.scss'
-type MyProps = {
-    Next: () => void;
-    Prew: () => void;
-    dots: JSX.Element[] | null
+import React, {FC} from "react";
 
+type Props = {
+    currentSlide: number,
+    slideCount: number,
+    prev(): void,
+    next(): void,
+    goTo(index: number): void
 }
 
-const Paginator: React.FC<MyProps> = ({ Next, Prew, dots }) => {
+
+const Paginator: FC<Props> = ({prev, next, goTo, currentSlide, slideCount}) => {
+    const dots = Array.from({length: slideCount});
 
     return (
         <div className={style.container}>
-            <img onClick={Prew} src="/assets/MiddleSliderImages/arts/Arrow.png" alt="" />
-            <ul className={style.dots} >
-                {dots}
+            <img onClick={prev} src="/assets/MiddleSliderImages/arts/Arrow.png" alt=""/>
+            <ul className={style.dots}>
+                {
+                    dots.map((_, index) => (
+                        <li
+                            key={index}
+                            className={`dot ${index === currentSlide ? "active" : "inactive"}`}
+                            onClick={() => {
+                                goTo(index);
+                            }}
+                        />
+                    ))
+                }
             </ul>
-            <img onClick={Next} className={style.right} src="/assets/MiddleSliderImages/arts/Arrow.png" alt="" />
+            <img onClick={next} className={style.right} src="/assets/MiddleSliderImages/arts/Arrow.png" alt=""/>
         </div>
 
     )
 }
-
 
 
 export default Paginator;
