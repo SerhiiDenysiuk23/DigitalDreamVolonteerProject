@@ -1,5 +1,5 @@
 .container {
-    width: 1095px;
+    width:58%;
     background: #fff;
     padding: 50px;
     border-radius: 20px;
@@ -28,5 +28,21 @@
         margin: 0 -10px;
 
 
+    }
+}
+
+@media (max-width:746px){
+    .container{
+        width: 100%;
+        padding-top: 40px;
+        .heading{
+            justify-content: end;
+            margin-bottom: 30px;
+        }
+
+        .header{
+            display: none;
+
+        }
     }
 }
