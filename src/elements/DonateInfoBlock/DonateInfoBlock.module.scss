@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 706px;
-    height: 530px;
+    height: 560px;
 }
 
 @media (max-width:1280px) {
@@ -15,8 +15,17 @@
     }
 }
 
+@media (max-width:840px) {
+    .wrapperDonate {
+        align-items: flex-end;
+        justify-content: center;
+    }
+}
+
 @media (max-width:768px) {
     .wrapperDonate {
-        align-items: center;
+        align-items: flex-end;
+        justify-content: center;
+        margin: 0 210px 0 0;
     }
 }

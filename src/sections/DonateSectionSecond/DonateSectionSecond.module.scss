@@ -1,4 +1,18 @@
 .donateSectionSecond {
     display: flex;
-    max-height: 876px;
+    min-height: 784px;
+}
+
+@media (max-width:1200px) {
+    .donateSectionSecond {
+        flex-direction: row-reverse;
+        height: 900px;
+    }
+}
+
+@media (max-width:768px) {
+    .donateSectionSecond {
+        flex-direction: row-reverse;
+        height: 784px;
+    }
 }
