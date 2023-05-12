@@ -1,25 +1,23 @@
 import React from "react";
-import Banner from "./components/Banner/Banner";
-import PlaceInfo from "./components/PlacesSection/PlaceInfo";
-import PlacesPhotoSlider from "./components/PlacesSection/PlacesPhotoSlider";
-import SolutionsSection from "./components/SolutionsSection/SolutionsSection";
+import Banner from "./sections/Banner/Banner";
 
-// import { ExamplesList } from "./components/ExamplesList/ExamplesList";
+// import { ArtistList } from "./components/ArtistList/ArtistList";
 // import { InfoBlock } from "./components/InfoBlock/InfoBlock";
 
-import DonateSection from "./components/DonateSection/DonateSection";
-import DonateSectionSecond from "./components/DonateSectionSecond/DonateSectionSecond";
+import DonateSection from "./sections/DonateSection/DonateSection";
+import DonateSectionSecond from "./sections/DonateSectionSecond/DonateSectionSecond";
 import MiddleSlider from "./components/MiddleSlider/MiddleSlider";
-import { MusicSection } from "./components/MusicSection/MusicSection";
+import { MusicSection } from "./sections/MusicSection";
+import PlaceSection from "./sections/PlaceSection";
+import SolutionsSection from "./sections/SolutionsSection";
 
 function App() {
   return (
     <div className="app">
 
       <Banner />
-      <SolutionsSection />
-      <PlaceInfo />
-      <PlacesPhotoSlider />
+        <SolutionsSection/>
+      <PlaceSection/>
       <MiddleSlider />
       <MusicSection />
       <DonateSection />

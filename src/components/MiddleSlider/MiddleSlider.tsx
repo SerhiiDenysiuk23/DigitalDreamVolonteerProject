@@ -78,6 +78,17 @@ const MiddleSlider = () => {
         slidesToShow: 3,
         rows: 2,
         slidesToScroll: 3,
+        responsive: [
+            {
+              breakpoint: 746,
+              settings: {
+                speed: 500,
+                slidesToShow: 2,
+                rows: 2,
+                slidesToScroll: 2,
+              }
+            },
+        ]
 
 
     };
@@ -119,7 +130,7 @@ const MiddleSlider = () => {
     return (
         <div className={`${style.container} middle-slider-container`} >
             <div className={style.heading}>
-                <h2>Do you know about Ukrainian ART?</h2>
+                <h3 className={style.header}>Do you know about Ukrainian ART?</h3>
                 <div>
                     <Paginator Next={goToNextSlide} Prew={goToPrevSlide} dots={dots} />
                 </div>

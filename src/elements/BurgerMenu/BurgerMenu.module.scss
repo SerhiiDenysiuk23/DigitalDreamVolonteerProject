@@ -13,10 +13,26 @@
   background: #ffffff;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  padding: 15px;
+  padding: 15px 17px 14px 15px;
   cursor: pointer;
   position: relative;
   z-index: 5;
+
+  &:hover {
+    .burger {
+      scale: 1.1;
+
+      span {
+        &::after {
+          bottom: 7px;
+        }
+
+        &::before {
+          top: 7px;
+        }
+      }
+    }
+  }
 
   span {
     font-family: "Hind";
@@ -30,8 +46,9 @@
 
   .burger {
     width: 24px;
-    height: 24px;
+    height: 19px;
     display: block;
+    transition: all 0.1s ease-in-out;
 
     span {
       display: block;
@@ -51,7 +68,7 @@
         height: 3px;
         width: 100%;
         background: #000000;
-        bottom: 8px;
+        bottom: 6px;
         border-radius: 10px;
       }
 
@@ -62,7 +79,7 @@
         height: 3px;
         width: 100%;
         background: #000000;
-        top: 8px;
+        top: 6px;
         border-radius: 10px;
       }
     }
@@ -103,18 +120,26 @@
   height: 100vh;
   top: 0;
   left: 0;
-  transition: all 0.4s ease-in-out;
   pointer-events: none;
   opacity: 0;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
 
   .leftHalf {
     width: 50%;
     background-color: #151515;
     transform: translateX(-100%);
-    transition: all 0.5s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
   }
 
   .rightHalf {
@@ -122,6 +147,10 @@
     width: 50%;
     transform: translateX(100%);
     transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
   }
 
   &.openMenu {
@@ -150,6 +179,10 @@
         background-position: right;
         background-repeat: no-repeat;
         transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
       }
     }
   }
@@ -171,6 +204,16 @@
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    padding: 10px;
+
+    &:hover {
+      scale: 1.2;
+      transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+    }
   }
 
   h3 {

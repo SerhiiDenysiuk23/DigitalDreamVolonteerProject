@@ -2,7 +2,7 @@ import styles from "./InfoBlock.module.scss";
 
 import { BsWikipedia } from "react-icons/bs";
 import { useQuery } from "@apollo/client";
-import { getExampleInfo } from "../MusicSection/queries";
+import {getExampleInfo} from "../../queries/artistQueries";
 interface InfoBlockProps {
   type: "author" | "musician" | "band";
   id: string

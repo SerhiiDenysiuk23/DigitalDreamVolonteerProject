@@ -49,7 +49,7 @@ const BurgerMenu = () => {
   return (
     <div ref={menuRef} className={style.menu__container}>
       <div onClick={toggleMenu} className={style.menu}>
-        <span className={isOpen ? "hidden" : ""}>Menu</span>
+        <span>Menu</span>
         <div
           onClick={toggleMenu}
           className={`${style.burger} ${isOpen ? style.cross : ""}`}

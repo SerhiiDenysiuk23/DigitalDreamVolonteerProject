@@ -2,14 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.scss';
 import App from './App';
-import { Provider } from "react-redux";
-import { store } from "./store/store";
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
+
+const client = new ApolloClient({
+    uri: 'https://api.uadna.art/graphql',
+    cache: new InMemoryCache(),
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+<<<<<<< HEAD
 const client = new ApolloClient({
   uri: 'https://api.uadna.art/graphql',
   cache: new InMemoryCache(),
@@ -27,4 +31,10 @@ root.render(
     <App />
   </Provider>
   </ApolloProvider>
+=======
+root.render(
+    <ApolloProvider client={client}>
+        <App />
+    </ApolloProvider>
+>>>>>>> 4bd5764b982f1cb07a37b040af697d1fbbe53208
 );
