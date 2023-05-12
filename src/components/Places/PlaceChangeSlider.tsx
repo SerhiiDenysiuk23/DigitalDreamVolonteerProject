@@ -29,6 +29,7 @@ const PlaceChangeSlider = () => {
                 photos.map((value: string) =>
                     <div key={value} className={styles.slideElem}>
                         <img src={value} alt=""/>
+                        <div className={styles.placeName}>text</div>
                     </div>)
             }
         </Slider>

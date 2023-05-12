@@ -3,20 +3,16 @@ import SolutionsDescription from "./SolutionsDescription";
 import SolutionsSlider from "./SolutionsSlider";
 import styles from './SolutionsSection.module.scss'
 
-const flexStyle: CSSProperties = {
-    display: "flex",
-    justifyContent: "space-evenly",
-    margin: "91px 0 137px",
-    borderRadius: "inherit"
-}
 
 const SolutionsBlock = () => {
+    const achievement = "In two rounds, Grammarly raised $ 200 million. Forbes experts estimated the company at $ 2.5 billion."
+
     return (
         <div className={`${styles.solutionBlock} main-block`}>
             <h3>Do you know about Ukrainian SOLUTIONS?</h3>
-            <div style={flexStyle}>
-                <SolutionsSlider/>
-                <SolutionsDescription/>
+            <div className={styles.solutionContainer}>
+                <SolutionsSlider achievement={achievement}/>
+                <SolutionsDescription achievement={achievement}/>
             </div>
         </div>
     );

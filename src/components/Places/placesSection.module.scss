@@ -1,13 +1,22 @@
 @import "../../styles/variables";
 
+.placeInfoContainer{
+  flex-basis: 743px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
 .placePhotos {
-  max-width: 1147px;
-  background: $background-color;
-  width: 100%;
+  //max-width: 1147px;
+  //width: 100%;
+  flex-basis: 1147px;
+  flex-grow: 1;
+  flex-shrink: 1;
+
   padding: 20px;
   .imgContainer{
     height: 760px;
-    border-radius: 20px;
+    border-radius: 30px;
     img{
       object-fit: cover;
       height: 100%;
@@ -23,7 +32,13 @@
 }
 
 .placeInfo{
-  max-width: 743px;
+  //max-width: 743px;
+  //width: 100%;
+
+
+  display: flex;
+  flex-direction: column;
+
   .geo{
     display: block;
     margin: 30px 0 94px;
@@ -34,10 +49,22 @@
     margin: 0 -10px;
   }
   .slideElem{
+    flex: 1;
+    position: relative;
     height: 283px;
     width: 195px;
     padding: 0 15px;
     border-radius: 20px;
+    .placeName{
+      position: absolute;
+      bottom: 22px;
+      left: calc(21px + 15px);
+      color: #FFFFFF;
+      font-family: Hind, sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      z-index: 100;
+    }
   }
   img{
     object-fit: cover;
@@ -47,3 +74,45 @@
   }
 }
 
+@media screen and (max-width: 1024px){
+  .placeSection{
+    flex-direction: column-reverse;
+    background: $background-color;
+    border-radius: 20px;
+
+    gap: 0;
+    h3{
+      background: #FFFFFF;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-bottom: 48px;
+    }
+    h2{
+      margin-top: 48px;
+    }
+  }
+
+  .placePhotos{
+    background: none;
+    flex: auto;
+    .imgContainer{
+      height: 430px;
+    }
+
+  }
+
+  .placeInfoContainer{
+    background: none;
+    padding-bottom: 0;
+    flex: auto;
+  }
+
+  .placeInfo{
+    flex-direction: column-reverse;
+
+    .geo{
+      margin-bottom: calc(32px - 20px);
+    }
+  }
+}

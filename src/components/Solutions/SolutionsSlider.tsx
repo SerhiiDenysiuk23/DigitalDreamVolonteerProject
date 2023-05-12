@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Slider, {Settings} from "react-slick";
 import styles from "./SolutionsSection.module.scss";
 import ArrowSliderBtn from "../../elements/ArrowSliderBtn/ArrowSliderBtn";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const SolutionsSlider = () => {
+const SolutionsSlider: FC<{achievement: string}> = ({achievement})=> {
     const photos = [
         '/assets/background.png',
         '/assets/background1.png',
@@ -15,6 +15,7 @@ const SolutionsSlider = () => {
     ];
 
     const settings: Settings = {
+        arrows: true,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -24,18 +25,29 @@ const SolutionsSlider = () => {
         dotsClass: `${styles.solutionSliderPagination} solution-slider`,
         customPaging(index: number): JSX.Element {
             return <img src={photos[index]}/>
-        }
+        },
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings:{
+                    arrows: false
+                }
+            }
+        ]
     };
 
     return (
-        <Slider className={styles.solutionSlider} {...settings}>
-            {
-                photos.map((value: string) =>
-                    <div key={value} className={styles.solutionSlider__elem}>
-                        <img src={value} alt=""/>
-                    </div>)
-            }
-        </Slider>
+        <div className={styles.sliderSide}>
+            <Slider className={styles.solutionSlider} {...settings}>
+                {
+                    photos.map((value: string) =>
+                        <div key={value} className={styles.solutionSlider__elem}>
+                            <img src={value} alt=""/>
+                        </div>)
+                }
+            </Slider>
+            <p className={"p-18-hind " + styles.starBefore}>{achievement}</p>
+        </div>
     );
 };
 
