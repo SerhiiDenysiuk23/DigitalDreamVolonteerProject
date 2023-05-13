@@ -50,43 +50,43 @@ h5 {
 }
 
 h1 {
-  font-size: calc(28px + (70 - 28) * ((100vw - 344px) / (1920 - 344)));
-  line-height: calc(30px + (63.41 - 30) * ((100vw - 344px) / (1920 - 344)));
+  font-size: calc(25px + (70 - 25) * ((100vw - 375px) / (1920 - 375)));
+  line-height: calc(27px + (63.41 - 27) * ((100vw - 375px) / (1920 - 375)));
 }
 
 h2 {
   //font-size: 49px;
   //line-height: 59px;
-  font-size: calc(24px + (49 - 24) * ((100vw - 344px) / (1920 - 344)));
+  font-size: calc(24px + (49 - 24) * ((100vw - 375px) / (1920 - 375)));
 }
 
 h3 {
-  font-size: calc(16px + (34 - 16) * ((100vw - 344px) / (1920 - 344)));
+  font-size: calc(16px + (34 - 16) * ((100vw - 375px) / (1920 - 375)));
 }
 
 h4 {
-  font-size: calc(17px + (24 - 17) * ((100vw - 344px) / (1920 - 344)));
+  font-size: calc(17px + (24 - 17) * ((100vw - 375px) / (1920 - 375)));
 }
 
 h5 {
-  font-size: calc(16px + (20 - 16) * ((100vw - 344px) / (1920 - 344)));
+  font-size: calc(16px + (20 - 16) * ((100vw - 375px) / (1920 - 375)));
 }
 
 p {
   font-family: Outfit, sans-serif;
-  font-size: calc(14px + (16 - 14) * ((100vw - 344px) / (1920 - 344)));
+  font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (1920 - 375)));
   font-weight: 400;
 }
 
 // custom p classes
 
 .p-large {
-  font-size: calc(15.6px + (18 - 15.6) * ((100vw - 344px) / (1920 - 344)));
+  font-size: calc(12px + (18 - 12) * ((100vw - 375px) / (1920 - 375)));
   font-weight: 500;
 }
 
 .p-18-hind{
-  font-size: calc(14px + (18 - 14) * ((100vw - 344px) / (1920 - 344)));
+  font-size: calc(14px + (18 - 14) * ((100vw - 375px) / (1920 - 375)));
   font-weight: 400;
   font-family: Hind, sans-serif;
 }
@@ -104,7 +104,7 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
-  padding: calc(30px + (50 - 30) * ((100vw - 744px) / (1920 - 744)));
+  padding: calc(32px + (50 - 32) * ((100vw - 375px) / (1920 - 375))) calc(16px + (50 - 16) * ((100vw - 375px) / (1920 - 375)));
   overflow: hidden;
 }
 
@@ -154,7 +154,9 @@ section {
 
 // Media queries
 @media (max-width:746px) {
-
+h1{
+  // letter-spacing: 0.01px;
+}
 }
 
 //doesn't let font sizes grow in more than 1920px screen sizes

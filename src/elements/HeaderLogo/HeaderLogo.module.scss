@@ -5,7 +5,7 @@
   gap: 12px;
   max-width: 460px;
   background-color: white;
-  padding: 4px 12px;
+  padding: 12px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -23,7 +23,23 @@
   span {
     white-space: nowrap;
     font-size: 40px;
+    font-size: calc(18px + (40 - 18) * ((100vw - 344px) / (1920 - 344)));
     font-weight: 400;
     font-family: Bebas Neue, serif;
   }
+}
+
+@media (max-width: 744px) {
+  .header__logo {
+    padding: 8px 12px;
+    p {
+      display: none;
+    }
+
+    span {
+      // font-size: calc(17px + (24 - 17) * ((100vw - 344px) / (1920 - 344)));
+
+    }
+  }
+
 }

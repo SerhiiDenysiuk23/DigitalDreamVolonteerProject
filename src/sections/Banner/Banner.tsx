@@ -8,12 +8,19 @@ import BannerBackground from "../../elements/BannerBackground/BannerBackground";
 const Banner = () => {
   return (
     <section className={`${style.banner} main-block`}>
-      <header className={style.banner__header}>
-        <HeaderLogo />
-        <BurgerMenu />
-      </header>
-      <BannerBackground />
-      <BannerDescription />
+      <div className={style.banner__container}>
+        <header className={style.banner__header}>
+          <HeaderLogo />
+          <BurgerMenu />
+        </header>
+        <BannerBackground />
+        <div className={style.desktop}>
+          <BannerDescription />
+        </div>
+      </div>
+      <div className={style.mobile}>
+        <BannerDescription />
+      </div>
     </section>
   );
 };

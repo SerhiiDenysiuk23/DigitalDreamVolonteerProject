@@ -38,17 +38,18 @@
     font-family: "Hind";
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
+    font-size: calc(14px + (18 - 14) * ((100vw - 344px) / (1920 - 344)));
     line-height: 100%;
     text-align: right;
     color: $dark-background;
+    transition: all 0.2s ease-in-out;
   }
 
   .burger {
     width: 24px;
     height: 19px;
     display: block;
-    transition: all 0.1s ease-in-out;
+    // transition: all 0.1s ease-in-out;
 
     span {
       display: block;
