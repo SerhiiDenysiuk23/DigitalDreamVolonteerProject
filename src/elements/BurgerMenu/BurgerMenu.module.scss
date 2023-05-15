@@ -328,3 +328,14 @@
 //     }
 //   }
 // }
+@media (max-width: 500px) {
+  .nav__container {
+    .leftHalf {
+      width: 100%;
+    }
+
+    .rightHalf {
+      display: none;
+    }
+  }
+}
