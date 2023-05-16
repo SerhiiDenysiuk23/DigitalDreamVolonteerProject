@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import style from "./BannerBackground.module.scss";
 import { Context } from "./Context";
 
@@ -24,6 +24,24 @@ const BannerBackground = () => {
     setGirlImg(updatedGirl);
     setLandImg(updatedlandscape);
   };
+
+  // const [currentItemIndex, setCurrentItemIndex] = useState(0);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     removeOpacity(currentItemIndex);
+
+  //     setCurrentItemIndex((prevIndex) => {
+  //       const nextIndex = (prevIndex + 1) % state.wreathOfGirl.length;
+  //       addOpacity(nextIndex);
+  //       return nextIndex;
+  //     });
+  //   }, 5000);
+
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, []);
 
   return (
     <div className={style.bannerBackground}>

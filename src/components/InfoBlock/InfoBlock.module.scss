@@ -1,38 +1,61 @@
 .block {
   display: flex;
   flex-direction: column;
-  width: 278px;
-  // flex: 1;
-  padding: 40px 30px;
+  padding: 40px 1.5vw;
   border-radius: 20px;
   background-color: #ffffff;
   overflow-y: scroll;
   overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.blockWrapper {
+  position: relative;
+  overflow-y: overlay;
+  width: max-content;
+  width: 15vw;
+  border-radius: 20px;
+}
+
+.overlay {
+  pointer-events: none;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
 }
 
 .pictureWrapper {
-  min-width: 218px;
-  min-height: 218px;
-  width: 218px;
-  height: 218px;
+  width: 100%;
+  padding-top: 100%; 
   margin-bottom: 23px;
   border-radius: 17px;
   overflow: hidden;
   background-color: #b4bec2;
+  position: relative;
 
   &.musician {
     border-radius: 100%;
   }
 }
 
-.picture {
+.picture { 
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .title {
   margin-bottom: 12px;
+  font-size: 1.3vw;
+  line-height: 1.2;
 
   &.band {
     margin-bottom: 7px;
@@ -45,6 +68,7 @@
 
 .paragraph {
   margin-bottom: 20px;
+  font-size: 0.9vw;
 }
 
 .socialLinks {
