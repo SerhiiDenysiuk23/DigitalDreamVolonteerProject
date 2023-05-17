@@ -7,6 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Paginator from "./Paginator/Paginator";
 
 
+
+
 let sliderItems = {
     arts: [
         {img: '/assets/MiddleSliderImages/arts/forSlider.png', description: "Society that"},
@@ -75,7 +77,7 @@ const MiddleSlider = () => {
     const settings: Settings = {
         dots: false, // Отключаем стандартные точки навигации
         arrows: false, // Отключаем стандартные стрелки навигации
-        infinite: false, // Отключаем бесконечный цикл слайдов
+        infinite: false, 
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -98,7 +100,7 @@ const MiddleSlider = () => {
     };
 
 
-    console.warn(currentSlide)
+   
     return (
         <div className={`${style.container} middle-slider-container`}>
             <div className={style.heading}>
