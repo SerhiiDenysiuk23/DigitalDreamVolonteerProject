@@ -1,0 +1,36 @@
+@import "../../../styles/variables";
+@import "placesPhotos.module";
+@import "placesInfo.module";
+
+.placeSection{
+  max-height: 775px;
+  height: 100%;
+}
+
+@media screen and (max-width: 1304px){
+  .placeSection{
+    flex-direction: column-reverse;
+    background: $background-color;
+    border-radius: 20px;
+    gap: 0;
+    max-height: 100%;
+    padding-bottom: 56px;
+
+    h3{
+      background: #FFFFFF;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-bottom: 48px;
+    }
+    h2{
+      margin-top: 48px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px){
+  .placeSection {
+    padding-bottom: 0;
+  }
+}

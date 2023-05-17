@@ -1,0 +1,55 @@
+.placePhotos {
+  flex: 1174;
+  height: 100%;
+
+  padding: 20px;
+  .imgContainer{
+    //height: 760px;
+
+    aspect-ratio: 1.54 / 1;
+    border-radius: 30px;
+    img{
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      border-radius: inherit;
+    }
+  }
+  &__slider {
+    border-radius: inherit;
+    height: 100%;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width: 1640px){
+  .placePhotos{
+    .imgContainer{
+      aspect-ratio: 1.5 / 1;
+    }
+  }
+}
+
+@media screen and (max-width: 1500px){
+  .placePhotos{
+    .imgContainer{
+      aspect-ratio: 1.4 / 1;
+    }
+  }
+}
+
+@media screen and (max-width: 1304px){
+  .placePhotos{
+    background: none;
+    padding: 40px;
+    .imgContainer{
+      aspect-ratio: 1.54 / 1;
+    }
+  }
+}
+@media screen and (max-width: 500px){
+  .placePhotos{
+    background: none;
+    padding: 14px 14px 62px;
+  }
+}

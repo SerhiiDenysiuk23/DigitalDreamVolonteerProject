@@ -1,35 +1,40 @@
-import React from 'react';
-import styles from "./placesSection.module.scss"
+import React, {FC} from 'react';
+import styles from "./styles/placesSection.module.scss"
 import ArrowSliderBtn from "../../elements/ArrowSliderBtn/ArrowSliderBtn";
 import Slider, {Settings} from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const PlaceChangeSlider = () => {
-    const photos = [
-        '/assets/background.png',
-        '/assets/background1.png',
-        '/assets/background2.png',
-        '/assets/background3.png',
-        '/assets/background4.png',
-        '/assets/background5.png'
-    ];
+import {default as testData} from "../../testDataPlaces.json";
+
+const PlaceChangeSlider: FC<{handleOnClick(id:string): void}> = ({handleOnClick}) => {
+    // const {data, loading} = useQuery(query)
+    const data: Place[] = testData
+
 
     const settings: Settings = {
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         prevArrow: <ArrowSliderBtn btnType={"shifted"} direction={"left"}/>,
-        nextArrow: <ArrowSliderBtn btnType={"shifted"} direction={"right"}/>
+        nextArrow: <ArrowSliderBtn btnType={"shifted"} direction={"right"}/>,
+        responsive: [
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+        ]
     };
 
     return (
         <Slider className={styles.placeInfo__slider} {...settings}>
             {
-                photos.map((value: string) =>
-                    <div key={value} className={styles.slideElem}>
-                        <img src={value} alt=""/>
-                        <div className={styles.placeName}>text</div>
+                data.map((value) =>
+                    <div onClick={()=>{handleOnClick(value.id)}} key={value.id} className={styles.slideElem}>
+                        <img src={value.mainImageURL} alt=""/>
+                        <div className={styles.placeName}>{value.name}</div>
                     </div>)
             }
         </Slider>
