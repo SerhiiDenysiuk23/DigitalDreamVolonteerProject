@@ -1,5 +1,3 @@
-@import "../../styles/variables.scss";
-
 .menu__container {
   position: relative;
   top: 0;
@@ -41,7 +39,7 @@
     font-size: calc(14px + (18 - 14) * ((100vw - 344px) / (1920 - 344)));
     line-height: 100%;
     text-align: right;
-    color: $dark-background;
+    color: #101010;
     transition: all 0.2s ease-in-out;
   }
 
@@ -49,11 +47,11 @@
     width: 24px;
     height: 19px;
     display: block;
-    // transition: all 0.1s ease-in-out;
 
     span {
-      display: block;
       position: relative;
+      background-color: #000000;
+      display: block;
       top: 50%;
       left: 50%;
       width: 24px;
@@ -61,27 +59,34 @@
       background: #000000;
       border-radius: 10px;
       transform: translate(-50%, -50%);
+      transition: all 0.1s ease 0.2s;
+      -webkit-transition: all 0.1s ease 0.2s;
+      -moz-transition: all 0.1s ease 0.2s;
+      -ms-transition: all 0.1s ease 0.2s;
+      -o-transition: all 0.1s ease 0.2s;
 
-      &::after {
+      &::after,
+      &::before {
         content: "";
+        background-color: #000000;
         position: absolute;
-        left: 0;
-        height: 3px;
         width: 100%;
-        background: #000000;
-        bottom: 6px;
+        height: 3px;
+        left: 0;
         border-radius: 10px;
+        transition: all 0.3s ease 0.2s;
+        -webkit-transition: all 0.3s ease 0.2s;
+        -moz-transition: all 0.3s ease 0.2s;
+        -ms-transition: all 0.3s ease 0.2s;
+        -o-transition: all 0.3s ease 0.2s;
       }
 
       &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        height: 3px;
-        width: 100%;
-        background: #000000;
         top: 6px;
-        border-radius: 10px;
+      }
+
+      &::after {
+        bottom: 6px;
       }
     }
 
