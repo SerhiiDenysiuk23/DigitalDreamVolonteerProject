@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 26vw;
-  padding: 40px 20px 0 14px;
+  padding: 2.08vw 1.04vw 0 0.73vw;
   border-radius: 20px;
   background-color: #ffffff;
   overflow: hidden;
@@ -53,6 +53,7 @@
   height: 3vw;
   min-height: 3vw;
   overflow: hidden;
+  background-color: #b4bec2;
 
   & img {
     width: 100%;
@@ -87,8 +88,70 @@
   font-size: 1vw;
 }
 
-@media screen and (max-width: 1200) {
+@media screen and (max-width: 1199px) {
   .block {
     background-color: transparent;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    border-radius: 0;
+  }
+
+  .list {
+    display: flex;
+    background-color: transparent;
+    overflow-x: scroll;
+    display: flex;
+    gap: 24px;
+    padding-bottom: 24px;
+
+    
+    & li {
+      width: 100px;
+      padding: 0;
+      display: block;
+      margin: 0;
+      background: none;
+
+      
+
+      &.active {
+        transform: none;
+        background: none;
+      box-shadow: none;
+
+      }
+    }
+  }
+
+  .title {
+    font-size: 16px;
+    white-space: normal;
+  }
+  
+  .description {
+    display: none;
+  }
+
+  .pictureWrapper {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+
+    &.musicians {
+      border-radius: 10px;
+    }
+  }
+
+  .overlay {
+    pointer-events: none;
+    width: 30px;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+    display: none;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
   }
 }

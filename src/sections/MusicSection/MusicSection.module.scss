@@ -1,0 +1,26 @@
+@media screen and (max-width: 1199px) {
+  .section {
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 20px;
+    background-image: url(../../../public//assets//bg.jpg);
+  }
+
+  .title {
+    padding-top: 22px;
+    padding-bottom: 22px;
+    background-color: #fff;
+    width: 100%;
+    & h1 {
+      text-align: center;
+      font-size: 24px;
+    }
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .title {
+    display: none;
+  }
+}
