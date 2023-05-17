@@ -1,5 +1,5 @@
 import React, {FC, useEffect, useState} from 'react';
-import styles from "./placesSection.module.scss"
+import styles from "./styles/placesSection.module.scss"
 import PlaceChangeSlider from "./PlaceChangeSlider";
 
 import {default as testData} from "../../testDataPlaces.json";
@@ -33,7 +33,7 @@ const PlaceInfo: FC<{handlePlacePhotosChange(elemId: string): void}> = ({handleP
                     !!data &&
                     <div>
                         <h2>{data.name}</h2>
-                        <p className="p-large">{data.description}</p>
+                        <p className={`p-large ${styles.placeDescription}`}>{data.description}</p>
                         <a target="_blank"
                            className={styles.geo}
                            href={googleMapURL + data.geo.replace('+', '%2B')}

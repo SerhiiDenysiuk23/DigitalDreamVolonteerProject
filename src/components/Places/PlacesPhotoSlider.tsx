@@ -1,5 +1,5 @@
 import React, {FC, useEffect, useState} from 'react';
-import styles from "./placesSection.module.scss"
+import styles from "./styles/placesSection.module.scss"
 import ArrowSliderBtn from "../../elements/ArrowSliderBtn/ArrowSliderBtn";
 import Slider, {Settings} from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -24,7 +24,22 @@ const PlacesPhotoSlider: FC<{id: string}> = ({id}) => {
         slidesToScroll: 1,
         fade: true,
         prevArrow: <ArrowSliderBtn btnType={"big"} direction={"left"}/>,
-        nextArrow: <ArrowSliderBtn btnType={"big"} direction={"right"}/>
+        nextArrow: <ArrowSliderBtn btnType={"big"} direction={"right"}/>,
+        responsive: [
+            {
+                breakpoint: 1304,
+                settings: {
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    arrows: false,
+                    dots: true
+                }
+            }
+        ]
 
     };
 

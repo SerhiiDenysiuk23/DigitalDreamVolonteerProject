@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import styles from "./placesSection.module.scss"
+import styles from "./styles/placesSection.module.scss"
 import ArrowSliderBtn from "../../elements/ArrowSliderBtn/ArrowSliderBtn";
 import Slider, {Settings} from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -17,15 +17,23 @@ const PlaceChangeSlider: FC<{handleOnClick(id:string): void}> = ({handleOnClick}
         slidesToShow: 3,
         slidesToScroll: 1,
         prevArrow: <ArrowSliderBtn btnType={"shifted"} direction={"left"}/>,
-        nextArrow: <ArrowSliderBtn btnType={"shifted"} direction={"right"}/>
+        nextArrow: <ArrowSliderBtn btnType={"shifted"} direction={"right"}/>,
+        responsive: [
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+        ]
     };
 
     return (
         <Slider className={styles.placeInfo__slider} {...settings}>
             {
                 data.map((value) =>
-                    <div key={value.id} className={styles.slideElem}>
-                        <img onClick={()=>{handleOnClick(value.id)}} src={value.mainImageURL} alt=""/>
+                    <div onClick={()=>{handleOnClick(value.id)}} key={value.id} className={styles.slideElem}>
+                        <img src={value.mainImageURL} alt=""/>
                         <div className={styles.placeName}>{value.name}</div>
                     </div>)
             }

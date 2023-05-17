@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PlacesPhotoSlider from "../components/Places/PlacesPhotoSlider";
 import PlaceInfo from "../components/Places/PlaceInfo";
-import styles from "../components/Places/placesSection.module.scss"
+import styles from "../components/Places/styles/placesSection.module.scss"
 
 
 const PlaceSection = () => {
