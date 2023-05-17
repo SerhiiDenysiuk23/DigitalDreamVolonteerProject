@@ -38,11 +38,16 @@ export const InfoBlock = ({ type, id }: InfoBlockProps) => {
               loading="lazy"
             />
           </div>
+          <div style={{width: '100%'}}>
           <h4 className={`${styles.title} ${styles[type]}`}>{q.data?.artist.name || ''}</h4>
           {/* {subtitle && <h5 className={styles.subtitle}>{subtitle}</h5>} */}
-          {formatParagraph(q.data?.artist.description || '').map((fragment) => (
+          <div style={{height: 124, overflow: 'hidden'}}>
+            {formatParagraph(q.data?.artist.description || '').map((fragment) => (
             <p className={`p-small ${styles.paragraph}`} key={fragment.slice(0, -1)}>{fragment.slice(0, -1)}</p>
           ))}
+          </div>
+          
+          </div>
           <div className={styles.socialLinks}>
             {q.data?.artist.links.map((l: string) => <a key={l} href={l}><BsWikipedia size={30} /></a>)}
           </div>

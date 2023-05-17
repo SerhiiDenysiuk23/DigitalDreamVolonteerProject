@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { ArtistList } from "../components/ArtistList/ArtistList";
-import { InfoBlock } from "../components/InfoBlock/InfoBlock";
-import MiddleSlider from "../components/MiddleSlider/MiddleSlider";
+import { ArtistList } from "../../components/ArtistList/ArtistList";
+import { InfoBlock } from "../../components/InfoBlock/InfoBlock";
+import MiddleSlider from "../../components/MiddleSlider/MiddleSlider";
 import { useQuery } from "@apollo/client";
-import {getExamplesList} from "../queries/artistQueries";
+import {getExamplesList} from "../../queries/artistQueries";
+import styles from './MusicSection.module.scss'
 
 export const MusicSection = () => {
   const {data, loading} = useQuery(getExamplesList);
@@ -19,7 +20,10 @@ export const MusicSection = () => {
       return <div>Loading...</div>
 
   return (
-    <section>
+    <section className={styles.section}>
+      <div className={styles.title}>
+        <h1>Do you know about ukrainian MUSIC?</h1>
+      </div>
       <InfoBlock type="musician" id={activeId} />
       <MiddleSlider />
       <ArtistList
