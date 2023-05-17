@@ -1,9 +1,12 @@
 import React from "react";
 import style from "./HeaderLogo.module.scss";
 
-const HeaderLogo = () => {
+interface HeaderLogoProps {
+  onClick: () => void;
+}
+const HeaderLogo: React.FC<HeaderLogoProps> = ({ onClick }) => {
   return (
-    <div className={style.header__logo}>
+    <div onClick={onClick} className={style.header__logo}>
       <div className={style["logo-img"]}>
         <img src="/assets/logo.svg" alt="" />
         <span>UA DNA</span>

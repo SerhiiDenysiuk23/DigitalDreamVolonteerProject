@@ -1,6 +1,6 @@
 .banner {
-  max-height: 876px;
-  height: calc(534px + (876 - 534) * ((100vw - 744px) / (1920 - 744)));
+  // max-height: 876px;
+  min-height: calc(534px + (876 - 534) * ((100vw - 744px) / (1920 - 744)));
   position: relative;
   display: flex;
   flex-direction: column;
@@ -31,5 +31,60 @@
     position: fixed;
     top: 0;
     transform: translateX(-50%);
+  }
+}
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 744px) {
+  .banner__container {
+  }
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    &::before {
+      content: "";
+      width: 100vw;
+      height: 20px;
+      background: linear-gradient(
+        180deg,
+        rgb(255, 255, 255, 0),
+        rgb(255, 255, 255)
+      );
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      pointer-events: none;
+      z-index: 2;
+      transform: translateX(-50%);
+    }
+  }
+
+  .banner {
+    padding-top: 0;
+    gap: 0;
+    &__header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 10px 30px 0 30px;
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .banner {
+    min-height: 876px;
   }
 }

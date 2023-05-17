@@ -34,7 +34,7 @@ code {
 
 body {
   background: $dark-background;
-  padding: 10px;
+  padding: calc(2px + (10 - 2) * ((100vw - 375px) / (1920 - 375)));
   overflow-x: hidden;
 }
 
@@ -50,43 +50,43 @@ h5 {
 }
 
 h1 {
-  font-size: calc(40px + (70 - 40) * ((100vw - 744px) / (1920 - 744)));
-  line-height: 63.41px;
+  font-size: calc(25px + (70 - 25) * ((100vw - 375px) / (1920 - 375)));
+  line-height: calc(27px + (63.41 - 27) * ((100vw - 375px) / (1920 - 375)));
 }
 
 h2 {
   //font-size: 49px;
   //line-height: 59px;
-  font-size: calc(40px + (49 - 40) * ((100vw - 744px) / (1920 - 744)));
+  font-size: calc(24px + (49 - 24) * ((100vw - 375px) / (1920 - 375)));
 }
 
 h3 {
-  font-size: calc(24px + (34 - 24) * ((100vw - 744px) / (1920 - 744)));
+  font-size: calc(16px + (34 - 16) * ((100vw - 375px) / (1920 - 375)));
 }
 
 h4 {
-  font-size: 24px;
+  font-size: calc(17px + (24 - 17) * ((100vw - 375px) / (1920 - 375)));
 }
 
 h5 {
-  font-size: calc(16px + (20 - 16) * ((100vw - 744px) / (1920 - 744)));
+  font-size: calc(16px + (20 - 16) * ((100vw - 375px) / (1920 - 375)));
 }
 
 p {
   font-family: Outfit, sans-serif;
-  font-size: calc(14px + (16 - 14) * ((100vw - 744px) / (1920 - 744)));
+  font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (1920 - 375)));
   font-weight: 400;
 }
 
 // custom p classes
 
 .p-large {
-  font-size: calc(16px + (18 - 16) * ((100vw - 744px) / (1920 - 744)));
+  font-size: calc(12px + (18 - 12) * ((100vw - 375px) / (1920 - 375)));
   font-weight: 500;
 }
 
 .p-18-hind{
-  font-size: 18px;
+  font-size: calc(14px + (18 - 14) * ((100vw - 375px) / (1920 - 375)));
   font-weight: 400;
   font-family: Hind, sans-serif;
 }
@@ -95,7 +95,7 @@ p {
 section {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: calc(2px + (10 - 2) * ((100vw - 375px) / (1920 - 375)));
 }
 
 .main-block {
@@ -104,7 +104,7 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
-  padding: calc(30px + (50 - 30) * ((100vw - 744px) / (1920 - 744)));
+  padding: calc(32px + (50 - 32) * ((100vw - 375px) / (1920 - 375))) calc(16px + (50 - 16) * ((100vw - 375px) / (1920 - 375)));
   overflow: hidden;
 }
 
@@ -114,7 +114,7 @@ section {
   max-width: 1920px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: calc(2px + (10 - 2) * ((100vw - 375px) / (1920 - 375)));
 }
 
 // classes to hide and show elements
@@ -125,6 +125,7 @@ section {
 .visible {
   display: block;
 }
+// classes to hide and show elements
 
 .middle-slider-container{
     .active{
@@ -151,24 +152,11 @@ section {
   background: #dfdfdf;
 }
 
-
 // Media queries
 @media (max-width:746px) {
-  h1 {
-    line-height: 60px;
-  }
-
-  //h2 {
-  //  font-size: 24px;
-  //}
-
-  p {
-    font-size: 14px;
-  }
-
-  .p-large {
-    font-size: 16px;
-  }
+h1{
+  // letter-spacing: 0.01px;
+}
 }
 
 //doesn't let font sizes grow in more than 1920px screen sizes
@@ -185,7 +173,6 @@ section {
     font-size: 34px;
   }
 
-
   h5 {
     font-size: 20px;
   }
@@ -195,6 +182,10 @@ section {
   }
 
   .p-large {
+    font-size: 18px;
+  }
+
+  .p-18-hind{
     font-size: 18px;
   }
 }

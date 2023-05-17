@@ -1,7 +1,17 @@
-.description{
+.description {
   display: flex;
   flex-direction: column;
   gap: 15px;
   max-width: calc(287px + (458 - 287) * ((100vw - 744px) / (1920 - 744)));
   z-index: 1;
+}
+
+@media (max-width: 744px) {
+  .description {
+    max-width: 100%;
+    gap: 12px;
+    h1{
+      text-align: center;
+    }
+  }
 }

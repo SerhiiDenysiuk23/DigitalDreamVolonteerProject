@@ -41,24 +41,10 @@
       background-repeat: no-repeat;
       transition: all 0.3s ease-in-out;
     }
-
-    .girlMain {}
-
-    .girlArt {}
-
-    .girlFilm {}
-
-    .girlBrend {}
-
-    .girlPlaces {}
-
-    .girlMusic {}
   }
 
   //CLOUDS
-  .clouds__container {
-    background-color: red;
-  }
+  .clouds__container {}
 
   .clouds {
     opacity: 0.7;
@@ -260,6 +246,7 @@
       -o-transform: translateX(5vw);
     }
   }
+
   //CLOUDS
 
   .icons {
@@ -304,7 +291,7 @@
       -moz-transform: scale(1.4);
       -ms-transform: scale(1.4);
       -o-transform: scale(1.4);
-}
+    }
 
     100% {
       transform: scale(1);
@@ -441,6 +428,68 @@
     .music {
       top: 39%;
       left: 62%;
+    }
+  }
+}
+
+@media (max-width: 744px) {
+  .bannerBackground {
+    position: relative;
+    min-height: calc(534px + (876 - 534) * ((100vw - 744px) / (1920 - 744)));
+    transform: translateX(-5.5%);
+
+    .landscapes {
+      width: calc(692px + (900 - 692) * ((100vw - 375px) / (744 - 375)));
+      left: 0;
+
+      .landscape {
+        background-size: cover;
+      }
+    }
+
+    .girl {
+      // width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .clouds__container {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .bannerBackground {
+    .art {
+      top: 35%;
+    }
+
+    .music {
+      top: 37%;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .bannerBackground {
+    .places {
+      top: 24%;
+    }
+
+    .music {
+      top: 36%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerBackground {
+    .art {
+      top: 34%;
+    }
+    .music {
+      top: 35%;
     }
   }
 }
