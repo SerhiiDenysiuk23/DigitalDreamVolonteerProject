@@ -3,12 +3,21 @@
     justify-content: space-between;
     align-items: center;
     width: 168px;
-
+    
+    .dotsContainer{
+        position: relative;
+        
+        
+        overflow: hidden;
+    }
     .dots {
+        
+        position: relative;
         height: 100%;
-        width: 100px;
+        width: 1000px;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
         align-items: center;
         padding: 0;
         list-style-type: none;
@@ -16,14 +25,17 @@
         li {
             height: 10px;
             width: 10px;
+            margin-left: 15px;
             background: white;
             border-radius: 50%;
             border: 1px solid black;
             cursor: pointer;
+            transition: all 0.5s ease-in-out;
 
         }
 
         .active {
+            
             width: 40px;
             border-radius: 50px;
             background-color: black;
@@ -35,6 +47,7 @@
         transform: scaleX(-1);
     }
     img{
+        
         cursor:pointer;
     }
 }
