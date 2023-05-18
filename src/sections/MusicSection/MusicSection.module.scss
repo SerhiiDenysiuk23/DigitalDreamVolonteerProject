@@ -1,4 +1,4 @@
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1023px) {
   .section {
     flex-direction: column;
     padding: 40px;
@@ -11,6 +11,9 @@
     padding-bottom: 22px;
     background-color: #fff;
     width: 100%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 48px;
     & h1 {
       text-align: center;
       font-size: 24px;
@@ -18,9 +21,26 @@
   }
 }
 
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
   .title {
     display: none;
+  }
+
+  .section {
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 30px 14px 30px 14px;
+  }
+
+  .title {
+    padding: 16px;
+    margin-bottom: 24px;
+    & h1 {
+      font-size: 16px;
+    }
   }
 }
