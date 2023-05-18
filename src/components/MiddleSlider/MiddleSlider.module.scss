@@ -1,4 +1,5 @@
 .container {
+    // order: 2;
     width:58%;
     background: #fff;
     padding: 50px;
@@ -31,8 +32,9 @@
     }
 }
 
-@media (max-width:746px){
+@media (max-width:1024px){
     .container{
+        order: 3;
         width: 100%;
         padding-top: 40px;
         .heading{

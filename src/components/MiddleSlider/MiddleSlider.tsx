@@ -88,7 +88,7 @@ const MiddleSlider = () => {
         onInit: () => updateState(currentSlide, (sliderRef.current?.innerSlider as CustomInnerSlider)?.state.slideCount), // Обновляем состояние при первой инициализации слайдера
         responsive: [
             {
-                breakpoint: 746,
+                breakpoint: 1024,
                 settings: {
                     speed: 500,
                     slidesToShow: 2,

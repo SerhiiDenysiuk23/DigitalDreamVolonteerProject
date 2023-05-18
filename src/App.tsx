@@ -18,7 +18,7 @@ function App() {
       <Banner />
         <SolutionsSection/>
       <PlaceSection/>
-      <MiddleSlider />
+      {/* <MiddleSlider /> */}
       <MusicSection />
       <DonateSection />
       <DonateSectionSecond />
