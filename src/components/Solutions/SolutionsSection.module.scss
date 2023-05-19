@@ -15,9 +15,6 @@
     margin: 91px 0 94px;
     border-radius: inherit;
     gap: 63px;
-    h2, h5{
-      display: none;
-    }
   }
 }
 
@@ -72,7 +69,9 @@
 .sliderSide{
   .starBefore{
     display: none;
-    //margin-top: 124px;
+  }
+  h2, h5{
+    display: none;
   }
 }
 
@@ -172,13 +171,15 @@
       padding: 22px 0;
     }
   }
+  .sliderSide {
+    .solutionSlider {
+      margin-bottom: 124px;
+    }
+  }
 }
 
 @media screen and (max-width: 995px) {
   .sliderSide{
-    .solutionSlider{
-      margin-bottom: 124px;
-    }
     .starBefore{
       display: block;
     }
