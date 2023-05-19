@@ -36,8 +36,12 @@ const SolutionsSlider: FC<{achievement: string}> = ({achievement})=> {
         ]
     };
 
+    const title = "Grammarly"
+    const shortDesc = "Service for spell checking and correct communication"
     return (
         <div className={styles.sliderSide}>
+            <h2>{title}</h2>
+            <h5>{shortDesc}</h5>
             <Slider className={styles.solutionSlider} {...settings}>
                 {
                     photos.map((value: string) =>
