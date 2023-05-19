@@ -28,7 +28,7 @@ const SolutionsSlider: FC<{achievement: string}> = ({achievement})=> {
         },
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 995,
                 settings:{
                     arrows: false
                 }
