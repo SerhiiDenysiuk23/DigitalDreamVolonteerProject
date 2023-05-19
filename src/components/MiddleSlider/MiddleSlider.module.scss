@@ -1,4 +1,5 @@
 .container {
+    // order: 2;
     width:58%;
     background: #fff;
     padding: 50px;
@@ -26,18 +27,40 @@
 
     .slider {
         margin: 0 -10px;
+        position: relative;
+
+        .prevnext{
+            cursor: pointer;
+        }
+
+        .next{
+            position: absolute;
+            bottom: 47%;
+            right:-15px;
+            transform: scaleX(-1);
+            z-index: 2;
+        }
+        .prev{
+            position: absolute;
+            bottom: 47%;
+            left:-15px;
+            z-index: 2;
+
+        }
 
 
     }
 }
 
-@media (max-width:746px){
+@media (max-width:1024px){
     .container{
+        order: 3;
         width: 100%;
-        padding-top: 40px;
+        padding: 0 10px;
+        padding-bottom: 30px;
+        background: transparent;
         .heading{
-            justify-content: end;
-            margin-bottom: 30px;
+            display: none;
         }
 
         .header{

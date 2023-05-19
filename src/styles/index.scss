@@ -128,12 +128,48 @@ section {
 // classes to hide and show elements
 
 .middle-slider-container{
+
     .active{
       width: 40px !important;
       border-radius: 50px !important;
       background-color: black !important;
     }
+
+    .middle-slider{
+      .slick-dots{
+        bottom: -40px;
+        // position: absolute;
+        // top:-20px;
+        // right: 20px;
+      }
+      .slick-dots > li{
+        height: 10px;
+        width: 10px;
+        margin-left: 15px;
+        background: white;
+        border-radius: 50%;
+        border: 1px solid black;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+    
+      }
+      .slick-dots > li.slick-active{
+        width: 40px !important;
+        border-radius: 50px !important;
+        background-color: black !important;
+      }
+    
+      .slick-dots > li > button{
+        font-size: 0;
+        
+      }
+      .slick-dots li button:before{
+        content: '';
+      }
+     
+    }
 }
+
 
 
 .solution-slider {

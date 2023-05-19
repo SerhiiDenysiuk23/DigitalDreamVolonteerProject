@@ -7,6 +7,7 @@
   background-color: #ffffff;
   overflow: hidden;
   position: relative;
+  background-image: url(../../../public/assets/bg.jpg);
 }
 
 .overlay {
@@ -23,13 +24,13 @@
 
 .list {
   overflow-y: scroll;
-  background-color: #fff;
   padding-bottom: 95px;
   overflow-x: hidden;
   width: 100%;
 
   & li {
     display: flex;
+    background-color: #ffffff;
     align-items: center;
     gap: 16px;
     padding: 10px;
@@ -74,7 +75,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  font-size: 0.8vw;
+  font-size: 12px;
 }
 
 .playButton {
@@ -85,15 +86,17 @@
 }
 
 .title {
-  font-size: 1vw;
+  font-size: 16px;
+  line-height: 130%;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1023px) {
   .block {
     background-color: transparent;
     padding: 0;
     width: 100%;
     position: relative;
+    order: 2;
     border-radius: 0;
   }
 
@@ -137,6 +140,7 @@
     border-radius: 10px;
     width: 100px;
     height: 100px;
+    margin-bottom: 16px;
 
     &.musicians {
       border-radius: 10px;
@@ -153,5 +157,27 @@
     z-index: 1;
     display: none;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .pictureWrapper {
+    width: 66px;
+    height: 66px;
+    min-width: 66px;
+    min-height: 66px;
+    margin-bottom: 0;
+  }
+
+  .list {
+    padding-bottom: 14px;
+    gap: 14px;
+    & li {
+      width: 66px;
+    }
+  }
+
+  .title {
+    display: none;
   }
 }
