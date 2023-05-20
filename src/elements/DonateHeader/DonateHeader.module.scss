@@ -18,10 +18,18 @@
     .wrapperDonateHeader {
         align-items: center;
         text-align: center;
+        height: 20%;
     }
 
     .donateHeader {
         font-size: 42px;
+    }
+}
+
+@media (max-width:840px) {
+    .wrapperDonateHeader {
+        width: 100%;
+        margin: 0 100px 40px 100px;
     }
 }
 
@@ -32,7 +40,61 @@
     }
 
     .donateHeader {
+        width: 550px;
+    }
+}
+
+@media (max-width:640px) {
+    .wrapperDonateHeader {
+        margin: 30px 90px 40px 100px;
+    }
+
+    .donateHeader {
         font-size: 36px;
-        width: 500px;
+    }
+}
+
+@media (max-width:600px) {
+
+    .wrapperDonateHeader {
+        margin: 30px 70px 40px 100px;
+    }
+
+    .donateHeader {
+        font-size: 24px;
+        width: 450px;
+    }
+
+    .donateSubheader {
+        font-size: 14px;
+        width: 300px;
+    }
+}
+
+@media (max-width:500px) {
+    .wrapperDonateHeader {
+        margin: 30px 46px 40px 60px;
+    }
+}
+
+@media (max-width:460px) {
+    .wrapperDonateHeader {
+        margin: 30px 40px 40px 60px;
+    }
+
+    .donateSubheader {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width:390px) {
+    .wrapperDonateHeader {
+        margin: 30px 35px 40px 60px;
+    }
+}
+
+@media (max-width:360px) {
+    .wrapperDonateHeader {
+        margin: 30px 32px 40px 60px;
     }
 }
