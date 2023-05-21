@@ -57,3 +57,11 @@
         }
     }
 }
+
+@media(max-width:680px) {
+    .tarasShevchenkoWrapper {
+        width: 0%;
+        opacity: 0;
+        visibility: hidden;
+    }
+}

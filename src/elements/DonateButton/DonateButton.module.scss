@@ -126,10 +126,11 @@
         border-radius: 8px;
 
         & img {
-            width: 25%;
+            width: 20%;
         }
 
-        & p {
+        & p,
+        span {
             font-size: 16px;
         }
     }
@@ -137,21 +138,30 @@
 
 @media (max-width:500px) {
     .wrapperButton {
-        width: 60%;
+        width: 74%;
         height: 50px;
-        margin: 0 50px 0 0;
+        margin: 0 30px 0 0;
+    }
+
+    .buttonDonate {
+        height: 40px;
+
+        & p,
+        & span {
+            font-size: 14px;
+        }
     }
 }
 
 @media (max-width:450px) {
     .wrapperButton {
-        width: 60%;
+        width: 65%;
         height: 50px;
-        margin: 0 60px 0 0;
+        margin: 0 45px 0 0;
     }
 
     .buttonDonate {
-        width: 40%;
+        width: 60%;
         margin: 10px;
         height: 40px;
         border-radius: 8px;
@@ -169,6 +179,7 @@
 
 @media (max-width:400px) {
     .wrapperButton {
+        width: 60%;
         margin: 0 55px 0 0;
     }
 }

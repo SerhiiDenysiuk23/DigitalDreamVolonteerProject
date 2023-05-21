@@ -95,7 +95,7 @@
     }
 
     .listItem {
-        width: 240px;
+        width: 280px;
     }
 }
 
@@ -110,5 +110,9 @@
         & p {
             font-size: 14px;
         }
+    }
+
+    .listItem {
+        width: 240px;
     }
 }
