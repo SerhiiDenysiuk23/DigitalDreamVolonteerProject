@@ -20,8 +20,8 @@ function App() {
         <BrandsSection/>
        <SolutionsSection/>
       <PlaceSection/>
-      {/*<MiddleSlider />*/}
-      {/*<MusicSection />*/}
+      <MiddleSlider />
+      <MusicSection />
       {/*<DonateSection />*/}
       {/*<DonateSectionSecond />*/}
     </div>
