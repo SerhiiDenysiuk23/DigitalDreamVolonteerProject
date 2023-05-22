@@ -14,6 +14,18 @@ const DonateCulture = () => {
           </h3>
           <p>Monument to the writer Shevchenko</p>
         </div>
+        <div className={style.tarasShevchenkoPhone}>
+          <img
+            src="/assets/tarasShevchenko1.png"
+            alt=""
+            className={style.object}
+          />
+          <img
+            src="/assets/tarasShevchenko2.png"
+            alt=""
+            className={style.objectDamage}
+          />
+        </div>
         <div className={style.descriptionCulture}>
           <p>
             Soviet and Ukrainian classic of modern photography and one of the
@@ -36,11 +48,11 @@ const DonateCulture = () => {
       <div className={style.locationCulture}>
         <div className={style.location}>
           <img src="/assets/icons/iconLocation.png" alt="" />
-          <p>Velyka Zhytomyrska Street, 11</p>
+          <p className={style.address}>Velyka Zhytomyrska Street, 11</p>
         </div>
-        <div className={style.locationButton}>
-          <DonateButton />
-        </div>
+        {/* <div className={style.locationButton}> */}
+        <DonateButton />
+        {/* </div> */}
       </div>
     </div>
   );

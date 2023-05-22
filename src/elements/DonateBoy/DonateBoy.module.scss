@@ -28,15 +28,48 @@
             margin: 200px 0px 245px 200px;
         }
     }
+}
 
-    @media (max-width:768px) {
-        .wrapperDonateBoy {
+@media (max-width:768px) {
+    .wrapperDonateBoy {
 
-            & img {
-                width: 1280px;
-                height: 920px;
-                margin: 200px 0px 245px 535px;
-            }
+        & img {
+            width: 1280px;
+            height: 920px;
+            margin: 200px 0px 245px 535px;
+        }
+    }
+}
+
+@media (max-width:680px) {
+    .wrapperDonateBoy {
+
+        & img {
+            width: 920px;
+            height: 700px;
+            margin: 320px 0px 245px 560px;
+        }
+    }
+}
+
+@media (max-width:560px) {
+    .wrapperDonateBoy {
+
+        & img {
+            width: 920px;
+            height: 700px;
+            margin: 260px 0px 245px 550px;
+        }
+    }
+}
+
+@media (max-width:500px) {
+    .wrapperDonateBoy {
+
+        & img {
+            width: 730px;
+            height: 520px;
+            margin: 260px 0px 245px 550px;
         }
     }
 }

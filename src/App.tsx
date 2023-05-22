@@ -17,13 +17,12 @@ function App() {
   return (
     <div className="app">
       <Banner />
-        <BrandsSection/>
-       <SolutionsSection/>
+      <BrandsSection/>
+      <SolutionsSection/>
       <PlaceSection/>
-      <MiddleSlider />
       <MusicSection />
-      {/*<DonateSection />*/}
-      {/*<DonateSectionSecond />*/}
+      <DonateSection />
+      <DonateSectionSecond />
     </div>
   );
 }

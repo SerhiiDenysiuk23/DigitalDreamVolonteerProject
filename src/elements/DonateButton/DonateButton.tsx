@@ -6,7 +6,7 @@ const DonateButton = () => {
     <div className={style.wrapperButton}>
       <button className={style.buttonDonate}>
         <img className={style.heartFlag} src="/assets/icons/flag.svg" alt="" />
-        <p>Donate</p>
+        <span>Donate</span>
       </button>
       <p className={style.buttonInfo}>
         You can help in restoration of these cultural treasures

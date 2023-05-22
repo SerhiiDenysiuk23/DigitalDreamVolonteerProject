@@ -29,3 +29,17 @@
         margin: 0 210px 0 0;
     }
 }
+
+@media (max-width:680px) {
+    .wrapperDonate {
+        // justify-content: space-between;
+        height: 650px;
+        margin: 0 210px 0 0;
+    }
+}
+
+@media (max-width:500px) {
+    .wrapperDonate {
+        height: 470px;
+    }
+}
