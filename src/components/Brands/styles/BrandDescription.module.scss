@@ -44,3 +44,48 @@
     margin-top: 55px;
   }
 }
+
+
+@media screen and (max-width: 1260px) {
+  .brandDescription {
+    .address{
+      margin-top: calc(107px / 2);
+    }
+    .links{
+      margin-top: calc(55px / 2);
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .brandDescription {
+    display: flex;
+    flex-direction: column;
+    > * {
+      margin: 0;
+    }
+    .description {
+      margin: 0;
+      max-height: 345px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px){
+  .brandDescription {
+    .address{
+      margin-top: calc((107px / 2) / 2);
+    }
+    .links{
+      margin-top: calc((55px / 2) / 2);
+    }
+  }
+}
+
+@media screen and (max-width: 640px){
+  .brandDescription {
+    .slogan, h2 {
+      display: none;
+    }
+  }
+}

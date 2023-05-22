@@ -12,7 +12,7 @@ const BrandsDescription: FC<{achievement: string}> = ({achievement}) => {
     return (
         <div className={styles.brandDescription}>
             <h2>{title}</h2>
-            <div className={styles.brandSlogan}>{slogan}</div>
+            <div className={styles.slogan}>{slogan}</div>
             <p className={"p-18-hind " + styles.description}>{description}</p>
             <div className={styles.address}>{address}</div>
             <div className={styles.links}>

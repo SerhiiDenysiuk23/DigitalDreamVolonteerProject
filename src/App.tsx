@@ -18,7 +18,7 @@ function App() {
     <div className="app">
       <Banner />
         <BrandsSection/>
-          <SolutionsSection/>
+       <SolutionsSection/>
       <PlaceSection/>
       {/*<MiddleSlider />*/}
       {/*<MusicSection />*/}

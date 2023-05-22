@@ -35,12 +35,12 @@ const BrandsSlider: FC<{achievement: string}> = ({achievement})=> {
         ]
     };
 
-    const title = "Grammarly"
-    const shortDesc = "Service for spell checking and correct communication"
+    const title = "TM byMe"
+    const slogan = "З А К О Х У В А Т И"
     return (
         <div className={styles.sliderSide}>
             <h2>{title}</h2>
-            <h5>{shortDesc}</h5>
+            <div className={styles.slogan}>{slogan}</div>
             <Slider className={styles.brandSlider} {...settings}>
                 {
                     photos.map((value: string) =>
