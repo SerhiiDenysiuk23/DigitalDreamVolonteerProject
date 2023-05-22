@@ -7,12 +7,11 @@ import "slick-carousel/slick/slick-theme.css";
 
 const SolutionsSlider: FC<{achievement: string}> = ({achievement})=> {
     const photos = [
-        '/assets/background.png',
-        '/assets/background1.png',
-        '/assets/background2.png',
-        '/assets/background3.png',
-        '/assets/background4.png',
-        '/assets/background4.png'
+        'https://picsum.photos/450',
+        'https://picsum.photos/451',
+        'https://picsum.photos/452',
+        'https://picsum.photos/453',
+        'https://picsum.photos/454',
     ];
 
     const settings: Settings = {
