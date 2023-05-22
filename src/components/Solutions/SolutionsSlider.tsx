@@ -11,6 +11,7 @@ const SolutionsSlider: FC<{achievement: string}> = ({achievement})=> {
         '/assets/background1.png',
         '/assets/background2.png',
         '/assets/background3.png',
+        '/assets/background4.png',
         '/assets/background4.png'
     ];
 

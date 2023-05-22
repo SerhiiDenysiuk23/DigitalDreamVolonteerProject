@@ -16,11 +16,14 @@ function App() {
     <div className="app">
 
       <Banner />
-        <SolutionsSection/>
-      <PlaceSection/>
-      <MiddleSlider />
       <MusicSection />
+      <PlaceSection/>
       <DonateSection />
+        <SolutionsSection/>
+      
+      {/* <MiddleSlider /> */}
+      
+      
       <DonateSectionSecond />
     </div>
   );
