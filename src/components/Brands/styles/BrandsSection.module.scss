@@ -1,0 +1,133 @@
+.brandBlock {
+  max-width: 1400px;
+  width: 100%;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+  }
+
+  .brandContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 38px 0 52px;
+    border-radius: inherit;
+  }
+}
+
+@import "BrandDescription";
+@import "BrandsSlider";
+
+@media screen and (max-width: 1558px) {
+  .brandBlock {
+    .solutionContainer {
+      gap: 44px;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .brandBlock {
+    .solutionContainer {
+      gap: 24px;
+    }
+  }
+
+  .brandDescription{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    >*{
+      margin: 0;
+    }
+    .description {
+      margin: 0;
+      max-height: 345px;
+      -webkit-line-clamp: 15;
+    }
+  }
+
+  .brandBlock{
+    padding-bottom: 0;
+    .brandContainer{
+      margin-top: 16px;
+    }
+    h3{
+      background: #FFFFFF;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-bottom: 40px;
+      padding: 22px 0;
+    }
+  }
+  .sliderSide {
+    .brandSlider {
+      margin-bottom: 124px;
+    }
+  }
+}
+
+@media screen and (max-width: 832px){
+  .brandSlider {
+    width: 320px;
+    border-radius: inherit;
+    height: 300px;
+
+    &__elem {
+      height: 300px;
+    }
+  }
+
+  .brandSliderPagination {
+    li {
+      img {
+        width: 60px;
+        height: 52px;
+      }
+    }
+  }
+  .brandBlock {
+    .brandContainer {
+      margin: 16px 0 48px;
+    }
+  }
+}
+
+@media screen and (max-width: 688px){
+  .brandBlock {
+    .brandContainer {
+      flex-direction: column;
+
+      h2, h5 {
+        display: block;
+      }
+      h2{
+        line-height: 24px;
+      }
+      h5{
+        margin: 16px 0;
+      }
+    }
+
+    .brandDescription {
+      h2, h5 {
+        display: none;
+      }
+    }
+  }
+
+  .brandSlider{
+    margin: auto;
+  }
+
+  .brandSide{
+    .solutionSlider{
+      margin-bottom: 104px;
+    }
+  }
+
+}

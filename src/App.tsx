@@ -10,18 +10,20 @@ import MiddleSlider from "./components/MiddleSlider/MiddleSlider";
 import { MusicSection } from "./sections/MusicSection/MusicSection";
 import PlaceSection from "./sections/PlaceSection";
 import SolutionsSection from "./sections/SolutionsSection";
+import BrandsBlock from "./components/Brands/BrandsBlock";
+import BrandsSection from "./sections/BrandsSection";
 
 function App() {
   return (
     <div className="app">
-
       <Banner />
-        <SolutionsSection/>
+        <BrandsSection/>
+          <SolutionsSection/>
       <PlaceSection/>
-      <MiddleSlider />
-      <MusicSection />
-      <DonateSection />
-      <DonateSectionSecond />
+      {/*<MiddleSlider />*/}
+      {/*<MusicSection />*/}
+      {/*<DonateSection />*/}
+      {/*<DonateSectionSecond />*/}
     </div>
   );
 }
