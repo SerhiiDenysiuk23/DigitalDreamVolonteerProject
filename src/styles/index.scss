@@ -138,22 +138,23 @@ section {
     background-color: black;
   }
 
-.middle-slider-container{
+  .middle-slider-container {
 
-    .active{
+    .active {
       width: 40px;
       border-radius: 50px;
       background-color: black;
     }
 
-    .middle-slider{
-      .slick-dots{
+    .middle-slider {
+      .slick-dots {
         bottom: -40px;
         // position: absolute;
         // top:-20px;
         // right: 20px;
       }
-      .slick-dots > li{
+
+      .slick-dots>li {
         height: 10px;
         width: 10px;
         margin-left: 15px;
@@ -162,77 +163,80 @@ section {
         border: 1px solid black;
         cursor: pointer;
         transition: all 0.5s ease-in-out;
-    
+
       }
-      .slick-dots > li.slick-active{
+
+      .slick-dots>li.slick-active {
         width: 40px !important;
         border-radius: 50px !important;
         background-color: black !important;
       }
-    
-      .slick-dots > li > button{
+
+      .slick-dots>li>button {
         font-size: 0;
-        
+
       }
-      .slick-dots li button:before{
+
+      .slick-dots li button:before {
         content: '';
       }
-     
-    }
-}
 
-
-
-.solution-slider {
-  li.slick-active {
-    img {
-      border: #015BBB 2px solid;
     }
   }
-}
 
-::-webkit-scrollbar {
-  width: 4px;
-}
 
-::-webkit-scrollbar-thumb {
-  background: #dfdfdf;
-}
 
-// Media queries
-@media (max-width:746px) {
-  h1 {
-    // letter-spacing: 0.01px;
-  }
-}
-
-//doesn't let font sizes grow in more than 1920px screen sizes
-@media (min-width: 1920px) {
-  h1 {
-    font-size: 70px;
+  .solution-slider {
+    li.slick-active {
+      img {
+        border: #015BBB 2px solid;
+      }
+    }
   }
 
-  h2 {
-    font-size: 49px;
+  ::-webkit-scrollbar {
+    width: 4px;
   }
 
-  h3 {
-    font-size: 34px;
+  ::-webkit-scrollbar-thumb {
+    background: #dfdfdf;
   }
 
-  h5 {
-    font-size: 20px;
+  // Media queries
+  @media (max-width:746px) {
+    h1 {
+      // letter-spacing: 0.01px;
+    }
   }
 
-  p {
-    font-size: 16px;
-  }
+  //doesn't let font sizes grow in more than 1920px screen sizes
+  @media (min-width: 1920px) {
+    h1 {
+      font-size: 70px;
+    }
 
-  .p-large {
-    font-size: 18px;
-  }
+    h2 {
+      font-size: 49px;
+    }
 
-  .p-18-hind {
-    font-size: 18px;
+    h3 {
+      font-size: 34px;
+    }
+
+    h5 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .p-large {
+      font-size: 18px;
+    }
+
+    .p-18-hind {
+      font-size: 18px;
+    }
   }
 }
