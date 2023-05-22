@@ -7,13 +7,16 @@ type Art = {
 }
 
 
-const SliderItem = (props: Art) =>{
-    return(
-        <div className={style.container}>
-            <img className={style.art_image} src={props.image} alt="" />
-            <p className={style.description}>{props.description}</p>
+const SliderItem = (props: Art) => {
+    return (
+        <div  className={style.test}>
+            <div className={style.container}>
+                <img className={style.art_image} src={props.image} alt="" />
+                <p className={style.description}>{props.description}</p>
 
+            </div>
         </div>
+
     )
 }
 

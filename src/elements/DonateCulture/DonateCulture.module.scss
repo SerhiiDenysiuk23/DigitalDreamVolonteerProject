@@ -1,10 +1,10 @@
 .donateCulture {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     width: 25%;
 }
+
 
 .infoCulture {
     display: flex;
@@ -26,6 +26,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     height: 40%;
 
     & h3 {
@@ -37,6 +38,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+
     height: 50%;
 
     & p {
@@ -49,6 +51,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
     height: 20%;
     width: 100%;
 
@@ -68,6 +71,16 @@
     }
 }
 
+.tarasShevchenkoPhone {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    & img {
+        width: 0;
+        height: 0;
+    }
+}
 
 
 @media (max-width:1700px) {
@@ -169,8 +182,92 @@
         }
     }
 
+    .location {
+        width: 210px;
+
+        & p {
+            font-size: 14px;
+        }
+
+    }
+
     .locationCulture {
         width: 100%;
         height: 18%;
+    }
+}
+
+@media (max-width:680px) {
+    .donateCulture {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .infoCulture {
+        width: 109%;
+    }
+
+    .headerCulture {
+        width: 80%;
+        margin: 0 0 0 24px;
+
+        & p {
+            font-size: 18px;
+        }
+    }
+
+    .descriptionCulture {
+        width: 94.5%;
+        margin: 0 0 0 14px;
+        height: 45%;
+
+        & p {
+            font-size: 14px;
+            padding-top: 10px;
+        }
+    }
+
+    .location {
+        width: 180px;
+    }
+
+
+    .locationCulture {
+        width: 110%;
+        margin: 0 0 0 40px;
+        height: 17%;
+
+        & p {
+            font-size: 12px;
+        }
+    }
+
+
+    .tarasShevchenkoPhone {
+        display: flex;
+        width: 100%;
+        height: 50%;
+        margin: 0 0px 0px 0;
+        opacity: 1;
+
+        & img {
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media (max-width:500px) {
+    .locationCulture {
+        width: 130%;
+        margin: 0 0 0 120px;
+    }
+}
+
+@media (max-width:400px) {
+    .locationCulture {
+        width: 165%;
+        margin: 0 0 0 220px;
     }
 }

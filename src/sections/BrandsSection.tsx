@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import SolutionsBlock from "../components/Solutions/SolutionsBlock";
 import {ArtistList} from "../components/ArtistList/ArtistList";
 import {useQuery} from "@apollo/client";
 import {getExamplesList} from "../queries/artistQueries";
+import BrandsBlock from "../components/Brands/BrandsBlock";
 
-const SolutionsSection = () => {
+const BrandsSection = () => {
     const {data, loading} = useQuery(getExamplesList);
     const [isShowArtists, setIsShowArtists] = useState<boolean>(window.innerWidth > 1198)
 
@@ -14,7 +14,7 @@ const SolutionsSection = () => {
 
     return (
         <section>
-            <SolutionsBlock isShowArtists={!isShowArtists} artists={data?.artists}/>
+            <BrandsBlock isShowArtists={!isShowArtists} artists={data?.artists}/>
             {
                 isShowArtists &&
                 <ArtistList type={"authors"} onClick={() => {
@@ -24,4 +24,4 @@ const SolutionsSection = () => {
     );
 };
 
-export default SolutionsSection;
+export default BrandsSection;

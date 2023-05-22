@@ -1,0 +1,50 @@
+.brandBlock {
+  max-width: 1400px;
+  width: 100%;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+  }
+
+  .brandContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 38px 0 52px;
+    border-radius: inherit;
+  }
+}
+
+@import "BrandDescription.module";
+@import "BrandsSlider.module";
+
+@media screen and (max-width: 1680px) {
+  .brandBlock {
+    .brandContainer {
+      gap: 44px;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .brandBlock {
+    padding-bottom: 0;
+    .brandContainer{
+      margin-top: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px){
+  .brandBlock {
+    .brandContainer {
+      gap: initial;
+    }
+    .brandContainer {
+      flex-direction: column;
+    }
+  }
+}
