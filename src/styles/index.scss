@@ -72,7 +72,8 @@ h5 {
   font-size: calc(16px + (20 - 16) * ((100vw - 375px) / (1920 - 375)));
 }
 
-p {
+p,
+span {
   font-family: Outfit, sans-serif;
   font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (1920 - 375)));
   font-weight: 400;
@@ -85,11 +86,12 @@ p {
   font-weight: 500;
 }
 
-.p-18-hind{
+.p-18-hind {
   font-size: calc(14px + (18 - 14) * ((100vw - 375px) / (1920 - 375)));
   font-weight: 400;
   font-family: Hind, sans-serif;
 }
+
 // custom p classes
 
 section {
@@ -125,14 +127,23 @@ section {
 .visible {
   display: block;
 }
+
 // classes to hide and show elements
+
+
+.middle-slider-container {
+  .active {
+    width: 40px;
+    border-radius: 50px;
+    background-color: black;
+  }
 
 .middle-slider-container{
 
     .active{
-      width: 40px !important;
-      border-radius: 50px !important;
-      background-color: black !important;
+      width: 40px;
+      border-radius: 50px;
+      background-color: black;
     }
 
     .middle-slider{
@@ -190,9 +201,9 @@ section {
 
 // Media queries
 @media (max-width:746px) {
-h1{
-  // letter-spacing: 0.01px;
-}
+  h1 {
+    // letter-spacing: 0.01px;
+  }
 }
 
 //doesn't let font sizes grow in more than 1920px screen sizes
@@ -221,7 +232,7 @@ h1{
     font-size: 18px;
   }
 
-  .p-18-hind{
+  .p-18-hind {
     font-size: 18px;
   }
 }
