@@ -101,10 +101,7 @@ section {
 }
 
 .main-block {
-  background-color: $background-color;
-  background-image: url(../../public/assets/bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  @include background-main-block;
   border-radius: 20px;
   padding: calc(32px + (50 - 32) * ((100vw - 375px) / (1920 - 375))) calc(16px + (50 - 16) * ((100vw - 375px) / (1920 - 375)));
   overflow: hidden;
