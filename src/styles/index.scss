@@ -138,7 +138,7 @@ section {
 
   .middle-slider {
     .slick-dots {
-      bottom: -40px;
+      bottom: -35px;
       // position: absolute;
       // top:-20px;
       // right: 20px;
@@ -192,8 +192,6 @@ section {
 }
 
 // Media queries
-@media (max-width: 746px) {}
-
 //doesn't let font sizes grow in more than 1920px screen sizes
 @media (min-width: 1920px) {
   h1 {
@@ -222,5 +220,27 @@ section {
 
   .p-18-hind {
     font-size: 18px;
+  }
+}
+
+@media(max-width: 1024px){
+  .middle-slider-container{
+    .middle-slider {
+      .slick-dots {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        bottom: -40px;
+        // position: absolute;
+        // top:-20px;
+        // right: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 746px) {
+  h1 {
+    // letter-spacing: 0.01px;
   }
 }

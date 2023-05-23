@@ -67,5 +67,27 @@
             display: none;
 
         }
+        .prev{
+            bottom: -40px!important;
+            left: 17px !important;;
+        }
+        .next{
+            bottom: -40px !important;;
+            right: 17px!important;
+        }
     }
+}
+@media(max-width:500px){
+    
+
+
+        .prev{
+            bottom: -20%!important;
+            left: 90px!important;
+        }
+        .next{
+            bottom: -20%!important;
+            right: 100px!important;
+        }
+    
 }

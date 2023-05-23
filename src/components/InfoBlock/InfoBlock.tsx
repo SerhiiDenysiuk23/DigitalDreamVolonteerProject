@@ -26,6 +26,7 @@ export const InfoBlock = ({ type, id }: InfoBlockProps) => {
   const q = useQuery(getExampleInfo, {
     variables: { artistId: id },
   });
+ 
   const [showModal, setShowModal] = React.useState<boolean>(false);
 
   const handleModal = () => setShowModal(prev => !prev);
