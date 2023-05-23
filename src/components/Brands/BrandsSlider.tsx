@@ -1,28 +1,27 @@
 import React, {FC} from 'react';
 import Slider, {Settings} from "react-slick";
-import styles from "./SolutionsSection.module.scss";
+import styles from "./styles/BrandsSection.module.scss";
 import ArrowSliderBtn from "../../elements/ArrowSliderBtn/ArrowSliderBtn";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const SolutionsSlider: FC<{achievement: string}> = ({achievement})=> {
+const BrandsSlider: FC<{achievement: string}> = ({achievement})=> {
     const photos = [
-        'https://picsum.photos/450',
-        'https://picsum.photos/451',
-        'https://picsum.photos/452',
-        'https://picsum.photos/453',
-        'https://picsum.photos/454',
+        'https://picsum.photos/250',
+        'https://picsum.photos/251',
+        'https://picsum.photos/252',
+        'https://picsum.photos/253'
     ];
 
     const settings: Settings = {
-        arrows: true,
+        arrows: false,
         infinite: true,
         slidesToShow: 1,
+        swipe: false,
+        fade: true,
         slidesToScroll: 1,
-        prevArrow: <ArrowSliderBtn direction={"left"}/>,
-        nextArrow: <ArrowSliderBtn direction={"right"}/>,
         dots: true,
-        dotsClass: `${styles.solutionSliderPagination} solution-slider`,
+        dotsClass: `${styles.brandSliderPagination} brand-slider`,
         customPaging(index: number): JSX.Element {
             return <img src={photos[index]}/>
         },
@@ -36,23 +35,22 @@ const SolutionsSlider: FC<{achievement: string}> = ({achievement})=> {
         ]
     };
 
-    const title = "Grammarly"
-    const shortDesc = "Service for spell checking and correct communication"
+    const title = "TM byMe"
+    const slogan = "З А К О Х У В А Т И"
     return (
         <div className={styles.sliderSide}>
             <h2>{title}</h2>
-            <h5>{shortDesc}</h5>
-            <Slider className={styles.solutionSlider} {...settings}>
+            <div className={styles.slogan}>{slogan}</div>
+            <Slider className={styles.brandSlider} {...settings}>
                 {
                     photos.map((value: string) =>
-                        <div key={value} className={styles.solutionSlider__elem}>
+                        <div key={value} className={styles.brandSlider__elem}>
                             <img src={value} alt=""/>
                         </div>)
                 }
             </Slider>
-            <p className={"p-18-hind " + styles.starBefore}>{achievement}</p>
         </div>
     );
 };
 
-export default SolutionsSlider;
+export default BrandsSlider;
