@@ -10,21 +10,22 @@ import MiddleSlider from "./components/MiddleSlider/MiddleSlider";
 import { MusicSection } from "./sections/MusicSection/MusicSection";
 import PlaceSection from "./sections/PlaceSection";
 import SolutionsSection from "./sections/SolutionsSection";
+import YouTubeVideos from "./components/YouTubeVideos/YouTubeVideos";
 
 function App() {
   return (
     <div className="app">
-
       <Banner />
       <MusicSection />
-      <PlaceSection/>
+      <PlaceSection />
       <DonateSection />
-        <SolutionsSection/>
-      
+      <SolutionsSection />
+
       {/* <MiddleSlider /> */}
-      
-      
+
       <DonateSectionSecond />
+
+      <YouTubeVideos />
     </div>
   );
 }
