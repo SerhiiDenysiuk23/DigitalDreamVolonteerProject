@@ -10,6 +10,7 @@ import BrandsSection from "./sections/BrandsSection";
 function App() {
   return (
     <div className="app">
+
         <Banner />
         <MusicSection />
         <PlaceSection/>
@@ -19,6 +20,7 @@ function App() {
         <SolutionsSection/>
         <MusicSection />
         <DonateSectionSecond />
+
     </div>
   );
 }
