@@ -80,6 +80,11 @@
 
 .paragraph {
   font-size: 14px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 20;
+  overflow: hidden;
+  white-space: pre-wrap;
 }
 
 .socialLinks {
@@ -138,6 +143,7 @@
     height: 127px;
     width: 100%;
     overflow: hidden;
+    margin-bottom: 0;
   }
 }
 
@@ -167,6 +173,11 @@
     right: 5px;
     bottom: 5px;
   }
+
+  .paragraph{
+    -webkit-line-clamp: 2;
+
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -187,6 +198,7 @@
 
   .paragraph {
     font-size: 14px;
+    -webkit-line-clamp: 7;
   }
 
   .socialLinks {
@@ -214,7 +226,7 @@
 
   & span {
     text-decoration: underline;
-    color: #015BBB;
+    color: #015bbb;
     cursor: pointer;
   }
 }
