@@ -1,5 +1,13 @@
 .brandDescription {
   max-width: 600px;
+
+  .facebook:hover{
+    color: #4267B2;
+  }
+  .instagram:hover{
+    color: #405de6;
+  }
+
   >*{
     overflow: hidden;
     text-overflow: ellipsis;
