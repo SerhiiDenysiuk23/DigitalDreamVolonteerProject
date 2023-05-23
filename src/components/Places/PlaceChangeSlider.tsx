@@ -44,9 +44,11 @@ const PlaceChangeSlider: FC<{handleOnClick(id:string): void}> = ({handleOnClick}
         <Slider className={styles.placeInfo__slider} {...settings}>
             {
                 data.map((value) =>
-                    <div onClick={()=>{handleOnClick(value.id)}} key={value.id} className={styles.slideElem}>
-                        <img src={value.mainImageURL} alt=""/>
-                        <div className={styles.placeName}>{value.name}</div>
+                    <div key={value.id} className={styles.slideElem}>
+                        <div onClick={()=>{handleOnClick(value.id)}}>
+                            <img src={value.mainImageURL} alt=""/>
+                            <div className={styles.placeName}>{value.name}</div>
+                        </div>
                     </div>)
             }
         </Slider>
