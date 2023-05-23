@@ -1,25 +1,29 @@
-import React, { useState, useEffect } from "react";
-import style from "./Banner.module.scss";
-import BurgerMenu from "../../elements/BurgerMenu/BurgerMenu";
-import HeaderLogo from "../../elements/HeaderLogo/HeaderLogo";
-import BannerDescription from "../../elements/BannerDescription/BannerDescription";
-import BannerBackground from "../../elements/BannerBackground/BannerBackground";
-import MobileLogoText from "../../elements/MobileLogoText/MobileLogoText";
+import React, { useState, useEffect } from 'react';
+import style from './Banner.module.scss';
+import BurgerMenu from '../../elements/BurgerMenu/BurgerMenu';
+import HeaderLogo from '../../elements/HeaderLogo/HeaderLogo';
+import BannerDescription from '../../elements/BannerDescription/BannerDescription';
+import BannerBackground from '../../elements/BannerBackground/BannerBackground';
+import MobileLogoText from '../../elements/MobileLogoText/MobileLogoText';
 
 const Banner = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleLogoText = () => {
     setIsOpen(!isOpen);
   };
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
+    const timeoutText1 = setTimeout(() => {
+      setIsOpen(true);
+    }, 1000);
+
+    const timeoutText2 = setTimeout(() => {
       setIsOpen(false);
-    }, 5000);
+    }, 6000);
 
     return () => {
-      clearTimeout(timeoutId);
+      clearTimeout(timeoutText2);
     };
   }, []);
 
