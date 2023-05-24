@@ -9,7 +9,9 @@
   border-radius: 12px;
   top: 50%;
   transform: translateY(-50%);
-
+  -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,0.51);
+  -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,0.51);
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.51);
   &:after {
     position: absolute;
     font-size: 28px;
@@ -44,6 +46,9 @@
   }
 
   &.big{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
     color: white;
     width: 15%;
     top: 50%;
