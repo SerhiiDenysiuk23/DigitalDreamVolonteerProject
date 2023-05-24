@@ -56,7 +56,7 @@ const BrandsSlider: FC<{achievement: string}> = ({achievement})=> {
                 {
                     photos.map((value: string) =>
                         <div key={value} className={styles.brandSlider__elem}>
-                            <img src={value} alt=""/>
+                            <img onClick={handleModal} src={value} alt=""/>
                         </div>)
                 }
             </Slider>
