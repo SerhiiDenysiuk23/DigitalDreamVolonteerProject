@@ -10,3 +10,9 @@
         min-height: 400px;
     }
 }
+
+@media (max-width:500px) {
+    .donateSection {
+        height: 535px;
+    }
+}
