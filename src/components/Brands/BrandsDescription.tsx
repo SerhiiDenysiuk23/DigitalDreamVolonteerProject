@@ -16,8 +16,8 @@ const BrandsDescription: FC<{achievement: string}> = ({achievement}) => {
             <p className={"p-18-hind " + styles.description}>{description}</p>
             <div className={styles.address}>{address}</div>
             <div className={styles.links}>
-                <a href={links[0]}><FaFacebookSquare/></a>
-                <a href={links[1]}><FaInstagramSquare/></a>
+                <a className={styles.facebook} href={links[0]}><FaFacebookSquare/></a>
+                <a className={styles.instagram} href={links[1]}><FaInstagramSquare/></a>
                 <a href={links[2]}>{links[2]}</a>
             </div>
         </div>

@@ -18,6 +18,11 @@ query Artists($artistId: ID!) {
     name
     description
     links
+
+    artworks {
+      assetUrl
+    }
+    
   }
 }
 `;

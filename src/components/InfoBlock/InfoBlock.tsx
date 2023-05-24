@@ -26,6 +26,7 @@ export const InfoBlock = ({ type, id }: InfoBlockProps) => {
   const q = useQuery(getExampleInfo, {
     variables: { artistId: id },
   });
+ 
   const [showModal, setShowModal] = React.useState<boolean>(false);
 
   const handleModal = () => setShowModal(prev => !prev);
@@ -46,10 +47,8 @@ export const InfoBlock = ({ type, id }: InfoBlockProps) => {
             <h4 className={`${styles.title} ${styles[type]}`}>{q.data?.artist.name || ''}</h4>
             {/* {subtitle && <h5 className={styles.subtitle}>{subtitle}</h5>} */}
             <div className={styles.descrWrapper}>
-              {formatParagraph(q.data?.artist.description || '').map((fragment) => (
-                <p className={`p-small ${styles.paragraph}`} key={fragment.slice(0, -1)}>{fragment}</p>
-              ))}
-              <span className={styles.moreButton}>...<span>More</span></span>
+                <p className={`p-small ${styles.paragraph}`}>{q.data?.artist.description}</p>
+              {/* <span className={styles.moreButton}>...<span>More</span></span> */}
             </div>
 
           </div>

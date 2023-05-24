@@ -50,7 +50,7 @@ h5 {
 }
 
 h1 {
-  font-size: calc(25px + (70 - 25) * ((100vw - 375px) / (1920 - 375)));
+  font-size: calc(28px + (70 - 28) * ((100vw - 375px) / (1920 - 375)));
   line-height: calc(27px + (63.41 - 27) * ((100vw - 375px) / (1920 - 375)));
 }
 
@@ -82,7 +82,7 @@ span {
 // custom p classes
 
 .p-large {
-  font-size: calc(12px + (18 - 12) * ((100vw - 375px) / (1920 - 375)));
+  font-size: calc(13px + (18 - 13) * ((100vw - 375px) / (1920 - 375)));
   font-weight: 500;
 }
 
@@ -101,10 +101,7 @@ section {
 }
 
 .main-block {
-  background-color: $background-color;
-  background-image: url(../../public/assets/bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  @include background-main-block;
   border-radius: 20px;
   padding: calc(32px + (50 - 32) * ((100vw - 375px) / (1920 - 375))) calc(16px + (50 - 16) * ((100vw - 375px) / (1920 - 375)));
   overflow: hidden;
@@ -141,7 +138,7 @@ section {
 
   .middle-slider {
     .slick-dots {
-      bottom: -40px;
+      bottom: -35px;
       // position: absolute;
       // top:-20px;
       // right: 20px;
@@ -178,7 +175,7 @@ section {
 }
 
 
-.solution-slider {
+.solution-slider, .brand-slider {
   li.slick-active {
     img {
       border: #015BBB 2px solid;
@@ -195,12 +192,6 @@ section {
 }
 
 // Media queries
-@media (max-width: 746px) {
-  h1 {
-    // letter-spacing: 0.01px;
-  }
-}
-
 //doesn't let font sizes grow in more than 1920px screen sizes
 @media (min-width: 1920px) {
   h1 {
@@ -229,5 +220,27 @@ section {
 
   .p-18-hind {
     font-size: 18px;
+  }
+}
+
+@media(max-width: 1024px){
+  .middle-slider-container{
+    .middle-slider {
+      .slick-dots {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        bottom: -40px;
+        // position: absolute;
+        // top:-20px;
+        // right: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 746px) {
+  h1 {
+    // letter-spacing: 0.01px;
   }
 }

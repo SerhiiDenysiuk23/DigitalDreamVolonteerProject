@@ -4,6 +4,8 @@ import { useState, useEffect, useRef, useCallback, RefObject } from "react"
 import Slider, { InnerSlider, Settings } from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useQuery } from "@apollo/client";
+import { getExampleInfo } from "../../queries/artistQueries";
 
 
 let sliderItems = {
@@ -44,7 +46,14 @@ let sliderItems = {
     ]
 }
 
-const MiddleSlider = () => {
+interface MiddleSliderProps{
+    id: string
+}
+
+const MiddleSlider = (id : MiddleSliderProps) => {
+
+
+
     function SampleNextArrow(props: any) {
         const { onClick } = props;
         return (
@@ -84,6 +93,7 @@ const MiddleSlider = () => {
             {
                 breakpoint: 500,
                 settings: {
+                    dots:false,
                     speed: 500,
                     slidesToShow: 2,
                     rows: 1,
@@ -93,7 +103,11 @@ const MiddleSlider = () => {
         ]
     };
 
+    const a = useQuery(getExampleInfo, {
+        variables: { artistId: id },
+      });
 
+      console.log(a.data?.artist.artworks[0].assetUrl)
 
     return (
         <div className={`${style.container} middle-slider-container`}>

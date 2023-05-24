@@ -6,19 +6,21 @@ import { MusicSection } from "./sections/MusicSection/MusicSection";
 import PlaceSection from "./sections/PlaceSection";
 import SolutionsSection from "./sections/SolutionsSection";
 import BrandsSection from "./sections/BrandsSection";
+import YouTubeVideos from "./components/YouTubeVideos/YouTubeVideos";
 
 function App() {
   return (
     <div className="app">
-        <Banner />
-        <MusicSection />
-        <PlaceSection/>
-        <BrandsSection/>
-        <DonateSection />
-        <MusicSection />
-        <SolutionsSection/>
-        <MusicSection />
-        <DonateSectionSecond />
+      <Banner />
+      <MusicSection />
+      <PlaceSection />
+      <BrandsSection />
+      <DonateSection />
+      <MusicSection />
+      <SolutionsSection />
+      <MusicSection />
+      <DonateSectionSecond />
+      <YouTubeVideos />
     </div>
   );
 }
