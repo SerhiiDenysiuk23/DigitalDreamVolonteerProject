@@ -26,7 +26,7 @@ export const MusicSection = () => {
   return (
     <section className={styles.section}>
       <div className={styles.title}>
-        <h1>Do you know about ukrainian MUSIC?</h1>
+        <h3>Do you know about ukrainian <span>MUSIC</span>?</h3>
       </div>
       <InfoBlock type="musician" id={activeId} />
       <MiddleSlider  id= {activeId}/>
