@@ -26,7 +26,6 @@ export const InfoBlock = ({ type, id }: InfoBlockProps) => {
   const q = useQuery(getExampleInfo, {
     variables: { artistId: id },
   });
-  const {name, description, links} = q.data?.artist
 
   const [showModal, setShowModal] = React.useState<boolean>(false);
 
@@ -45,16 +44,16 @@ export const InfoBlock = ({ type, id }: InfoBlockProps) => {
             />
           </div>
           <div style={{ width: '100%' }}>
-            <h4 className={`${styles.title} ${styles[type]}`}>{name || ''}</h4>
+            <h4 className={`${styles.title} ${styles[type]}`}>{q.data?.artist.name || ''}</h4>
             {/* {subtitle && <h5 className={styles.subtitle}>{subtitle}</h5>} */}
             <div className={styles.descrWrapper}>
-                <p className={`p-small ${styles.paragraph}`}>{description}</p>
+                <p className={`p-18-hind ${styles.paragraph}`}>{q.data?.artist.description}</p>
               {/* <span className={styles.moreButton}>...<span>More</span></span> */}
             </div>
 
           </div>
           <div className={styles.socialLinks}>
-            {links.map((l: string) => <a key={l} href={l}><BsWikipedia size={30} /></a>)}
+            {q.data?.artist.links.map((l: string) => <a key={l} href={l}><BsWikipedia size={30} /></a>)}
           </div>
         </div>
       </div>

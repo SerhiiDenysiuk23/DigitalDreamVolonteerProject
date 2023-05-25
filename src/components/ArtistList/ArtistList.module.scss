@@ -162,18 +162,18 @@
 
 @media screen and (max-width: 767px) {
   .pictureWrapper {
-    width: 66px;
-    height: 66px;
-    min-width: 66px;
-    min-height: 66px;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
     margin-bottom: 0;
   }
 
   .list {
-    padding-bottom: 14px;
-    gap: 14px;
+    padding-bottom: 10px;
+    gap: 12px;
     & li {
-      width: 66px;
+      width: 50px;
     }
   }
 
