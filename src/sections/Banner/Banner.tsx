@@ -54,6 +54,7 @@ const Banner = () => {
   return (
     <section className={`${style.banner}  main-block`}>
       <div className={style.banner__container}>
+        <div className={`${style.banner__gradient} ${isScrolled ? 'scrolled' : ''}`}></div>
         <header className={`${style.banner__header} ${isScrolled ? 'scrolled' : ''}`}>
           <HeaderLogo onClick={toggleLogoText} />
           <BurgerMenu />
