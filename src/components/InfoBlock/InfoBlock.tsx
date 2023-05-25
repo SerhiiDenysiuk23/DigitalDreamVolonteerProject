@@ -26,11 +26,11 @@ export const InfoBlock = ({ type, id }: InfoBlockProps) => {
   const q = useQuery(getExampleInfo, {
     variables: { artistId: id },
   });
+
   // for(let i =0; i< q.data?.artist.artworks.length; i++){
   //   console.warn(q.data?.artist.artworks[i].assetUrl)
   // }
  
-
   const [showModal, setShowModal] = React.useState<boolean>(false);
 
   const handleModal = () => setShowModal(prev => !prev);
@@ -51,7 +51,7 @@ export const InfoBlock = ({ type, id }: InfoBlockProps) => {
             <h4 className={`${styles.title} ${styles[type]}`}>{q.data?.artist.name || ''}</h4>
             {/* {subtitle && <h5 className={styles.subtitle}>{subtitle}</h5>} */}
             <div className={styles.descrWrapper}>
-                <p className={`p-small ${styles.paragraph}`}>{q.data?.artist.description}</p>
+                <p className={`p-18-hind ${styles.paragraph}`}>{q.data?.artist.description}</p>
               {/* <span className={styles.moreButton}>...<span>More</span></span> */}
             </div>
 
