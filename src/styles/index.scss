@@ -55,13 +55,18 @@ h1 {
 }
 
 h2 {
-  //font-size: 49px;
-  //line-height: 59px;
   font-size: calc(24px + (49 - 24) * ((100vw - 375px) / (1920 - 375)));
 }
 
 h3 {
-  font-size: calc(16px + (34 - 16) * ((100vw - 375px) / (1920 - 375)));
+  font-size: calc(20px + (34 - 20) * ((100vw - 375px) / (1920 - 375)));
+  opacity: 0.8;
+
+  span {
+    font-size: calc(20px + (34 - 20) * ((100vw - 375px) / (1920 - 375)));
+    font-weight: 900;
+    opacity: 1;
+  }
 }
 
 h4 {
@@ -209,6 +214,9 @@ section {
 
   h3 {
     font-size: 34px;
+    span {
+      font-size: 34px;
+    }
   }
 
   h5 {
