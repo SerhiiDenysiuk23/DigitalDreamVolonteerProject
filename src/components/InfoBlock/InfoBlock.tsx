@@ -27,6 +27,10 @@ export const InfoBlock = ({ type, id }: InfoBlockProps) => {
     variables: { artistId: id },
   });
 
+  // for(let i =0; i< q.data?.artist.artworks.length; i++){
+  //   console.warn(q.data?.artist.artworks[i].assetUrl)
+  // }
+ 
   const [showModal, setShowModal] = React.useState<boolean>(false);
 
   const handleModal = () => setShowModal(prev => !prev);
