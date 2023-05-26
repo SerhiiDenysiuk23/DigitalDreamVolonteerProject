@@ -1,18 +1,14 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import style from "./BurgerMenu.module.scss";
-import { Context } from "../BannerBackground/Context";
-
-const BurgerMenu = () => {
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import style from './BurgerMenu.module.scss';
+import { Context } from '../BannerBackground/Context';
+type BurgerProps = {
+  isBurgerOpen: boolean;
+  toggleBurgerMenu: () => void;
+};
+const BurgerMenu: React.FC<BurgerProps> = ({ toggleBurgerMenu, isBurgerOpen }) => {
   const state = useContext(Context);
-  const [isOpen, setIsOpen] = useState(false);
   const [girlImg, setGirlImg] = useState(state.girlImages);
   const [landlImg, setLandImg] = useState(state.girlImages);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const menuRef = useRef<HTMLDivElement>(null);
 
   const addOpacity = (n: number): void => {
     const updatedGirl = [...state.girlImages];
@@ -32,46 +28,27 @@ const BurgerMenu = () => {
     setLandImg(updatedlandscape);
   };
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    }
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [menuRef]);
-
   return (
-    <div ref={menuRef} className={style.menu__container}>
-      <div onClick={toggleMenu} className={style.menu}>
+    <div className={style.menu__container}>
+      <div onClick={toggleBurgerMenu} className={style.menu}>
         <span>Menu</span>
         <div
-          onClick={toggleMenu}
-          className={`${style.burger} ${isOpen ? style.cross : ""}`}
-        >
+          onClick={toggleBurgerMenu}
+          className={`${style.burger} ${isBurgerOpen ? style.cross : ''}`}>
           <span></span>
         </div>
       </div>
-      {/* {isOpen && ( */}
-      <div
-        className={`${style.nav__container} ${isOpen ? style.openMenu : ""}`}
-      >
+      <div className={`${style.nav__container} ${isBurgerOpen ? style.openMenu : ''}`}>
         <div className={style.leftHalf}>
           <nav>
             {state.wreathOfGirl.map((item) => (
               <a
                 key={item.id}
                 href={item.href}
-                onClick={toggleMenu}
+                onClick={toggleBurgerMenu}
                 onMouseEnter={() => addOpacity(item.id)}
                 onMouseLeave={() => removeOpacity(item.id)}
-                className={`${style.icons} ${style[item.className]}`}
-              >
+                className={`${style.icons} ${style[item.className]}`}>
                 <div className={style.nav__icon}>
                   <img src={item.src} alt={item.className} />
                 </div>
@@ -88,8 +65,7 @@ const BurgerMenu = () => {
               style={{
                 backgroundImage: `url(${img.src})`,
                 opacity: img.opacity,
-              }}
-            ></div>
+              }}></div>
           ))}
         </div>
       </div>
