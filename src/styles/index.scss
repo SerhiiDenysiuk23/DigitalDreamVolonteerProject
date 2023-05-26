@@ -37,6 +37,11 @@ body {
   padding: calc(2px + (10 - 2) * ((100vw - 375px) / (1920 - 375)));
   overflow-x: hidden;
 }
+  
+// class that prevents scroll when burger menu is opened
+body.lock {
+  overflow-y: hidden;
+}
 
 h1,
 h2,
