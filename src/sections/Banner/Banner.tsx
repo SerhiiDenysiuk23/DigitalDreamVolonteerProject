@@ -9,9 +9,14 @@ import MobileLogoText from '../../elements/MobileLogoText/MobileLogoText';
 const Banner = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
   const toggleLogoText = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleBurgerMenu = () => {
+    setIsBurgerOpen(!isBurgerOpen);
   };
 
   useEffect(() => {
@@ -38,6 +43,11 @@ const Banner = () => {
       prevScrollPos = currentScrollPos;
 
       const header = document.querySelector('header');
+
+      if (isBurgerOpen) {
+        header?.classList.remove('scrolled');
+        return;
+      }
       if (isScrolledUp) {
         header?.classList.add('scrolled');
       } else {
@@ -49,15 +59,15 @@ const Banner = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isBurgerOpen]);
 
   return (
     <section className={`${style.banner}  main-block`}>
       <div className={style.banner__container}>
         <div className={`${style.banner__gradient} ${isScrolled ? 'scrolled' : ''}`}></div>
-        <header className={`${style.banner__header} ${isScrolled ? 'scrolled' : ''}`}>
+        <header className={`${style.banner__header}`}>
           <HeaderLogo onClick={toggleLogoText} />
-          <BurgerMenu />
+          <BurgerMenu isBurgerOpen={isBurgerOpen} toggleBurgerMenu={toggleBurgerMenu} />
         </header>
         <MobileLogoText isOpen={isOpen} onClick={toggleLogoText} />
         <BannerBackground />
