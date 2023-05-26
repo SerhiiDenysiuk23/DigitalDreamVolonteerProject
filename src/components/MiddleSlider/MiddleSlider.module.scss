@@ -1,10 +1,15 @@
 .container {
+    position: relative;
     // order: 2;
     width:58%;
     background: #fff;
     padding: 50px;
     border-radius: 20px;
 
+    .slideCount{
+        // color: transparent;
+        // display: none;
+    }
 
     .heading {
         display: flex;
@@ -77,13 +82,19 @@
     }
 }
 
-@media (max-width:1024px){
+@media (max-width:1023px){
     .container{
         order: 3;
         width: 100%;
         padding: 0 10px;
         padding-bottom: 30px;
         background: transparent;
+
+        .slideCount{
+            // color:transparent;
+            display: none;
+        }
+
         .heading{
             display: none;
         }
@@ -101,10 +112,19 @@
             right: 17px!important;
         }
     }
+
+
 }
 @media(max-width:500px){
     
-
+        .slideCount{
+            display: block!important;
+            color: black;
+            position: absolute;
+            font-size: 24px;
+            bottom: -12px;
+            left:43%;
+        }
 
         .prev{
             bottom: -20%!important;

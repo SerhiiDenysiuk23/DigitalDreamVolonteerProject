@@ -37,7 +37,7 @@ let sliderItems = {
         { img: 'https://picsum.photos/1100', description: "Society that" },
         { img: 'https://picsum.photos/1200', description: "Society that" },
         { img: 'https://picsum.photos/1300', description: "Society that" },
-        { img: 'https://picsum.photos/1400', description: "Society that" },
+
 
         // {img: '/assets/MiddleSliderImages/arts/forSlider.png', description: "Society that"},
         // {img: '/assets/MiddleSliderImages/arts/img-2.png', description: "Society that"},
@@ -78,9 +78,34 @@ const MiddleSlider = (id: MiddleSliderProps) => {
         );
     }
 
+    const [activeSlide, setActiveSlide] = React.useState<number>(0);
+    const [slideCount, setSlideCount] = React.useState<number>(0);
+    const slider = useRef<Slider | null>(null)
+
+
+    interface CustomInnerSlider extends InnerSlider {
+        props: {
+
+            children: [];
+        };
+        state: {
+            currentSlide: number;
+            slideCount: number;
+        };
+    }
+
+    useEffect(() => {
+
+        setSlideCount((slider.current?.innerSlider as CustomInnerSlider).props.children.length)
+
+
+
+    }, [])
+    console.log(slideCount)
+
     const settings: Settings = {
         dots: true,
-        swipe:false,
+        swipe: false,
         arrows: true,
         infinite: true,
         speed: 500,
@@ -93,7 +118,7 @@ const MiddleSlider = (id: MiddleSliderProps) => {
             {
                 breakpoint: 1024,
                 settings: {
-                    swipe:true,
+                    swipe: true,
                     speed: 500,
                     slidesToShow: 2,
                     rows: 2,
@@ -103,12 +128,18 @@ const MiddleSlider = (id: MiddleSliderProps) => {
             {
                 breakpoint: 500,
                 settings: {
-                    swipe:true,
+                    // autoplay:true,
+                    // autoplaySpeed: 4000,
+                    // cssEase: "linear",
+                    centerMode: true,
+                    centerPadding: "25px",
+                    swipe: true,
                     dots: false,
                     speed: 500,
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     rows: 1,
                     slidesToScroll: 1,
+                    afterChange: current => setActiveSlide(current)
                 }
             },
         ]
@@ -126,14 +157,18 @@ const MiddleSlider = (id: MiddleSliderProps) => {
                 <h3 className={style.header}>Do you know about Ukrainian ART?</h3>
             </div>
             <div className={style.slide}>
-                <Slider className={`${style.slider} middle-slider `} {...settings}>
+                <div  className={style.slideCount}> {activeSlide + 1} / {sliderItems.arts.length}</div>
+
+                <Slider ref={slider} className={`${style.slider} middle-slider `} {...settings}>
                     {
                         sliderItems.arts.map(item => (
-                            <SliderItem key={item.img} image={item.img} description={item.description} handleClick ={handleModal} />
+                            <SliderItem key={item.img} image={item.img} description={item.description} handleClick={handleModal} />
                         ))
                     }
 
+
                 </Slider>
+
 
             </div>
             {showModal && <Popup data={arts} handleModal={handleModal} />}
