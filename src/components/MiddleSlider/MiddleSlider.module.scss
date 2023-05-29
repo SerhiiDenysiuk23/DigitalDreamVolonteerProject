@@ -6,7 +6,9 @@
     padding: 50px;
     border-radius: 20px;
 
-    .slideCount {
+
+    .slideCount{
+
         // color: transparent;
         display: none;
     }
@@ -102,16 +104,30 @@
     }
 }
 
+
 @media (max-width:1023px) {
     .container {
+
+@media (max-width:1023px){
+    .container{
+
         order: 3;
         width: 100%;
         padding: 0 10px;
         padding-bottom: 30px;
         background: transparent;
 
+
         .slideCount {
             // color:transparent;
+
+        .slideCount{
+            // color:transparent;
+            display: none;
+        }
+
+        .heading{
+
             display: none;
         }
 
@@ -140,6 +156,7 @@
 
 }
 
+
 @media(max-width:500px) {
 
     .slideCount {
@@ -160,5 +177,16 @@
         bottom: -20% !important;
         right: 100px !important;
     }
+
+@media(max-width:500px){
+    
+        .slideCount{
+            display: block!important;
+            color: black;
+            position: absolute;
+            font-size: 24px;
+            bottom: -12px;
+            left:43%;
+        }
 
 }

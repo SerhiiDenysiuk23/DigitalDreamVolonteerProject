@@ -80,6 +80,11 @@ const MiddleSlider = (id: MiddleSliderProps) => {
 
     const [activeSlide, setActiveSlide] = React.useState<number>(0);
 
+
+    const [slideCount, setSlideCount] = React.useState<number>(0);
+
+
+
     const settings: Settings = {
         dots: true,
         swipe: false,
@@ -131,9 +136,11 @@ const MiddleSlider = (id: MiddleSliderProps) => {
                 <h3 className={style.header}>Do you know about Ukrainian ART?</h3>
             </div>
             <div className={style.slide}>
+
                 <div className={style.slideCount}> {activeSlide + 1} / {sliderItems.arts.length}</div>
 
                 <Slider className={`${style.slider} middle-slider `} {...settings}>
+
                     {
                         sliderItems.arts.map(item => (
                             <SliderItem key={item.img} image={item.img} description={item.description} handleClick={handleModal} />
