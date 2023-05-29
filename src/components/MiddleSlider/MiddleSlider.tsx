@@ -79,29 +79,11 @@ const MiddleSlider = (id: MiddleSliderProps) => {
     }
 
     const [activeSlide, setActiveSlide] = React.useState<number>(0);
+
+
     const [slideCount, setSlideCount] = React.useState<number>(0);
-    const slider = useRef<Slider | null>(null)
 
 
-    interface CustomInnerSlider extends InnerSlider {
-        props: {
-
-            children: [];
-        };
-        state: {
-            currentSlide: number;
-            slideCount: number;
-        };
-    }
-
-    useEffect(() => {
-
-        setSlideCount((slider.current?.innerSlider as CustomInnerSlider).props.children.length)
-
-
-
-    }, [])
-    console.log(slideCount)
 
     const settings: Settings = {
         dots: true,
@@ -128,9 +110,6 @@ const MiddleSlider = (id: MiddleSliderProps) => {
             {
                 breakpoint: 500,
                 settings: {
-                    // autoplay:true,
-                    // autoplaySpeed: 4000,
-                    // cssEase: "linear",
                     centerMode: true,
                     centerPadding: "25px",
                     swipe: true,
@@ -157,9 +136,11 @@ const MiddleSlider = (id: MiddleSliderProps) => {
                 <h3 className={style.header}>Do you know about Ukrainian ART?</h3>
             </div>
             <div className={style.slide}>
-                <div  className={style.slideCount}> {activeSlide + 1} / {sliderItems.arts.length}</div>
 
-                <Slider ref={slider} className={`${style.slider} middle-slider `} {...settings}>
+                <div className={style.slideCount}> {activeSlide + 1} / {sliderItems.arts.length}</div>
+
+                <Slider className={`${style.slider} middle-slider `} {...settings}>
+
                     {
                         sliderItems.arts.map(item => (
                             <SliderItem key={item.img} image={item.img} description={item.description} handleClick={handleModal} />
