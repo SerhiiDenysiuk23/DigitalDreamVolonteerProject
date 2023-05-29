@@ -1,11 +1,12 @@
-import React, { useContext, useState, useEffect } from "react";
-import style from "./BannerBackground.module.scss";
-import { Context } from "./Context";
+import React, { useContext, useState, useEffect } from 'react';
+import style from './BannerBackground.module.scss';
+import { Context } from './Context';
 
 const BannerBackground = () => {
   const state = useContext(Context);
   const [girlImg, setGirlImg] = useState(state.girlImages);
   const [landlImg, setLandImg] = useState(state.girlImages);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const addOpacity = (n: number): void => {
     const updatedGirl = [...state.girlImages];
@@ -25,23 +26,44 @@ const BannerBackground = () => {
     setLandImg(updatedlandscape);
   };
 
-  // const [currentItemIndex, setCurrentItemIndex] = useState(0);
+  // changes girl & landscape on hover for 1024+ screens
+  const handleMouseEnter = (id: number) => {
+    if (window.innerWidth >= 1024) {
+      addOpacity(id);
+    }
+  };
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     removeOpacity(currentItemIndex);
+  const handleMouseLeave = (id: number) => {
+    if (window.innerWidth >= 1024) {
+      removeOpacity(id);
+    }
+  };
+  // changes girl & landscape on hover for 1024+ screens
 
-  //     setCurrentItemIndex((prevIndex) => {
-  //       const nextIndex = (prevIndex + 1) % state.wreathOfGirl.length;
-  //       addOpacity(nextIndex);
-  //       return nextIndex;
-  //     });
-  //   }, 5000);
+  useEffect(() => {
+    // Function to handle the interval logic
+    const handleInterval = () => {
+      removeOpacity(currentIndex);
 
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, []);
+      const idx = (prevIndex: number) => {
+        let nextIndex = (prevIndex + 1) % 6;
+        addOpacity(nextIndex);
+        return nextIndex;
+      };
+
+      setCurrentIndex(idx(currentIndex));
+    };
+
+    // Check if the screen width is less than or equal to 1024 (mobile and tablet screens)
+    if (window.innerWidth <= 1024) {
+      const interval = setInterval(handleInterval, 7000);
+
+      // Clear the interval when the component unmounts
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [currentIndex]);
 
   return (
     <div className={style.bannerBackground}>
@@ -53,8 +75,7 @@ const BannerBackground = () => {
             style={{
               backgroundImage: `url(${img.src})`,
               opacity: img.opacity,
-            }}
-          ></div>
+            }}></div>
         ))}
       </div>
       <div className={style.girl}>
@@ -65,28 +86,25 @@ const BannerBackground = () => {
             style={{
               backgroundImage: `url(${girl.src})`,
               opacity: girl.opacity,
-            }}
-          ></div>
+            }}></div>
         ))}
         <div>
           {state.wreathOfGirl.map((item) => (
             <a
               key={item.id}
               href={item.href}
-              onMouseEnter={() => addOpacity(item.id)}
-              onMouseLeave={() => removeOpacity(item.id)}
-              className={`${style.icons} ${style[item.className]}`}
-            >
+              onMouseEnter={() => handleMouseEnter(item.id)}
+              onMouseLeave={() => handleMouseLeave(item.id)}
+              // onMouseEnter={() => addOpacity(item.id)}
+              // onMouseLeave={() => removeOpacity(item.id)}
+              className={`${style.icons} ${style[item.className]}`}>
               <img src={item.src} alt={item.className} />
             </a>
           ))}
         </div>
         <div className={style.clouds__container}>
           {state.clouds.map((cloud) => (
-            <div
-              key={cloud.id}
-              className={`${style[cloud.className]} ${style.clouds}`}
-            >
+            <div key={cloud.id} className={`${style[cloud.className]} ${style.clouds}`}>
               <img src={cloud.src} alt={cloud.className} />
             </div>
           ))}
