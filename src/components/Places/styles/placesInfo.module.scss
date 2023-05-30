@@ -1,11 +1,10 @@
 .placeInfoContainer {
-  flex: 743;
+  aspect-ratio: 743/769;
 
   .placeInfo {
     display: flex;
     flex-direction: column;
     position: relative;
-    //aspect-ratio: 743/769;
 
     .placeDescription{
       overflow: hidden;
@@ -74,7 +73,7 @@
   }
 }
 
-@media screen and (max-width: 1304px){
+@media screen and (max-width: 1024px){
   .placeInfoContainer{
     background: none;
     padding-bottom: 0;
@@ -92,6 +91,7 @@
 }
 @media screen and (max-width: 770px){
   .placeInfoContainer{
+    aspect-ratio: initial;
     .placeInfo{
       &__slider{
         margin: initial;

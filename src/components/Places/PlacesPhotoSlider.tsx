@@ -5,17 +5,27 @@ import Slider, {Settings} from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import {default as testData} from "../../testDataPlaces.json"
+// import {default as testData} from "../../testDataPlaces.json"
 
-const PlacesPhotoSlider: FC<{id: string}> = ({id}) => {
+const testData = [
+    "https://picsum.photos/200",
+    "https://picsum.photos/201",
+    "https://picsum.photos/202",
+    "https://picsum.photos/203",
+    "https://picsum.photos/204"
+]
+
+
+const PlacesPhotoSlider: FC<{ id: string }> = ({id}) => {
     // const {data, loading, refetch} = useQuery(query, {variables: {id}})
 
-    const [data, setImagesURL] = useState<string[]>( [])
+    const [data, setImagesURL] = useState<string[]>([])
 
-    useEffect(()=>{
+    useEffect(() => {
         // refetch({id})
-        setImagesURL(testData.find(item => item.id == id)?.imagesURL ?? [])
-    },[id])
+        // setImagesURL(testData.find(item => item.id == id)?.imagesURL ?? [])
+        setImagesURL(testData)
+    }, [id])
 
 
     const settings: Settings = {
@@ -44,14 +54,14 @@ const PlacesPhotoSlider: FC<{id: string}> = ({id}) => {
     };
 
     return (
-        <div className={`${styles.placePhotos} main-block` }>
+        <div className={`${styles.placePhotos} main-block`}>
             {
                 !!data &&
                 <Slider className={styles.placePhotos__slider} {...settings}>
                     {
                         data.map(item =>
                             <div key={item} className={styles.imgContainer}>
-                                <img src={item} alt=""/>
+                                    <img src={item} alt=""/>
                             </div>
                         )
                     }
@@ -59,6 +69,7 @@ const PlacesPhotoSlider: FC<{id: string}> = ({id}) => {
             }
         </div>
     );
-};
+}
+
 
 export default PlacesPhotoSlider;

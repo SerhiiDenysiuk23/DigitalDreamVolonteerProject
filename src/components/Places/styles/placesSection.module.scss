@@ -5,9 +5,10 @@
 .placeSection{
   max-height: 775px;
   height: 100%;
+  aspect-ratio: 1920 / 774;
 }
 
-@media screen and (max-width: 1304px){
+@media screen and (max-width: 1024px){
   .placeSection{
     flex-direction: column-reverse;
     @include background-main-block;

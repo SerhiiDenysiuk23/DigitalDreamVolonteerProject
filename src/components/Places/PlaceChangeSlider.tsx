@@ -19,12 +19,12 @@ const PlaceChangeSlider: FC<{handleOnClick(id:string): void}> = ({handleOnClick}
         prevArrow: <ArrowSliderBtn btnType={"shifted"} direction={"left"}/>,
         nextArrow: <ArrowSliderBtn btnType={"shifted"} direction={"right"}/>,
         responsive: [
-            {
-                breakpoint: 1304,
-                settings: {
-                    slidesToShow: 5
-                }
-            },
+            // {
+            //     breakpoint: 1304,
+            //     settings: {
+            //         slidesToShow: 5
+            //     }
+            // },
             {
                 breakpoint: 875,
                 settings: {

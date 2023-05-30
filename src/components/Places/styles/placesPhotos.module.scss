@@ -1,49 +1,35 @@
 .placePhotos {
-  flex: 1174;
-  height: 100%;
-
+  aspect-ratio: 1174 / 769;
   padding: 20px;
+  &__slider {
+    border-radius: inherit;
+    overflow: hidden;
+    height: 100%;
+    z-index: 1;
+  }
   .imgContainer{
-    //height: 760px;
-
-    aspect-ratio: 1.54 / 1;
     border-radius: 30px;
+    height: 100%;
+    //display: flex !important;
+    //aspect-ratio: 1174 / 769;
     img{
+
       object-fit: cover;
       height: 100%;
       width: 100%;
       border-radius: inherit;
-    }
-  }
-  &__slider {
-    border-radius: inherit;
-    height: 100%;
-    z-index: 1;
-  }
-}
-
-@media screen and (max-width: 1640px){
-  .placePhotos{
-    .imgContainer{
-      aspect-ratio: 1.5 / 1;
+      aspect-ratio: inherit;
     }
   }
 }
 
-@media screen and (max-width: 1500px){
-  .placePhotos{
-    .imgContainer{
-      aspect-ratio: 1.4 / 1;
-    }
-  }
-}
-
-@media screen and (max-width: 1304px){
+@media screen and (max-width: 1024px){
   .placePhotos{
     background: none;
     padding: 40px;
+    aspect-ratio: initial;
     .imgContainer{
-      aspect-ratio: 1.54 / 1;
+      //aspect-ratio: 1.54 / 1;
     }
   }
 }
