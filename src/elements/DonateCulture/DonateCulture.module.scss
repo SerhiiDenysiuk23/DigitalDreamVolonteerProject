@@ -231,7 +231,6 @@
         width: 180px;
     }
 
-
     .locationCulture {
         width: 110%;
         margin: 0 0 0 40px;
@@ -241,7 +240,6 @@
             font-size: 12px;
         }
     }
-
 
     .tarasShevchenkoPhone {
         display: flex;
@@ -269,5 +267,12 @@
     .locationCulture {
         width: 165%;
         margin: 0 0 0 220px;
+    }
+}
+
+@media (max-width: 374px) {
+    .locationCulture {
+        width: 579px;
+        margin: 0 0 0 300px;
     }
 }

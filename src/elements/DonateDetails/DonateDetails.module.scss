@@ -3,15 +3,14 @@
     flex-direction: column;
     justify-content: space-around;
     width: 700px;
-    height: 200px;
+    height: 230px;
 }
 
 .supportList {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 20px;
+    gap: 10px;
     width: 706px;
-    height: 100px;
 }
 
 .listItem {
@@ -46,7 +45,6 @@
         display: flex;
         flex-direction: column;
         width: 350px;
-        height: 100px;
     }
 
     .listItem {
@@ -60,11 +58,11 @@
         justify-content: space-evenly;
         width: 450px;
         height: 320px;
-        margin: 0 40px 100px 0px;
+        margin: 0 80px 30px 0px;
 
         & h4 {
             width: 280px;
-            margin: 0 0 0 0;
+            margin: 20px 0 0 0;
         }
     }
 
@@ -75,14 +73,13 @@
 
 @media (max-width:768px) {
     .wrapperDetails {
-        height: 250px;
-        margin: 0 40px 170px 0px;
+        margin: 0 40px 10px 0px;
     }
 }
 
 @media (max-width:680px) {
     .wrapperDetails {
-        margin: 0 30px 130px 0px;
+        margin: 0 30px 0px 0px;
 
         & h4 {
             font-size: 18px;
@@ -101,7 +98,7 @@
 
 @media (max-width:600px) {
     .wrapperDetails {
-        margin: 0 0px 170px 130px;
+        margin: 0 0px 0px 130px;
 
         & h4 {
             font-size: 16px;
@@ -114,5 +111,29 @@
 
     .listItem {
         width: 240px;
+    }
+}
+
+@media (max-width:374px) {
+    .wrapperDetails {
+        margin: 0 0 0 180px;
+
+        & p {
+            font-size: 12px;
+        }
+
+        & h4 {
+            font-size: 14px;
+        }
+
+    }
+
+    .listItem {
+        width: 190px;
+        margin: 0;
+
+        & img {
+            width: 20px;
+        }
     }
 }

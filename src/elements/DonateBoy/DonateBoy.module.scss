@@ -58,7 +58,7 @@
         & img {
             width: 920px;
             height: 700px;
-            margin: 260px 0px 245px 550px;
+            margin: 320px 0px 245px 550px;
         }
     }
 }
@@ -70,6 +70,17 @@
             width: 730px;
             height: 520px;
             margin: 260px 0px 245px 550px;
+        }
+    }
+}
+
+@media (max-width:374px) {
+    .wrapperDonateBoy {
+
+        & img {
+            width: 730px;
+            height: 520px;
+            margin: 260px 0px 245px 640px;
         }
     }
 }
