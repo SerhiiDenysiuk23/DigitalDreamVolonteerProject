@@ -18,7 +18,7 @@ const [activeAuthor, setActiveAuthor] = React.useState<number>(0);
     <div className={styles.block}>
       <div className={styles.overlay}></div>
       <ul className={styles.list}>
-        {data.map((item, index) => (
+        {data?.map((item, index) => (
           <li
             key={item.id}
             className={activeAuthor === index ? styles.active : ""}
