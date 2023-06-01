@@ -26,8 +26,9 @@
 @media (max-width:768px) {
     .wrapperDonate {
         align-items: flex-end;
-        justify-content: center;
+        justify-content: space-evenly;
         margin: 0 210px 0 0;
+        height: 750px;
     }
 }
 
