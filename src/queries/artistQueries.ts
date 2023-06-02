@@ -1,14 +1,12 @@
 import { gql } from "@apollo/client";
 
 export const getExamplesList = gql`
-  query Artists{
-    artists {
+query Artists($data: AllArtistsInput!) {
+  artists(data: $data) {
       id
-      name
-      links
-      description
-    }
   }
+}
+
 `;
 
 export const getExampleInfo = gql`
@@ -18,6 +16,11 @@ query Artists($artistId: ID!) {
     name
     description
     links
+
+    artworks {
+      assetUrl
+    }
+    
   }
 }
 `;

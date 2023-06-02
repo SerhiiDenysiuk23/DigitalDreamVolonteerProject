@@ -37,6 +37,11 @@ body {
   padding: calc(2px + (10 - 2) * ((100vw - 375px) / (1920 - 375)));
   overflow-x: hidden;
 }
+  
+// class that prevents scroll when burger menu is opened
+body.lock {
+  overflow-y: hidden;
+}
 
 h1,
 h2,
@@ -50,18 +55,23 @@ h5 {
 }
 
 h1 {
-  font-size: calc(25px + (70 - 25) * ((100vw - 375px) / (1920 - 375)));
+  font-size: calc(28px + (70 - 28) * ((100vw - 375px) / (1920 - 375)));
   line-height: calc(27px + (63.41 - 27) * ((100vw - 375px) / (1920 - 375)));
 }
 
 h2 {
-  //font-size: 49px;
-  //line-height: 59px;
   font-size: calc(24px + (49 - 24) * ((100vw - 375px) / (1920 - 375)));
 }
 
 h3 {
-  font-size: calc(16px + (34 - 16) * ((100vw - 375px) / (1920 - 375)));
+  font-size: calc(20px + (34 - 20) * ((100vw - 375px) / (1920 - 375)));
+  opacity: 0.8;
+
+  span {
+    font-size: calc(20px + (34 - 20) * ((100vw - 375px) / (1920 - 375)));
+    font-weight: 900;
+    opacity: 1;
+  }
 }
 
 h4 {
@@ -82,7 +92,7 @@ span {
 // custom p classes
 
 .p-large {
-  font-size: calc(12px + (18 - 12) * ((100vw - 375px) / (1920 - 375)));
+  font-size: calc(13px + (18 - 13) * ((100vw - 375px) / (1920 - 375)));
   font-weight: 500;
 }
 
@@ -138,7 +148,7 @@ section {
 
   .middle-slider {
     .slick-dots {
-      bottom: -40px;
+      bottom: -35px;
       // position: absolute;
       // top:-20px;
       // right: 20px;
@@ -175,7 +185,7 @@ section {
 }
 
 
-.solution-slider {
+.solution-slider, .brand-slider {
   li.slick-active {
     img {
       border: #015BBB 2px solid;
@@ -192,12 +202,6 @@ section {
 }
 
 // Media queries
-@media (max-width: 746px) {
-  h1 {
-    // letter-spacing: 0.01px;
-  }
-}
-
 //doesn't let font sizes grow in more than 1920px screen sizes
 @media (min-width: 1920px) {
   h1 {
@@ -210,6 +214,9 @@ section {
 
   h3 {
     font-size: 34px;
+    span {
+      font-size: 34px;
+    }
   }
 
   h5 {
@@ -226,5 +233,27 @@ section {
 
   .p-18-hind {
     font-size: 18px;
+  }
+}
+
+@media(max-width: 1024px){
+  .middle-slider-container{
+    .middle-slider {
+      .slick-dots {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        bottom: -40px;
+        // position: absolute;
+        // top:-20px;
+        // right: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 746px) {
+  h1 {
+    // letter-spacing: 0.01px;
   }
 }

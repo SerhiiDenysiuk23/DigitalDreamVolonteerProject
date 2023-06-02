@@ -50,7 +50,7 @@ const Popup: React.FC<PopupProps> = ({ data: { name, description, link }, handle
           <span></span>
         </div>
       </div>
-      <div className={style.background}></div>
+      <div onClick={handleModal} className={style.background}></div>
     </div>
   );
 };

@@ -84,6 +84,7 @@
     border-radius: 12px;
     object-fit: cover;
     height: 100%;
+    cursor: pointer;
   }
 
   &__elem {
@@ -256,5 +257,10 @@
       display: none;
     }
   }
+}
 
+@media screen and (max-width: 390px) {
+  .solutionSlider {
+    width: 100%;
+  }
 }

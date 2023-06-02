@@ -13,12 +13,12 @@ interface ExamplesListProps {
 }
 
 export const ArtistList = ({ type, onClick, data }: ExamplesListProps) => {
-  const [activeAuthor, setActiveAuthor] = React.useState<number>(0);
+const [activeAuthor, setActiveAuthor] = React.useState<number>(0);
   return (
     <div className={styles.block}>
       <div className={styles.overlay}></div>
       <ul className={styles.list}>
-        {data.map((item, index) => (
+        {data?.map((item, index) => (
           <li
             key={item.id}
             className={activeAuthor === index ? styles.active : ""}

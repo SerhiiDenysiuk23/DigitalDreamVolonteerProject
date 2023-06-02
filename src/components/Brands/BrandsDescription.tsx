@@ -9,6 +9,12 @@ const BrandsDescription: FC<{achievement: string}> = ({achievement}) => {
     const title = "TM byMe"
     const slogan = "З А К О Х У В А Т И"
     const links = ["","","byme.ua"]
+
+    const icons = [
+        "./assets/icons/facebook.png",
+        "./assets/icons/instagram.png",
+    ]
+
     return (
         <div className={styles.brandDescription}>
             <h2>{title}</h2>
@@ -16,8 +22,8 @@ const BrandsDescription: FC<{achievement: string}> = ({achievement}) => {
             <p className={"p-18-hind " + styles.description}>{description}</p>
             <div className={styles.address}>{address}</div>
             <div className={styles.links}>
-                <a href={links[0]}><FaFacebookSquare/></a>
-                <a href={links[1]}><FaInstagramSquare/></a>
+                <a className={styles.facebook} href={links[0]}><img src={icons[0]} alt="facebook"/></a>
+                <a className={styles.instagram} href={links[1]}><img src={icons[1]} alt="instagram"/></a>
                 <a href={links[2]}>{links[2]}</a>
             </div>
         </div>

@@ -1,5 +1,6 @@
 .brandDescription {
   max-width: 600px;
+
   >*{
     overflow: hidden;
     text-overflow: ellipsis;
@@ -34,7 +35,7 @@
 
   .links{
     display: flex;
-    text-align: center;
+    align-items: center;
     font-family: 'Hind', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -42,6 +43,16 @@
     text-transform: uppercase;
     gap: 15px;
     margin-top: 55px;
+    a{
+      display: flex;
+      &:hover{
+        opacity: .7;
+      }
+    }
+    img{
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 
