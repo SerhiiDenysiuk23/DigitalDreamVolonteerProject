@@ -1,13 +1,13 @@
 .brandDescription {
   max-width: 600px;
 
-  >*{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-  }
+  //>*{
+  //  overflow: hidden;
+  //  text-overflow: ellipsis;
+  //  white-space: normal;
+  //  display: -webkit-box;
+  //  -webkit-box-orient: vertical;
+  //}
 
   .slogan{
     line-height: 22px;
@@ -18,7 +18,7 @@
   .description {
     position: relative;
     margin-top: 40px;
-    max-height: 207px;
+    //max-height: 207px;
     line-height: 23.4px;
   }
 
@@ -68,6 +68,17 @@
   }
 }
 
+@media screen and (max-width: 1174px) {
+  .brandDescription {
+    .address{
+      margin-top: calc((107px / 2) / 2);
+    }
+    .links{
+      margin-top: calc((55px / 2) / 2);
+    }
+  }
+}
+
 @media screen and (max-width: 900px) {
   .brandDescription {
     display: flex;
@@ -82,16 +93,16 @@
   }
 }
 
-@media screen and (max-width: 700px){
-  .brandDescription {
-    .address{
-      margin-top: calc((107px / 2) / 2);
-    }
-    .links{
-      margin-top: calc((55px / 2) / 2);
-    }
-  }
-}
+//@media screen and (max-width: 700px){
+//  .brandDescription {
+//    .address{
+//      margin-top: calc((107px / 2) / 2);
+//    }
+//    .links{
+//      margin-top: calc((55px / 2) / 2);
+//    }
+//  }
+//}
 
 @media screen and (max-width: 640px){
   .brandDescription {
