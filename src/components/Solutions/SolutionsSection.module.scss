@@ -126,21 +126,15 @@
 }
 
 
-@media screen and (max-width: 1558px) {
-  .solutionBlock {
-    .solutionContainer {
-      gap: 44px;
-    }
-  }
-}
-
-@media screen and (max-width: 1199px) {
-  .solutionBlock {
-    .solutionContainer {
-      gap: 24px;
+  @media screen and (max-width: 1470px) {
+    .solutionBlock {
+      .solutionContainer {
+        gap: 34px;
+      }
     }
   }
 
+@media screen and (max-width: 1023px) {
   .solutionDescription{
     display: flex;
     flex-direction: column;
