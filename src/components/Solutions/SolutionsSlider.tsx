@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import Slider, {Settings} from "react-slick";
-import styles from "./SolutionsSection.module.scss";
+import styles from "./styles/SolutionsSection.module.scss";
 import ArrowSliderBtn from "../../elements/ArrowSliderBtn/ArrowSliderBtn";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
