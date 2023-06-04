@@ -1,22 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import SolutionsBlock from "../components/Solutions/SolutionsBlock";
 import {ArtistList} from "../components/ArtistList/ArtistList";
 import {useQuery} from "@apollo/client";
 import {getExamplesList} from "../queries/artistQueries";
+import {useWindowWidth} from "../hooks/useWindowWidth";
 
 const SolutionsSection = () => {
     const {data, loading} = useQuery(getExamplesList);
-    const [isShowArtists, setIsShowArtists] = useState<boolean>(window.innerWidth > 1198)
 
-    window.onresize = () => {
-        setIsShowArtists(window.innerWidth > 1198)
-    }
+    const winWidth = useWindowWidth()
+    const breakpoint = 1023
 
     return (
         <section>
-            <SolutionsBlock isShowArtists={!isShowArtists} artists={data?.artists}/>
+            <SolutionsBlock isShowArtists={(winWidth < breakpoint)} artists={data?.artists}/>
             {
-                isShowArtists &&
+                (winWidth > breakpoint) &&
                 <ArtistList type={"authors"} onClick={() => {
                 }} data={data?.artists ?? []}/>
             }
