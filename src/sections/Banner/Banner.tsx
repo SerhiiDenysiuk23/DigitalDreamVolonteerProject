@@ -83,7 +83,7 @@ const Banner = () => {
   }, [isBurgerOpen]);
 
   return (
-    <section className={`${style.banner}  main-block`}>
+    <section className={`${style.banner}  main-block`} id='home'>
       <div className={style.banner__container}>
         <div className={`${style.banner__gradient} ${isScrolled ? 'scrolled' : ''}`}></div>
         <header className={`${style.banner__header}`}>
