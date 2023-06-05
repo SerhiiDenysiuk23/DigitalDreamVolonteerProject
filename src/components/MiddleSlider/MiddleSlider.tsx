@@ -66,7 +66,7 @@ const MiddleSlider = (id: MiddleSliderProps) => {
         const { onClick } = props;
         return (
 
-            <img src="/assets/MiddleSliderImages/arts/Arrow.png" alt="" onClick={onClick} className={`${style.prevnext}, ${style.next}`} />
+            <img src="/assets/MiddleSliderImages/arts/Arrow-1.png" alt="" onClick={onClick} className={`${style.prevnext}, ${style.next}`} />
         );
     }
 
@@ -133,7 +133,7 @@ const MiddleSlider = (id: MiddleSliderProps) => {
     return (
         <div className={`${style.container} middle-slider-container`}>
             <div className={style.heading}>
-                <h3 className={style.header}>Do you know about Ukrainian ART?</h3>
+                <h3 className={style.header}>Do you know about Ukrainian <span>ART</span>?</h3>
             </div>
             <div className={style.slide}>
 
