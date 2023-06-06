@@ -1,0 +1,93 @@
+.solutionBlock {
+  max-width: 1400px;
+  width: 100%;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+  }
+
+  .solutionContainer {
+    display: flex;
+    justify-content: center;
+    margin: 91px 0 94px;
+    border-radius: inherit;
+    gap: 63px;
+  }
+}
+
+.starBefore {
+  padding-left: 44px;
+  position: relative;
+
+  &:before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FED501;
+    font-size: 28px;
+  }
+}
+
+
+@import "SoulutionsSlider";
+@import "SolutionsDescription";
+
+@media screen and (max-width: 1470px) {
+  .solutionBlock {
+    .solutionContainer {
+      gap: 34px;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .solutionBlock {
+    padding-bottom: 0;
+
+    .solutionContainer {
+      margin-top: 16px;
+    }
+
+    h3 {
+      background: #FFFFFF;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-bottom: 40px;
+      padding: 22px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 832px) {
+  .solutionBlock {
+    .solutionContainer {
+      margin: 16px 0 48px;
+    }
+  }
+}
+
+@media screen and (max-width: 688px) {
+  .solutionBlock {
+    .solutionContainer {
+      flex-direction: column;
+
+      h2, h5 {
+        display: block;
+      }
+
+      h2 {
+        line-height: 24px;
+      }
+
+      h5 {
+        margin: 16px 0;
+      }
+    }
+  }
+}

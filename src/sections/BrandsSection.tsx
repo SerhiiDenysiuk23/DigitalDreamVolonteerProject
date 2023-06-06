@@ -3,20 +3,19 @@ import {ArtistList} from "../components/ArtistList/ArtistList";
 import {useQuery} from "@apollo/client";
 import {getExamplesList} from "../queries/artistQueries";
 import BrandsBlock from "../components/Brands/BrandsBlock";
+import {useWindowWidth} from "../hooks/useWindowWidth";
 
 const BrandsSection = () => {
     const {data, loading} = useQuery(getExamplesList);
-    const [isShowArtists, setIsShowArtists] = useState<boolean>(window.innerWidth > 1198)
 
-    window.onresize = () => {
-        setIsShowArtists(window.innerWidth > 1198)
-    }
+    const winWidth = useWindowWidth()
+    const breakpoint = 1023
 
     return (
         <section>
-            <BrandsBlock isShowArtists={!isShowArtists} artists={data?.artists}/>
+            <BrandsBlock isShowArtists={(winWidth < breakpoint)} artists={data?.artists}/>
             {
-                isShowArtists &&
+                (winWidth > breakpoint) &&
                 <ArtistList type={"authors"} onClick={() => {
                 }} data={data?.artists ?? []}/>
             }

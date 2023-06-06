@@ -2,12 +2,13 @@
     position: relative;
     // order: 2;
     width: 58%;
-    background: #fff;
+    // background: #fff;
+    background-image: url(../../../public/assets/bg.jpg);
     padding: 50px;
     border-radius: 20px;
 
 
-    .slideCount{
+    .slideCount {
 
         // color: transparent;
         display: none;
@@ -17,7 +18,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 
     .paginator {
@@ -45,8 +46,9 @@
             position: absolute;
             bottom: 47%;
             right: -15px;
-            transform: scaleX(-1);
+
             z-index: 2;
+            transition: transform 0.3s ease-in-out;
         }
 
         .prev {
@@ -55,56 +57,21 @@
             bottom: 47%;
             left: -15px;
             z-index: 2;
+            transition: transform 0.3s ease-in-out;
 
         }
 
         .next:hover {
-            width: 15px;
-            height: 25px;
-
-            // animation: rotate-1 .3s;
+            transform: scale(1.5);
         }
 
         .prev:hover {
-            width: 15px;
-            height: 25px;
+            transform: scale(1.5);
         }
-
-        @keyframes rotate-1 {
-            0% {
-                transform: scaleX(-1);
-                transform: translateX(0);
-                // transform: rotate(180deg);
-            }
-
-            50% {
-                transform: scaleX(-1);
-                transform: translateX(5px);
-            }
-
-            100% {
-                transform: scaleX(-1);
-                // transform: rotate(540deg);
-                // right: -15px;
-                transform: translateX(-5px);
-            }
-        }
-
-        @keyframes rotate-2 {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-
     }
 }
 
-@media (max-width:1023px){
+@media (max-width:1023px) {
     .container {
 
         order: 3;
@@ -113,23 +80,11 @@
         padding-bottom: 30px;
         background: transparent;
 
+        .heading {
+            display: none;
+        }
 
-        .slideCount {
-            // color:transparent;
-
-            .slideCount {
-                // color:transparent;
-                display: none;
-            }
-
-            .heading {
-
-                display: none;
-            }
-
-            .heading {
-                display: none;
-            }
+      
 
             .header {
                 display: none;
@@ -138,50 +93,44 @@
 
             .prev {
                 bottom: -40px !important;
-                left: 17px !important;;
+                left: 17px !important;
+                
             }
 
             .next {
-                bottom: -40px !important;;
+                bottom: -40px !important;
+                
                 right: 17px !important;
             }
-        }
+        
 
     }
 }
 
 
 @media(max-width:500px) {
+    .container{
 
-    .slideCount {
-        display: block !important;
-        color: black;
-        position: absolute;
-        font-size: 24px;
-        bottom: -12px;
-        left: 43%;
-    }
-
-    .prev {
-        bottom: -20% !important;
-        left: 90px !important;
-    }
-
-    .next {
-        bottom: -20% !important;
-        right: 100px !important;
-    }
-}
-
-@media(max-width:500px){
-    
-        .slideCount{
-            display: block!important;
+        .slideCount {
+            display: block !important;
             color: black;
             position: absolute;
-            font-size: 24px;
+            font-size: 20px;
             bottom: -12px;
-            left:43%;
+            left: 43%;
         }
+    
+        .prev {
+            bottom: -40px !important;
+            left: 90px !important;
+        }
+    
+        .next {
+            bottom: -40px !important;
+            right: 86px !important;
+        }
+
+    }
+
 
 }

@@ -43,6 +43,31 @@
   }
 }
 
+@media screen and (max-width: 1124px){
+  .sliderSide{
+    padding-right: 120px;
+  }
+
+  .brandSlider {
+    width: 320px;
+    height: 467px;
+
+    &__elem {
+      height: 467px;
+    }
+  }
+
+  .brandSliderPagination {
+    top: 0;
+    right: -120px;
+    li{
+      width: 100px;
+      height: calc( (136px * 100) / 132);
+    }
+  }
+}
+
+
 @media screen and (max-width: 900px) {
   .sliderSide {
     padding-right: 0;

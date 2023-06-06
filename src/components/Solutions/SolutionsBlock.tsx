@@ -1,7 +1,7 @@
 import React, {CSSProperties, FC, useState} from 'react';
 import SolutionsDescription from "./SolutionsDescription";
 import SolutionsSlider from "./SolutionsSlider";
-import styles from './SolutionsSection.module.scss'
+import styles from './styles/SolutionsSection.module.scss'
 import {ArtistList} from "../ArtistList/ArtistList";
 import {Artist} from "../../types/Artist";
 

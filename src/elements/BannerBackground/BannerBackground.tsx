@@ -5,65 +5,141 @@ import { Context } from './Context';
 const BannerBackground = () => {
   const state = useContext(Context);
   const [girlImg, setGirlImg] = useState(state.girlImages);
-  const [landlImg, setLandImg] = useState(state.girlImages);
+  const [landlImg, setLandImg] = useState(state.backgroundPictures);
+  const [icon, setIcon] = useState(state.wreathOfGirl);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-
-  const addOpacity = (n: number): void => {
-    const updatedGirl = [...state.girlImages];
-    const updatedlandscape = [...state.backgroundPictures];
-    updatedGirl[n].opacity = 1;
-    updatedlandscape[n].opacity = 1;
-    setGirlImg(updatedGirl);
-    setLandImg(updatedlandscape);
-  };
-
-  const removeOpacity = (n: number): void => {
-    const updatedGirl = [...state.girlImages];
-    const updatedlandscape = [...state.backgroundPictures];
-    updatedGirl[n].opacity = 0;
-    updatedlandscape[n].opacity = 0;
-    setGirlImg(updatedGirl);
-    setLandImg(updatedlandscape);
-  };
 
   // changes girl & landscape on hover for 1024+ screens
   const handleMouseEnter = (id: number) => {
     if (window.innerWidth >= 1024) {
+      const addOpacity = (n: number): void => {
+        const updatedGirl = [...state.girlImages];
+        const updatedlandscape = [...state.backgroundPictures];
+        updatedGirl[n].opacity = 1;
+        updatedlandscape[n].opacity = 1;
+        setGirlImg(updatedGirl);
+        setLandImg(updatedlandscape);
+      };
       addOpacity(id);
     }
   };
 
   const handleMouseLeave = (id: number) => {
     if (window.innerWidth >= 1024) {
+      const removeOpacity = (n: number): void => {
+        const updatedGirl = [...state.girlImages];
+        const updatedlandscape = [...state.backgroundPictures];
+        updatedGirl[n].opacity = 0;
+        updatedlandscape[n].opacity = 0;
+        setGirlImg(updatedGirl);
+        setLandImg(updatedlandscape);
+      };
       removeOpacity(id);
     }
   };
   // changes girl & landscape on hover for 1024+ screens
 
   useEffect(() => {
-    // Function to handle the interval logic
-    const handleInterval = () => {
-      removeOpacity(currentIndex);
+    const girlDuration = 4000; 
+    const transitionDuration = 2000;
+    let girlIndex = 0;
+    let iconIndex = 0;
+    let isMainGirl = true;
+    let isFirstCircle = true;
 
-      const idx = (prevIndex: number) => {
-        let nextIndex = (prevIndex + 1) % 6;
-        addOpacity(nextIndex);
-        return nextIndex;
-      };
-
-      setCurrentIndex(idx(currentIndex));
+    const transition = () => {
+      if (isMainGirl) {
+        removeOpacity(girlIndex);
+        removeIconScale(iconIndex);
+    
+        setTimeout(() => {
+          let newGirlIndex;
+          do {
+            newGirlIndex = Math.floor(Math.random() * 5) + 1;
+          } while (newGirlIndex === girlIndex);
+    
+          girlIndex = newGirlIndex;
+          addOpacity(girlIndex);
+    
+          if (girlIndex === 1) {
+            iconIndex = 0;
+            addIconScale(iconIndex);
+          } else if (girlIndex > 1) {
+            iconIndex = (girlIndex - 1) % state.wreathOfGirl.length;
+            if (iconIndex !== 0) {
+              addIconScale(iconIndex);
+            }
+          }
+    
+          if (girlIndex === 0 && !isFirstCircle) {
+            removeIconScale(iconIndex);
+          }
+    
+          setTimeout(transition, transitionDuration);
+        }, transitionDuration);
+      } else {
+        removeOpacity(girlIndex);
+        removeIconScale(iconIndex);
+    
+        setTimeout(() => {
+          girlIndex = (girlIndex + 1) % state.girlImages.length;
+          addOpacity(girlIndex);
+          iconIndex = (girlIndex + state.girlImages.length - 1) % state.wreathOfGirl.length;
+          addIconScale(iconIndex);
+          isMainGirl = true;
+    
+          if (girlIndex === 0) {
+            isFirstCircle = false;
+          }
+    
+          setTimeout(transition, girlDuration);
+        }, girlDuration - transitionDuration);
+      }
+    };
+    const addOpacity = (index: number) => {
+      const updatedGirl = [...state.girlImages];
+      const updatedlandscape = [...state.backgroundPictures];
+      updatedGirl[index].opacity = 1;
+      updatedlandscape[index].opacity = 1;
+      setGirlImg(updatedGirl);
+      setLandImg(updatedlandscape);
     };
 
-    // Check if the screen width is less than or equal to 1024 (mobile and tablet screens)
-    if (window.innerWidth <= 1024) {
-      const interval = setInterval(handleInterval, 7000);
+    const removeOpacity = (index: number) => {
+      const updatedGirl = [...state.girlImages];
+      const updatedlandscape = [...state.backgroundPictures];
+      updatedGirl[index].opacity = 0;
+      updatedlandscape[index].opacity = 0;
+      setGirlImg(updatedGirl);
+      setLandImg(updatedlandscape);
+    };
 
-      // Clear the interval when the component unmounts
-      return () => {
-        clearInterval(interval);
-      };
+    const addIconScale = (index: number) => {
+      const updatedIcon = [...state.wreathOfGirl];
+      updatedIcon.forEach((icon) => {
+        icon.scale = 1;
+      });
+      if (index >= 0 && index < state.wreathOfGirl.length) {
+        updatedIcon[index].scale = 1.2;
+      }
+      setIcon(updatedIcon);
+      console.log(index);
+    };
+
+    const removeIconScale = (index: number) => {
+      const updatedIcon = [...state.wreathOfGirl];
+      updatedIcon[index].scale = 1;
+      setIcon(updatedIcon);
+    };
+
+    if (window.innerWidth < 1024) {
+      setTimeout(transition, girlDuration);
     }
-  }, [currentIndex]);
+
+    return () => {
+      // Cleanup logic if needed
+    };
+  }, []);
 
   return (
     <div className={style.bannerBackground}>
@@ -95,8 +171,9 @@ const BannerBackground = () => {
               href={item.href}
               onMouseEnter={() => handleMouseEnter(item.id)}
               onMouseLeave={() => handleMouseLeave(item.id)}
-              // onMouseEnter={() => addOpacity(item.id)}
-              // onMouseLeave={() => removeOpacity(item.id)}
+              style={{
+                scale: `${item.scale}`,
+              }}
               className={`${style.icons} ${style[item.className]}`}>
               <img src={item.src} alt={item.className} />
             </a>
