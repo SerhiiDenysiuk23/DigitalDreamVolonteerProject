@@ -1,5 +1,6 @@
 import style from './SliderItem.module.scss'
 import React from 'react';
+import { useState } from 'react';
 import Popup from '../../../elements/Popup/Popup';
 import { getExampleInfo } from "../../../queries/artistQueries";
 import { useQuery } from '@apollo/client';
@@ -12,6 +13,8 @@ type Art = {
 
 
 const SliderItem: React.FC<Art> = ({handleClick: onClick, image, description}) => {
+
+
 
     const q = useQuery(getExampleInfo)
     // console.warn(q.data?.artist)
@@ -28,7 +31,7 @@ const SliderItem: React.FC<Art> = ({handleClick: onClick, image, description}) =
 
     // }
     return (
-        <div className={style.test}>
+        <div className={style.test} >
             <div className={style.container} onClick={onClick} >
                 {/* <div  > */}
                     <img className={style.art_image} src={image} alt="" />

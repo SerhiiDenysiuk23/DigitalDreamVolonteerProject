@@ -87,7 +87,7 @@ const MiddleSlider = (id: MiddleSliderProps) => {
 
     const settings: Settings = {
         dots: true,
-        swipe: false,
+        swipe: true,
         arrows: true,
         infinite: true,
         speed: 500,
@@ -130,6 +130,22 @@ const MiddleSlider = (id: MiddleSliderProps) => {
 
     console.log(a.data?.artist.artworks[0].assetUrl)
 
+    
+    // const [hasScrolled, setHasScrolled] = useState(false);
+    // const handleSlideClick = () => {
+    //     if (!hasScrolled) {
+    //       setShowModal(true);
+    //     }
+    //   };
+    // const handleMouseDown = () => {
+    //     setHasScrolled(false);
+    //   };
+    
+    //   const handleScroll = () => {
+    //     setHasScrolled(true);
+    //   };
+
+
     return (
         <div className={`${style.container} middle-slider-container`}>
             <div className={style.heading}>
@@ -143,7 +159,7 @@ const MiddleSlider = (id: MiddleSliderProps) => {
 
                     {
                         sliderItems.arts.map(item => (
-                            <SliderItem key={item.img} image={item.img} description={item.description} handleClick={handleModal} />
+                           <SliderItem key={item.img} image={item.img} description={item.description} handleClick={handleModal} />
                         ))
                     }
 
