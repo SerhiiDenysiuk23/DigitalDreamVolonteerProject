@@ -2,7 +2,7 @@ import React from "react";
 import Banner from "./sections/Banner/Banner";
 import DonateSection from "./sections/DonateSection/DonateSection";
 import DonateSectionSecond from "./sections/DonateSectionSecond/DonateSectionSecond";
-import { MusicSection } from "./sections/MusicSection/MusicSection";
+import ArtistsSection from "./sections/ArtistsSection/ArtistsSection";
 import PlaceSection from "./sections/PlaceSection";
 import SolutionsSection from "./sections/SolutionsSection";
 import BrandsSection from "./sections/BrandsSection";
@@ -12,13 +12,13 @@ function App() {
   return (
     <div className="app">
       <Banner />
-      <MusicSection />
+      <ArtistsSection kind='Illustrator'/>
       <PlaceSection />
       <BrandsSection />
       <DonateSection />
-      <MusicSection />
+      <ArtistsSection kind='Painter' />
       <SolutionsSection />
-      <MusicSection />
+      <ArtistsSection />
       <DonateSectionSecond />
       <YouTubeVideos />
     </div>

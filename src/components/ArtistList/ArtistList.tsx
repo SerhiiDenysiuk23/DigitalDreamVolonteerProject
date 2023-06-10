@@ -6,7 +6,7 @@ interface ExamplesListProps {
   onClick: (id: string ) => void,
   data: {
     id?: string,
-    picture?: string,
+    imageUrl?: string,
     name?: string,
     description?: string,
   }[]
@@ -14,6 +14,7 @@ interface ExamplesListProps {
 
 export const ArtistList = ({ type, onClick, data }: ExamplesListProps) => {
 const [activeAuthor, setActiveAuthor] = React.useState<number>(0);
+
   return (
     <div className={styles.block}>
       <div className={styles.overlay}></div>
@@ -28,7 +29,7 @@ const [activeAuthor, setActiveAuthor] = React.useState<number>(0);
             }}
           >
             <div className={`${styles.pictureWrapper} ${styles[type]}`}>
-              <img src={item.picture} alt={`${item.name}`} loading="lazy" />
+              <img src={item.imageUrl} alt={`${item.name}`} loading="lazy" />
             </div>
             <div style={{ whiteSpace: "nowrap", overflow: "hidden" }}>
               <h5 className={`${styles.title} ${styles[type]}`}>{item.name}</h5>
