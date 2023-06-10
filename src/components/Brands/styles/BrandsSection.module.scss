@@ -2,7 +2,8 @@
   max-width: 1400px;
   width: 100%;
   height: fit-content;
-
+  min-height: 835px;
+  
   img {
     object-fit: cover;
     height: 100%;
@@ -33,11 +34,11 @@
 @media screen and (max-width: 1023px) {
   .brandBlock {
     padding-bottom: 0;
-    .brandContainer{
+    .brandContainer {
       margin-top: 16px;
     }
-    h3{
-      background: #FFFFFF;
+    h3 {
+      background: #ffffff;
       text-align: center;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
@@ -47,7 +48,7 @@
   }
 }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 640px) {
   .brandBlock {
     .brandContainer {
       gap: initial;
