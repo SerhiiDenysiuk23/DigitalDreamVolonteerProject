@@ -4,7 +4,7 @@ import {useQuery} from "@apollo/client";
 import {getCompanies} from "../../queries/companyQueries";
 import {CompanyKind} from "../../types/Company";
 
-const BrandList: FC<{handleClick(id: string): void}> = ({handleClick}) => {
+const BrandList: FC<{handleClick(id: string): void, height?: number}> = ({handleClick, height}) => {
     const {data, loading} = useQuery(getCompanies, {variables:{data:{kinds: "Brand"} as CompanyKind}});
 
     const defaultActiveId = data?.companies[0]?.id ?? null;
@@ -25,7 +25,7 @@ const BrandList: FC<{handleClick(id: string): void}> = ({handleClick}) => {
         return <div>Loading...</div>
 
     return (
-        <ArtistList type={"authors"} onClick={setActiveId} data={data?.companies ?? []}/>
+        <ArtistList type={"authors"} onClick={setActiveId} data={data?.companies ?? []} height={height}/>
     );
 };
 

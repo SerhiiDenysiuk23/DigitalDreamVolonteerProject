@@ -6,7 +6,7 @@ import Slider, { InnerSlider, Settings } from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useQuery } from "@apollo/client";
-import { getExampleInfo } from "../../queries/artistQueries";
+import { getArtistInfo } from "../../queries/artistQueries";
 import Popup from "../../elements/Popup/Popup";
 
 
@@ -124,7 +124,7 @@ const MiddleSlider = (id: MiddleSliderProps) => {
         ]
     };
 
-    const a = useQuery(getExampleInfo, {
+    const a = useQuery(getArtistInfo, {
         variables: { artistId: id },
     });
 
