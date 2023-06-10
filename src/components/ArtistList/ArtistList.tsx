@@ -1,22 +1,39 @@
 import styles from "./ArtistList.module.scss";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface ExamplesListProps {
   type: "authors" | "musicians";
-  onClick: (id: string ) => void,
+  onClick: (id: string) => void,
   data: {
     id?: string,
     imageUrl?: string,
     name?: string,
     description?: string,
   }[]
+  height?: number
 }
 
-export const ArtistList = ({ type, onClick, data }: ExamplesListProps) => {
-const [activeAuthor, setActiveAuthor] = React.useState<number>(0);
+export const ArtistList = ({ type, onClick, data, height }: ExamplesListProps) => {
+  const [activeAuthor, setActiveAuthor] = React.useState<number>(0);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [windowWidth]);
+
+  const blockHeight = windowWidth > 1024 ? (height ?? 835) : 'fit-content'
+  
   return (
-    <div className={styles.block}>
+    <div className={styles.block} style={{ height: blockHeight }}>
       <div className={styles.overlay}></div>
       <ul className={styles.list}>
         {data?.map((item, index) => (
