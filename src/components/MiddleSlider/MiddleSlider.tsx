@@ -1,11 +1,13 @@
 import SliderItem from "./SliderItem/SliderItem"
 import style from './MiddleSlider.module.scss'
+import React from "react"
 import { useState, useEffect, useRef, useCallback, RefObject } from "react"
 import Slider, { InnerSlider, Settings } from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useQuery } from "@apollo/client";
-import { getExampleInfo } from "../../queries/artistQueries";
+import { getArtistInfo } from "../../queries/artistQueries";
+import Popup from "../../elements/Popup/Popup";
 
 
 let sliderItems = {
@@ -35,7 +37,7 @@ let sliderItems = {
         { img: 'https://picsum.photos/1100', description: "Society that" },
         { img: 'https://picsum.photos/1200', description: "Society that" },
         { img: 'https://picsum.photos/1300', description: "Society that" },
-        { img: 'https://picsum.photos/1400', description: "Society that" },
+
 
         // {img: '/assets/MiddleSliderImages/arts/forSlider.png', description: "Society that"},
         // {img: '/assets/MiddleSliderImages/arts/img-2.png', description: "Society that"},
@@ -46,19 +48,25 @@ let sliderItems = {
     ]
 }
 
-interface MiddleSliderProps{
+interface MiddleSliderProps {
     id: string
 }
 
-const MiddleSlider = (id : MiddleSliderProps) => {
-
+const MiddleSlider = (id: MiddleSliderProps) => {
+    const [showModal, setShowModal] = React.useState<boolean>(false);
+    const handleModal = () => setShowModal(prev => !prev);
+    let arts = {
+        name: '',
+        description: '',
+        link: ''
+    }
 
 
     function SampleNextArrow(props: any) {
         const { onClick } = props;
         return (
 
-            <img src="/assets/MiddleSliderImages/arts/Arrow.png" alt="" onClick={onClick} className={`${style.prevnext}, ${style.next}`} />
+            <img src="/assets/MiddleSliderImages/arts/Arrow-1.png" alt="" onClick={onClick} className={`${style.prevnext}, ${style.next}`} />
         );
     }
 
@@ -70,9 +78,17 @@ const MiddleSlider = (id : MiddleSliderProps) => {
         );
     }
 
+    const [activeSlide, setActiveSlide] = React.useState<number>(0);
+
+
+    const [slideCount, setSlideCount] = React.useState<number>(0);
+
+
+
     const settings: Settings = {
         dots: true,
-        arrows: true, 
+        swipe: false,
+        arrows: true,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
@@ -84,6 +100,7 @@ const MiddleSlider = (id : MiddleSliderProps) => {
             {
                 breakpoint: 1024,
                 settings: {
+                    swipe: true,
                     speed: 500,
                     slidesToShow: 2,
                     rows: 2,
@@ -93,38 +110,49 @@ const MiddleSlider = (id : MiddleSliderProps) => {
             {
                 breakpoint: 500,
                 settings: {
-                    dots:false,
+                    centerMode: true,
+                    centerPadding: "25px",
+                    swipe: true,
+                    dots: false,
                     speed: 500,
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     rows: 1,
                     slidesToScroll: 1,
+                    afterChange: current => setActiveSlide(current)
                 }
             },
         ]
     };
 
-    const a = useQuery(getExampleInfo, {
+    const a = useQuery(getArtistInfo, {
         variables: { artistId: id },
-      });
+    });
 
-      console.log(a.data?.artist.artworks[0].assetUrl)
+    console.log(a.data?.artist.artworks[0].assetUrl)
 
     return (
         <div className={`${style.container} middle-slider-container`}>
             <div className={style.heading}>
-                <h3 className={style.header}>Do you know about Ukrainian ART?</h3>
+                <h3 className={style.header}>Do you know about Ukrainian <span>ART</span>?</h3>
             </div>
             <div className={style.slide}>
+
+                <div className={style.slideCount}> {activeSlide + 1} / {sliderItems.arts.length}</div>
+
                 <Slider className={`${style.slider} middle-slider `} {...settings}>
+
                     {
                         sliderItems.arts.map(item => (
-                            <SliderItem key={item.img} image={item.img} description={item.description} />
+                            <SliderItem key={item.img} image={item.img} description={item.description} handleClick={handleModal} />
                         ))
                     }
 
+
                 </Slider>
 
+
             </div>
+            {showModal && <Popup data={arts} handleModal={handleModal} />}
         </div>
     )
 }

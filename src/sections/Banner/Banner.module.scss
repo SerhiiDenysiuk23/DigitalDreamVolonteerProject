@@ -5,8 +5,7 @@
   flex-direction: column;
   justify-content: flex-end;
 
-  &::after {
-    content: '';
+  &__gradient {
     width: 100%;
     height: 116px;
     background: linear-gradient(180deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
@@ -15,6 +14,11 @@
     left: 0;
     pointer-events: none;
     z-index: 3;
+    transition: top 0.3s ease-in-out;
+    -webkit-transition: top 0.3s ease-in-out;
+    -moz-transition: top 0.3s ease-in-out;
+    -ms-transition: top 0.3s ease-in-out;
+    -o-transition: top 0.3s ease-in-out;
   }
 
   &__header {
@@ -48,7 +52,7 @@
     left: 50%;
     width: 100%;
     height: 100px;
-    max-width: 1900px;
+    max-width: 1920px;
     transition: top 0.3s ease-in-out;
     -webkit-transition: top 0.3s ease-in-out;
     -moz-transition: top 0.3s ease-in-out;

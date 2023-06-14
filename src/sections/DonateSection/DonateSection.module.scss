@@ -7,6 +7,14 @@
 
 @media (max-width:680px) {
     .donateSection {
-        min-height: 400px;
+        min-height: 535px;
     }
 }
+
+
+@media (max-width:500px) {
+    .donateSection {
+        height: 560px;
+    }
+}
+

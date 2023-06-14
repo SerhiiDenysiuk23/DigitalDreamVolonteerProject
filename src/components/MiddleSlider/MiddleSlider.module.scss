@@ -1,16 +1,24 @@
 .container {
+    position: relative;
     // order: 2;
-    width:58%;
-    background: #fff;
+    width: 58%;
+    // background: #fff;
+    background-image: url(../../../public/assets/bg.jpg);
     padding: 50px;
     border-radius: 20px;
 
+
+    .slideCount {
+
+        // color: transparent;
+        display: none;
+    }
 
     .heading {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 
     .paginator {
@@ -20,7 +28,7 @@
     }
 
     .slide {
-        
+
         width: 100%;
 
     }
@@ -29,65 +37,100 @@
         margin: 0 -10px;
         position: relative;
 
-        .prevnext{
+        .prevnext {
             cursor: pointer;
         }
 
-        .next{
+        .next {
+            cursor: pointer;
             position: absolute;
             bottom: 47%;
-            right:-15px;
-            transform: scaleX(-1);
+            right: -15px;
+
             z-index: 2;
+            transition: transform 0.3s ease-in-out;
         }
-        .prev{
+
+        .prev {
+            cursor: pointer;
             position: absolute;
             bottom: 47%;
-            left:-15px;
+            left: -15px;
             z-index: 2;
+            transition: transform 0.3s ease-in-out;
 
         }
 
+        .next:hover {
+            transform: scale(1.5);
+        }
 
+        .prev:hover {
+            transform: scale(1.5);
+        }
     }
 }
 
-@media (max-width:1024px){
-    .container{
+@media (max-width:1023px) {
+    .container {
+
         order: 3;
         width: 100%;
         padding: 0 10px;
         padding-bottom: 30px;
         background: transparent;
-        .heading{
+
+        .heading {
             display: none;
         }
 
-        .header{
-            display: none;
+      
 
-        }
-        .prev{
-            bottom: -40px!important;
-            left: 17px !important;;
-        }
-        .next{
-            bottom: -40px !important;;
-            right: 17px!important;
-        }
+            .header {
+                display: none;
+
+            }
+
+            .prev {
+                bottom: -40px !important;
+                left: 17px !important;
+                
+            }
+
+            .next {
+                bottom: -40px !important;
+                
+                right: 17px !important;
+            }
+        
+
     }
 }
-@media(max-width:500px){
-    
 
 
-        .prev{
-            bottom: -20%!important;
-            left: 90px!important;
-        }
-        .next{
-            bottom: -20%!important;
-            right: 100px!important;
+@media(max-width:500px) {
+    .container{
+
+        .slideCount {
+            display: block !important;
+            color: black;
+            position: absolute;
+            font-size: 20px;
+            bottom: -12px;
+            left: 43%;
         }
     
+        .prev {
+            bottom: -40px !important;
+            left: 90px !important;
+        }
+    
+        .next {
+            bottom: -40px !important;
+            right: 86px !important;
+        }
+
+    }
+
+
 }

@@ -8,6 +8,7 @@
   overflow: hidden;
   position: relative;
   background-image: url(../../../public/assets/bg.jpg);
+  min-height: 835px;
 }
 
 .overlay {
@@ -98,6 +99,8 @@
     position: relative;
     order: 2;
     border-radius: 0;
+    min-height: 227px;
+    margin-bottom: 20px;
   }
 
   .list {
@@ -105,12 +108,12 @@
     background-color: transparent;
     overflow-x: scroll;
     display: flex;
-    gap: 24px;
+    gap: 3vw;
     padding-bottom: 24px;
 
     
     & li {
-      width: 100px;
+      width: 13vw;
       padding: 0;
       display: block;
       margin: 0;
@@ -138,8 +141,8 @@
 
   .pictureWrapper {
     border-radius: 10px;
-    width: 100px;
-    height: 100px;
+    width: 13vw;
+    height: 13vw;
     margin-bottom: 16px;
 
     &.musicians {
@@ -161,19 +164,21 @@
 }
 
 @media screen and (max-width: 767px) {
+  .block {
+    min-height: 0;  }
   .pictureWrapper {
-    width: 66px;
-    height: 66px;
-    min-width: 66px;
-    min-height: 66px;
+    width: 17vw;
+    height: 17vw;
+    min-width: 17vw;
+    min-height: 17vw;
     margin-bottom: 0;
   }
 
   .list {
-    padding-bottom: 14px;
-    gap: 14px;
+    padding-bottom: 10px;
+    gap: 4vw;
     & li {
-      width: 66px;
+      width: 17vw;
     }
   }
 

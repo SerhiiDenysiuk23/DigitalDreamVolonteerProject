@@ -2,34 +2,27 @@ import styles from "./InfoBlock.module.scss";
 import React from 'react'
 import { BsWikipedia } from "react-icons/bs";
 import { useQuery } from "@apollo/client";
-import { getExampleInfo } from "../../queries/artistQueries";
+import { getArtistInfo } from "../../queries/artistQueries";
 import Popup from "../../elements/Popup/Popup";
+import Loader from "../Loader/Loader";
 interface InfoBlockProps {
   type: "author" | "musician" | "band";
-  id: string
+  id: string,
+  loading: boolean
 }
 
-let formatParagraph: (text: string) => string[];
-
-formatParagraph = (text) => {
-  const fragments = text.split(".").map((element, index, array) => {
-    if (index % 2 === 0) {
-      return `${element}.${array[index + 1] || ""}`;
-    } else return "";
-  });
-  console.log(fragments);
-
-  return fragments.filter((el) => el !== "" && el !== ".");
-};
-
-export const InfoBlock = ({ type, id }: InfoBlockProps) => {
-  const q = useQuery(getExampleInfo, {
+export const InfoBlock = ({ type, id, loading }: InfoBlockProps) => {
+  const { data } = useQuery(getArtistInfo, {
     variables: { artistId: id },
   });
- 
+
   const [showModal, setShowModal] = React.useState<boolean>(false);
 
   const handleModal = () => setShowModal(prev => !prev);
+
+  if (loading) {
+    return <Loader />
+  }
 
   return (
     <>
@@ -37,27 +30,25 @@ export const InfoBlock = ({ type, id }: InfoBlockProps) => {
         <div className={styles.block}>
           <div className={`${styles.pictureWrapper} ${styles[type]}`}>
             <img
-              alt={`${q.data?.artist.name || ''}`}
-              // src={picture}
+              alt={`${data?.artist.name || ''}`}
+              src={data?.artist.imageUrl || ''}
               className={styles.picture}
               loading="lazy"
             />
           </div>
           <div style={{ width: '100%' }}>
-            <h4 className={`${styles.title} ${styles[type]}`}>{q.data?.artist.name || ''}</h4>
-            {/* {subtitle && <h5 className={styles.subtitle}>{subtitle}</h5>} */}
+            <h4 className={`${styles.title} ${styles[type]}`}>{data?.artist.name || ''}</h4>
             <div className={styles.descrWrapper}>
-                <p className={`p-small ${styles.paragraph}`}>{q.data?.artist.description}</p>
-              {/* <span className={styles.moreButton}>...<span>More</span></span> */}
+              <p className={`p-18-hind ${styles.paragraph}`}>{data?.artist.description}</p>
             </div>
 
           </div>
           <div className={styles.socialLinks}>
-            {q.data?.artist.links.map((l: string) => <a key={l} href={l}><BsWikipedia size={30} /></a>)}
+            {data?.artist.links.map((link: { id: string, url: string }) => <a key={link.id} href={link.url}><BsWikipedia size={30} /></a>)}
           </div>
         </div>
       </div>
-      {showModal && <Popup data={q.data.artist} handleModal={handleModal} />}
+      {showModal && <Popup data={data.artist} handleModal={handleModal} />}
     </>
   );
 };

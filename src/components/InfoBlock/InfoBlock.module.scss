@@ -17,7 +17,6 @@
   width: max-content;
   width: 15vw;
   border-radius: 20px;
-  // order: 2;
 }
 
 .descrWrapper {
@@ -82,7 +81,7 @@
   font-size: 14px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 20;
+  -webkit-line-clamp: 15;
   overflow: hidden;
   white-space: pre-wrap;
 }
@@ -149,18 +148,18 @@
 
 @media screen and (max-width: 767px) {
   .descrWrapper {
-    height: 36px;
+    height: 50px;
   }
 
   .block {
-    padding: 10px 38px 10px 10px;
+    padding: 5px 38px 5px 5px;
   }
 
   .pictureWrapper {
-    width: 74px;
-    height: 74px;
-    min-width: 74px;
-    min-height: 74px;
+    width: 94px;
+    height: 94px;
+    min-width: 94px;
+    min-height: 94px;
   }
 
   .title {
@@ -175,8 +174,8 @@
   }
 
   .paragraph{
-    -webkit-line-clamp: 2;
-
+    -webkit-line-clamp: 3;
+    line-height: 1;
   }
 }
 
@@ -205,28 +204,5 @@
     position: absolute;
     right: 16px;
     bottom: 16px;
-  }
-}
-
-.moreButton {
-  position: absolute;
-  bottom: -2px;
-  right: 0;
-  display: block;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    85deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 26%
-  );
-  padding-left: 15px;
-  font-family: "Outfit";
-  font-weight: 400;
-  font-size: 14px;
-
-  & span {
-    text-decoration: underline;
-    color: #015bbb;
-    cursor: pointer;
   }
 }

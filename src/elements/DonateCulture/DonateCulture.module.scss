@@ -82,6 +82,10 @@
     }
 }
 
+.locationButton {
+    width: 100%;
+}
+
 
 @media (max-width:1700px) {
     .donateCulture {
@@ -144,7 +148,6 @@
     }
 
     .locationCulture {
-        width: 100%;
         height: 18%;
     }
 }
@@ -231,17 +234,13 @@
         width: 180px;
     }
 
-
     .locationCulture {
-        width: 110%;
-        margin: 0 0 0 40px;
         height: 17%;
 
         & p {
             font-size: 12px;
         }
     }
-
 
     .tarasShevchenkoPhone {
         display: flex;
@@ -258,16 +257,32 @@
     }
 }
 
-@media (max-width:500px) {
-    .locationCulture {
-        width: 130%;
-        margin: 0 0 0 120px;
+@media (max-width:600px) {
+    .locationButton {
+        width: 110%;
     }
 }
 
-@media (max-width:400px) {
-    .locationCulture {
-        width: 165%;
-        margin: 0 0 0 220px;
+@media (max-width:475px) {
+    .locationButton {
+        width: 135%;
+    }
+}
+
+@media (max-width:450px) {
+    .locationButton {
+        width: 153%;
+    }
+}
+
+@media (max-width: 400px) {
+    .locationButton {
+        width: 167%;
+    }
+}
+
+@media (max-width: 375px) {
+    .locationButton {
+        width: 220%;
     }
 }

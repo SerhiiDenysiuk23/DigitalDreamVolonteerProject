@@ -1,27 +1,43 @@
-import React, {useEffect, useState} from 'react';
-import {ArtistList} from "../components/ArtistList/ArtistList";
-import {useQuery} from "@apollo/client";
-import {getExamplesList} from "../queries/artistQueries";
+import React, { useEffect, useState } from 'react';
+import { ArtistList } from "../components/ArtistList/ArtistList";
+import { useQuery } from "@apollo/client";
 import BrandsBlock from "../components/Brands/BrandsBlock";
+import { useWindowWidth } from "../hooks/useWindowWidth";
+import { getCompanies } from "../queries/companyQueries";
+import { CompanyKind } from "../types/Company";
+import BrandList from "../components/Brands/BrandList";
 
 const BrandsSection = () => {
-    const {data, loading} = useQuery(getExamplesList);
-    const [isShowArtists, setIsShowArtists] = useState<boolean>(window.innerWidth > 1198)
 
-    window.onresize = () => {
-        setIsShowArtists(window.innerWidth > 1198)
+    const winWidth = useWindowWidth()
+    const breakpoint = 1023
+
+    const [activeId, setActiveId] = useState<string | null>(null)
+
+    const [brandBlockHeight, setBrandBlockHeight] = useState(825)
+
+    const handleCompanyChange = (id: string) => {
+        console.warn(id)
+        setActiveId(id)
+    }
+
+    const handleBlockHeightChange = (height: number) => {
+        setBrandBlockHeight(height)
     }
 
     return (
         <section>
-            <BrandsBlock isShowArtists={!isShowArtists} artists={data?.artists}/>
+            <BrandsBlock isShowArtists={(winWidth < breakpoint)}
+                activeId={activeId ?? ""}
+                handleCompanyChange={handleCompanyChange} setHeight={handleBlockHeightChange} />
             {
-                isShowArtists &&
-                <ArtistList type={"authors"} onClick={() => {
-                }} data={data?.artists ?? []}/>
+                (winWidth > breakpoint) &&
+                <BrandList handleClick={handleCompanyChange} height={brandBlockHeight} />
+                // <ArtistList type={"authors"} onClick={setActiveId} data={data?.companies ?? []}/>
             }
         </section>
     );
-};
+}
+    ;
 
 export default BrandsSection;

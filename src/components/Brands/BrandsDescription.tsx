@@ -1,30 +1,58 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import styles from "./styles/BrandsSection.module.scss"
-import {FaFacebookSquare, FaInstagramSquare} from "react-icons/fa";
+import {Company, Link} from "../../types/Company";
 
-const BrandsDescription: FC<{achievement: string}> = ({achievement}) => {
-    const description = "™ byMe – це команда, яка цінує дружбу й розвиток; це покупці, які цінують щирість і надійність; це вклад кожного з нас у країну нашої мрії. Тому сьогодні byMe – місце нашого розвитку і вашого натхнення. Місце, де речі мають значення. Бо кожна капсульна колекція несе свою думку до людей."
+interface LinkWithIcon extends Link {
+    iconUrl?: string
+}
+
+const BrandsDescription: FC<{ company: Company }> = ({company}) => {
+    const [links, setLinks] = useState<LinkWithIcon[]>([])
+
     const address = "А серце – byMe у шоурумі. Шукай нас тут:\n" +
         `м. Київ, вул. Хрещатик 46, 2 поверх.`
-    const title = "TM byMe"
-    const slogan = "З А К О Х У В А Т И"
-    const links = ["","","byme.ua"]
 
-    const icons = [
-        "./assets/icons/facebook.png",
-        "./assets/icons/instagram.png",
-    ]
+
+    useEffect(() => {
+        if (!company.links) {
+            setLinks([])
+            return
+        }
+
+        const linksWithIcon: LinkWithIcon[] = company.links.map((item) => {
+            switch (item.kind) {
+                case "Facebook":
+                    return {...item, iconUrl: "./assets/icons/facebook.png"};
+                case "Instagram":
+                    return {...item, iconUrl: "./assets/icons/instagram.png"};
+                case "Telegram":
+                    return {...item, iconUrl: "./assets/icons/telegram.png"};
+                case "WhatsApp":
+                    return {...item, iconUrl: "./assets/icons/whatsapp.png"};
+                case "Site":
+                    return {...item}
+            }
+        })
+        setLinks(linksWithIcon.sort((a, b) => {
+            if (a.kind === "Site") return 1;
+            if (b.kind === "Site") return -1;
+            return 0;
+        }))
+    }, [company])
 
     return (
         <div className={styles.brandDescription}>
-            <h2>{title}</h2>
-            <div className={styles.slogan}>{slogan}</div>
-            <p className={"p-18-hind " + styles.description}>{description}</p>
+            <h2>{company.name}</h2>
+            <p className={"p-18-hind " + styles.description}>{company.description}</p>
             <div className={styles.address}>{address}</div>
             <div className={styles.links}>
-                <a className={styles.facebook} href={links[0]}><img src={icons[0]} alt="facebook"/></a>
-                <a className={styles.instagram} href={links[1]}><img src={icons[1]} alt="instagram"/></a>
-                <a href={links[2]}>{links[2]}</a>
+                {
+                    links.map((item) =>
+                        item.kind == "Site"
+                            ? <a target="_blank" key={item.url} href={item.url}>{item.url.split("//")[1].split("/")[0]}</a>
+                            : <a target="_blank" key={item.url} href={item.url}><img src={item?.iconUrl} alt={item.kind}/></a>
+                    )
+                }
             </div>
         </div>
     );

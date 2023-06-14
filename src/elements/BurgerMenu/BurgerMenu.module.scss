@@ -135,6 +135,7 @@
 
   .leftHalf {
     width: 50%;
+    overflow: auto;
     background-color: #151515;
     transform: translateX(-100%);
     display: flex;
