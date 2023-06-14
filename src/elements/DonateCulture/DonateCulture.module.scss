@@ -1,14 +1,17 @@
-.donateCulture {
+@mixin display {
     display: flex;
     flex-direction: column;
+}
+
+.donateCulture {
+    @include display;
     justify-content: space-between;
     width: 25%;
 }
 
 
 .infoCulture {
-    display: flex;
-    flex-direction: column;
+    @include display;
     justify-content: space-evenly;
     height: 80%;
     width: 100%;
@@ -23,8 +26,7 @@
 }
 
 .headerCulture {
-    display: flex;
-    flex-direction: column;
+    @include display;
     justify-content: space-between;
 
     height: 40%;
@@ -35,9 +37,8 @@
 }
 
 .descriptionCulture {
-    display: flex;
+    @include display;
     justify-content: space-evenly;
-    flex-direction: column;
 
     height: 50%;
 
@@ -48,8 +49,7 @@
 
 
 .locationCulture {
-    display: flex;
-    flex-direction: column;
+    @include display;
     justify-content: space-around;
 
     height: 20%;
@@ -137,9 +137,8 @@
     }
 
     .descriptionCulture {
-        display: flex;
+        @include display;
         justify-content: space-evenly;
-        flex-direction: column;
         height: 60%;
 
         & p {
@@ -175,9 +174,8 @@
     }
 
     .descriptionCulture {
-        display: flex;
+        @include display;
         justify-content: space-around;
-        flex-direction: column;
         height: 55%;
 
         & p {
