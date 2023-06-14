@@ -123,7 +123,7 @@ const BannerBackground = () => {
         updatedIcon[index].scale = 1.2;
       }
       setIcon(updatedIcon);
-      console.log(index);
+      // console.log(index);
     };
 
     const removeIconScale = (index: number) => {
@@ -173,6 +173,7 @@ const BannerBackground = () => {
               onMouseLeave={() => handleMouseLeave(item.id)}
               style={{
                 scale: `${item.scale}`,
+                filter: item.scale === 1.2 ? 'drop-shadow(1px 1px 3px #ddd)' : ''
               }}
               className={`${style.icons} ${style[item.className]}`}>
               <img src={item.src} alt={item.className} />
