@@ -10,10 +10,11 @@ export const MusicSection = () => {
   const { data, loading } = useQuery(getExamplesList, {
     variables: {
       data: {
-        kinds: "Musician"
+        kinds: "Painter"
       }
     }
   });
+  console.warn(data);
   const defaultActiveId = data?.artists[0]?.id ?? null;
   const [activeId, setActiveId] = useState(defaultActiveId);
 
@@ -24,14 +25,13 @@ export const MusicSection = () => {
 
   if (loading)
     return <div>Loading...</div>
-    
   return (
     <section className={styles.section}>
       <div className={styles.title}>
         <h3>Do you know about ukrainian <span>MUSIC</span>?</h3>
       </div>
       <InfoBlock type="musician" id={activeId} />
-      <MiddleSlider id={activeId} />
+      <MiddleSlider id={activeId ?? ""} />
       <ArtistList
         type={"musicians"}
         onClick={setActiveId}

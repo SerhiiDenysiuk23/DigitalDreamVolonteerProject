@@ -4,6 +4,7 @@ export const getExamplesList = gql`
 query Artists($data: AllArtistsInput!) {
   artists(data: $data) {
       id
+      name
   }
 }
 
@@ -17,6 +18,16 @@ query Artists($artistId: ID!) {
     description
     links
 
+    artworks {
+      assetUrl
+    }
+    
+  }
+}
+`;
+export const getArts = gql`
+query Artists($artistId: ID!) {
+  artist(artistId: $artistId) {
     artworks {
       assetUrl
     }

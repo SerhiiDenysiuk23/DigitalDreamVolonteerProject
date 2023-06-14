@@ -6,53 +6,18 @@ import Slider, { InnerSlider, Settings } from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useQuery } from "@apollo/client";
-import { getExampleInfo } from "../../queries/artistQueries";
+import { getArts, getExampleInfo } from "../../queries/artistQueries";
 import Popup from "../../elements/Popup/Popup";
+import { Artwork } from "../../types/Artwork"
 
 
-let sliderItems = {
-    arts: [
-        { img: 'https://picsum.photos/300', description: "Society that" },
-        { img: 'https://picsum.photos/200', description: "Society that" },
-        { img: 'https://picsum.photos/400', description: "Society that" },
-        { img: 'https://picsum.photos/500', description: "Society that" },
-        { img: 'https://picsum.photos/100', description: "Society that" },
-        { img: 'https://picsum.photos/600', description: "Society that" },
-        // {img: '/assets/MiddleSliderImages/arts/img-2.png', description: "Society that"},
-        // {img: '/assets/MiddleSliderImages/arts/img-3.png', description: "Society that"},
-        // {img: '/assets/MiddleSliderImages/arts/img-4.png', description: "Society that"},
-        // {img: '/assets/MiddleSliderImages/arts/img-2.png', description: "Society that"},
-        // {img: '/assets/MiddleSliderImages/arts/forSlider.png', description: "Society that"},
-
-        { img: '/assets/MiddleSliderImages/arts/forSlider.png', description: "Society that" },
-        { img: '/assets/MiddleSliderImages/arts/img-2.png', description: "Society that" },
-        { img: '/assets/MiddleSliderImages/arts/img-3.png', description: "Society that" },
-        { img: '/assets/MiddleSliderImages/arts/img-4.png', description: "Society that" },
-        { img: '/assets/MiddleSliderImages/arts/img-2.png', description: "Society that" },
-        { img: '/assets/MiddleSliderImages/arts/forSlider.png', description: "Society that" },
-
-        { img: 'https://picsum.photos/800', description: "Society that" },
-        { img: 'https://picsum.photos/900', description: "Society that" },
-        { img: 'https://picsum.photos/1000', description: "Society that" },
-        { img: 'https://picsum.photos/1100', description: "Society that" },
-        { img: 'https://picsum.photos/1200', description: "Society that" },
-        { img: 'https://picsum.photos/1300', description: "Society that" },
 
 
-        // {img: '/assets/MiddleSliderImages/arts/forSlider.png', description: "Society that"},
-        // {img: '/assets/MiddleSliderImages/arts/img-2.png', description: "Society that"},
-        // {img: '/assets/MiddleSliderImages/arts/img-3.png', description: "Society that"},
-        // {img: '/assets/MiddleSliderImages/arts/img-4.png', description: "Society that"},
-        // {img: '/assets/MiddleSliderImages/arts/img-2.png', description: "Society that"},
-        // {img: '/assets/MiddleSliderImages/arts/forSlider.png', description: "Society that"}
-    ]
-}
-
-interface MiddleSliderProps {
+interface Props {
     id: string
 }
 
-const MiddleSlider = (id: MiddleSliderProps) => {
+const MiddleSlider: React.FC<Props> = ({id}) => {
     const [showModal, setShowModal] = React.useState<boolean>(false);
     const handleModal = () => setShowModal(prev => !prev);
     let arts = {
@@ -124,11 +89,6 @@ const MiddleSlider = (id: MiddleSliderProps) => {
         ]
     };
 
-    const a = useQuery(getExampleInfo, {
-        variables: { artistId: id },
-    });
-
-    console.log(a.data?.artist.artworks[0].assetUrl)
 
     
     // const [hasScrolled, setHasScrolled] = useState(false);
@@ -144,7 +104,19 @@ const MiddleSlider = (id: MiddleSliderProps) => {
     //   const handleScroll = () => {
     //     setHasScrolled(true);
     //   };
+   
+    // const data = useQuery(getExampleInfo, { variables: { artistId: id },});
+    console.log("ID -" +id );
+    
+      const{data}  = useQuery(getArts,{variables:{artistId: id}});
+      console.warn(data?.artist.artworks);
+    //   const artist = data?.artist as Artwork[]
+      const [artist, setArtist] = useState<Artwork[]>([])
 
+    useEffect(()=>{
+        data?.artist&&
+        setArtist(data?.artist.artworks);
+    },[data])
 
     return (
         <div className={`${style.container} middle-slider-container`}>
@@ -153,14 +125,17 @@ const MiddleSlider = (id: MiddleSliderProps) => {
             </div>
             <div className={style.slide}>
 
-                <div className={style.slideCount}> {activeSlide + 1} / {sliderItems.arts.length}</div>
+                <div className={style.slideCount}> {activeSlide + 1} / {artist.length}</div>
 
                 <Slider className={`${style.slider} middle-slider `} {...settings}>
 
-                    {
-                        sliderItems.arts.map(item => (
-                           <SliderItem key={item.img} image={item.img} description={item.description} handleClick={handleModal} />
-                        ))
+                    {!!artist.length&&
+                        artist.map((item:Artwork) => (
+                            <SliderItem key={item.id} image={item.assetUrl} description={item.description} handleClick={handleModal} />
+                         ))
+                        // sliderItems.arts.map(item => (
+                        //    <SliderItem key={item.img} image={item.img} description={item.description} handleClick={handleModal} />
+                        // ))
                     }
 
 
