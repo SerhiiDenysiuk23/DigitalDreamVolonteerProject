@@ -1,5 +1,5 @@
-import React from 'react';
-import style from './Popup.module.scss';
+import React, { useEffect } from "react";
+import style from "./Popup.module.scss";
 
 interface PopupProps {
   data: {
@@ -10,25 +10,51 @@ interface PopupProps {
     link?: string;
   };
   handleModal: () => void;
+  isModalOpen?: boolean;
 }
 
-const Popup: React.FC<PopupProps> = ({ data: { name, description, link }, handleModal }) => {
+const Popup: React.FC<PopupProps> = ({
+  data: { name, description, link, picture },
+  handleModal,
+  isModalOpen,
+}) => {
   // To use this element you will need:
   // 1. state, example -
   //   const [showModal, setShowModal] = useState<boolean>(true);
   // 2. function that changes this state
   //  const handleModal = () => setShowModal(!showModal);
-  // 3. also this component needs props as data (contains id, picture, name, description, link) and handleModal function
-  // {showModal && <Popup data={q.data?.artist} handleModal={handleModal} />}
+  // 3. also this component needs props as data (contains id, picture, name, description, link), handleModal function and boolean state of madal isModalOpen
+  // {showModal && <Popup data={q.data?.artist} handleModal={handleModal} isModalOpen={showModal}/>}
+
+  // it prevents scroll when popup is opened
+  useEffect(() => {
+    const body = document.body;
+
+    if (isModalOpen) {
+      body.classList.add("lock");
+    } else {
+      body.classList.remove("lock");
+    }
+
+    return () => {
+      // Clean up the body class when the component unmounts
+      body.classList.remove("lock");
+    };
+  }, [isModalOpen]);
+
   return (
     <div>
       <div className={`main-block ${style.popup}`}>
         <div className={style.popup__content}>
           <div className={style.popupInfo}>
-            <div className={`${style.popupImg} ${description ? '' : style.fullImg}`}>
+            <div
+              className={`${style.popupImg} ${
+                description ? "" : style.fullImg
+              }`}
+            >
               <img
-                src="https://images.pexels.com/photos/14713776/pexels-photo-14713776.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-                alt=""
+                src={picture}
+                alt={name}
               />
             </div>
             <div className={style.popupAuthor}>

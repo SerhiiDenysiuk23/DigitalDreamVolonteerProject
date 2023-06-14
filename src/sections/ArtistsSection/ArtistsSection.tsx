@@ -3,17 +3,19 @@ import { ArtistList } from "../../components/ArtistList/ArtistList";
 import { InfoBlock } from "../../components/InfoBlock/InfoBlock";
 import MiddleSlider from "../../components/MiddleSlider/MiddleSlider";
 import { useQuery } from "@apollo/client";
-import { getExamplesList } from "../../queries/artistQueries";
-import styles from './MusicSection.module.scss'
+import { getArtistsList } from "../../queries/artistQueries";
+import styles from './ArtistsSection.module.scss'
+import Loader from "../../components/Loader/Loader";
 
-export const MusicSection = () => {
-  const { data, loading } = useQuery(getExamplesList, {
+const ArtistsSection = ({ kind }: { kind?: string }) => {
+  const { data, loading } = useQuery(getArtistsList, {
     variables: {
       data: {
-        kinds: "Musician"
+        kinds: kind
       }
     }
   });
+
   const defaultActiveId = data?.artists[0]?.id ?? null;
   const [activeId, setActiveId] = useState(defaultActiveId);
 
@@ -23,14 +25,14 @@ export const MusicSection = () => {
   }, [data]);
 
   if (loading)
-    return <div>Loading...</div>
-    
+    return <Loader/>
+
   return (
     <section className={styles.section}>
       <div className={styles.title}>
         <h3>Do you know about ukrainian <span>MUSIC</span>?</h3>
       </div>
-      <InfoBlock type="musician" id={activeId} />
+      <InfoBlock type="musician" id={activeId} loading={loading}/>
       <MiddleSlider id={activeId} />
       <ArtistList
         type={"musicians"}
@@ -40,3 +42,5 @@ export const MusicSection = () => {
     </section>
   );
 };
+
+export default ArtistsSection

@@ -11,7 +11,6 @@ const BrandsDescription: FC<{ company: Company }> = ({company}) => {
 
     const address = "А серце – byMe у шоурумі. Шукай нас тут:\n" +
         `м. Київ, вул. Хрещатик 46, 2 поверх.`
-    const slogan = "З А К О Х У В А Т И"
 
 
     useEffect(() => {
@@ -44,7 +43,6 @@ const BrandsDescription: FC<{ company: Company }> = ({company}) => {
     return (
         <div className={styles.brandDescription}>
             <h2>{company.name}</h2>
-            <div className={styles.slogan}>{slogan}</div>
             <p className={"p-18-hind " + styles.description}>{company.description}</p>
             <div className={styles.address}>{address}</div>
             <div className={styles.links}>

@@ -2,11 +2,11 @@ import React from 'react';
 import SolutionsBlock from "../components/Solutions/SolutionsBlock";
 import {ArtistList} from "../components/ArtistList/ArtistList";
 import {useQuery} from "@apollo/client";
-import {getExamplesList} from "../queries/artistQueries";
 import {useWindowWidth} from "../hooks/useWindowWidth";
+import { getCompanies } from '../queries/companyQueries';
 
 const SolutionsSection = () => {
-    const {data, loading} = useQuery(getExamplesList);
+    const {data, loading} = useQuery(getCompanies, {variables: {data: {kinds: 'Company'}}});
 
     const winWidth = useWindowWidth()
     const breakpoint = 1023
