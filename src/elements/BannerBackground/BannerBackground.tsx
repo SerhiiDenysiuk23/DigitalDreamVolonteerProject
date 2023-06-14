@@ -7,7 +7,6 @@ const BannerBackground = () => {
   const [girlImg, setGirlImg] = useState(state.girlImages);
   const [landlImg, setLandImg] = useState(state.backgroundPictures);
   const [icon, setIcon] = useState(state.wreathOfGirl);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   // changes girl & landscape on hover for 1024+ screens
   const handleMouseEnter = (id: number) => {
