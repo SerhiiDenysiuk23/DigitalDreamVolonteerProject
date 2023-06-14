@@ -4,20 +4,31 @@ import {useQuery} from "@apollo/client";
 import {getCompanies} from "../../queries/companyQueries";
 import {CompanyKind} from "../../types/Company";
 
-const BrandList: FC<{handleClick(id: string): void}> = ({handleClick}) => {
+const BrandList: FC<{handleClick(id: string): void, height?: number}> = ({handleClick, height}) => {
     const {data, loading} = useQuery(getCompanies, {variables:{data:{kinds: "Brand"} as CompanyKind}});
 
-    const defaultActiveId = data?.companies[0]?.id ?? null;
-    const [activeId, setActiveId] = useState(defaultActiveId);
+    const [isFirstRender, setIsFirstRender] = useState(true)
+
+    const [activeId, setActiveId] = useState<string>("");
 
 
     useEffect(() => {
-        const defaultActiveId = data?.companies[0]?.id ?? null;
-        setActiveId(defaultActiveId);
+        if (isFirstRender && data) {
+            const defaultActiveId = data?.companies[0]?.id ?? "";
+            setActiveId(defaultActiveId);
+            setIsFirstRender(false)
+        }
     }, [data]);
+
+    // if (!loading)
+    //     setActiveId(data?.companies[0]?.id)
 
 
     useEffect(()=>{
+        if (activeId == "f7e76e1d-8df2-4069-a98a-79307be21b26")
+            console.error(activeId)
+        else
+            console.warn(activeId)
         handleClick(activeId)
     }, [activeId])
 
@@ -25,7 +36,7 @@ const BrandList: FC<{handleClick(id: string): void}> = ({handleClick}) => {
         return <div>Loading...</div>
 
     return (
-        <ArtistList type={"authors"} onClick={setActiveId} data={data?.companies ?? []}/>
+        <ArtistList type={"authors"} onClick={setActiveId} data={data?.companies ?? []} height={height}/>
     );
 };
 

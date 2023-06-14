@@ -1,27 +1,36 @@
 import { gql } from "@apollo/client";
 
-export const getExamplesList = gql`
+export const getArtistsList = gql`
 query Artists($data: AllArtistsInput!) {
   artists(data: $data) {
       id
       name
+      description
+      imageUrl
   }
 }
-
 `;
 
-export const getExampleInfo = gql`
-query Artists($artistId: ID!) {
+export const getArtistInfo = gql`
+query Artist($artistId: ID!) {
   artist(artistId: $artistId) {
     id
     name
     description
-    links
-
+    imageUrl
     artworks {
+      id
+      kind
+      title
       assetUrl
+      description
+      isPublished
     }
-    
+    links {
+      id
+      kind
+      url
+    }
   }
 }
 `;

@@ -70,6 +70,7 @@ h3 {
   span {
     font-size: calc(20px + (34 - 20) * ((100vw - 375px) / (1920 - 375)));
     font-weight: 1000;
+    text-transform: uppercase;
     opacity: 1;
   }
 }

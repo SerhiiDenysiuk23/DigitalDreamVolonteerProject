@@ -6,7 +6,7 @@ import Slider, { InnerSlider, Settings } from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useQuery } from "@apollo/client";
-import { getArts, getExampleInfo } from "../../queries/artistQueries";
+import { getArts } from "../../queries/artistQueries";
 import Popup from "../../elements/Popup/Popup";
 import { Artwork } from "../../types/Artwork"
 
@@ -88,7 +88,6 @@ const MiddleSlider: React.FC<Props> = ({id}) => {
             },
         ]
     };
-
 
     
     // const [hasScrolled, setHasScrolled] = useState(false);

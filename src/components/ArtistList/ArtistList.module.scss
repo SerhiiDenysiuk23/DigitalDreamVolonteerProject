@@ -8,6 +8,7 @@
   overflow: hidden;
   position: relative;
   background-image: url(../../../public/assets/bg.jpg);
+  min-height: 835px;
 }
 
 .overlay {
@@ -98,6 +99,8 @@
     position: relative;
     order: 2;
     border-radius: 0;
+    min-height: 227px;
+    margin-bottom: 20px;
   }
 
   .list {
@@ -161,6 +164,8 @@
 }
 
 @media screen and (max-width: 767px) {
+  .block {
+    min-height: 0;  }
   .pictureWrapper {
     width: 17vw;
     height: 17vw;

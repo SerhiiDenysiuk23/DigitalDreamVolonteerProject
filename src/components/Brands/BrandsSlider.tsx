@@ -8,6 +8,8 @@ import Popup from "../../elements/Popup/Popup";
 import {Company} from "../../types/Company";
 
 const BrandsSlider: FC<{company: Company}> = ({company})=> {
+    const [currentPugElem, setCurrentPugElem] = useState(2)
+
     const [showModal, setShowModal] = useState<boolean>(false);
     const [currentSlide, setCurrentSlide] = useState(0)
     const handleModal = () => {
@@ -29,7 +31,7 @@ const BrandsSlider: FC<{company: Company}> = ({company})=> {
         appendDots: (dots: JSX.Element[]) => {
             const maxVisibleDots = 4;
             const totalSlides = company.mediaSlides.length;
-            const startIndex = Math.max(currentSlide - 2, 0);
+            const startIndex = Math.max(currentSlide - currentPugElem, 0);
             const endIndex = Math.min(startIndex + maxVisibleDots, totalSlides);
 
             let visibleDots = dots.slice(startIndex, endIndex);
@@ -44,14 +46,16 @@ const BrandsSlider: FC<{company: Company}> = ({company})=> {
             return (
                 <ul>
                     {visibleDots.map((dot, index) => (
-                        <React.Fragment key={index}>{dot}</React.Fragment>
+                        <div key={index} onClick={() => {
+                            if (index == 3 || index == 2)
+                                setCurrentPugElem(2)
+                            else if (index == 0 || index == 1)
+                                setCurrentPugElem(1)
+                        }}>{dot}</div>
                     ))}
                 </ul>
             );
         },
-        // afterChange(currentSlide: number) {
-        //     setCurrentSlide(currentSlide)
-        // },
         beforeChange(currentSlide: number, nextSlide: number) {
             setCurrentSlide(nextSlide)
         },
@@ -66,12 +70,10 @@ const BrandsSlider: FC<{company: Company}> = ({company})=> {
     };
 
     const data = { name: "", description: "", link: "" }
-    const slogan = "З А К О Х У В А Т И"
     return (
         <div className={styles.sliderSide}>
             {showModal && <Popup data={data} handleModal={handleModal} />}
             <h2>{company.name}</h2>
-            <div className={styles.slogan}>{slogan}</div>
             <Slider className={styles.brandSlider} {...settings}>
                 {
                     company.mediaSlides.map((value: string) =>
