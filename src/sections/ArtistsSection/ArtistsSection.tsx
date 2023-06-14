@@ -15,7 +15,6 @@ const ArtistsSection = ({ kind }: { kind?: string }) => {
       }
     }
   });
-
   const defaultActiveId = data?.artists[0]?.id ?? null;
   const [activeId, setActiveId] = useState(defaultActiveId);
 
@@ -24,14 +23,17 @@ const ArtistsSection = ({ kind }: { kind?: string }) => {
     setActiveId(defaultActiveId);
   }, [data]);
 
+    
+
   if (loading)
     return <Loader/>
 
   return (
-    <section className={styles.section}>
+  <section className={styles.section}>
       <div className={styles.title}>
         <h3>Do you know about ukrainian <span>MUSIC</span>?</h3>
       </div>
+
       <InfoBlock type="musician" id={activeId} loading={loading}/>
       <MiddleSlider id={activeId} />
       <ArtistList

@@ -34,3 +34,13 @@ query Artist($artistId: ID!) {
   }
 }
 `;
+export const getArts = gql`
+query Artists($artistId: ID!) {
+  artist(artistId: $artistId) {
+    artworks {
+      assetUrl
+    }
+    
+  }
+}
+`;
