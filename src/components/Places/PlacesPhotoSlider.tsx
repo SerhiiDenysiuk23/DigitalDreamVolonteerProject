@@ -37,7 +37,7 @@ const PlacesPhotoSlider: FC<{ id: string }> = ({id}) => {
         nextArrow: <ArrowSliderBtn btnType={"big"} direction={"right"}/>,
         responsive: [
             {
-                breakpoint: 1304,
+                breakpoint: 1023,
                 settings: {
                     dots: true
                 }
