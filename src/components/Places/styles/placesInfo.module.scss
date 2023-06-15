@@ -32,6 +32,10 @@
       padding: 15px;
       border-radius: 20px;
 
+      .activeElem{
+        border: #015BBB 2px solid;
+      }
+
       >div{
         aspect-ratio: 195 / 283;
         position: relative;

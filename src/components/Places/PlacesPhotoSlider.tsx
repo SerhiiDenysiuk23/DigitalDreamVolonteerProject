@@ -53,6 +53,7 @@ const PlacesPhotoSlider: FC<{ id: string }> = ({id}) => {
 
     };
 
+
     return (
         <div className={`${styles.placePhotos} main-block`}>
             {

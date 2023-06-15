@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import {default as testData} from "../../testDataPlaces.json";
 
-const PlaceChangeSlider: FC<{handleOnClick(id:string): void}> = ({handleOnClick}) => {
+const PlaceChangeSlider: FC<{idState: [string, React.Dispatch<React.SetStateAction<string>>]}> = ({idState}) => {
     // const {data, loading} = useQuery(query)
     const data: Place[] = testData
 
@@ -45,7 +45,7 @@ const PlaceChangeSlider: FC<{handleOnClick(id:string): void}> = ({handleOnClick}
             {
                 data.map((value) =>
                     <div key={value.id} className={styles.slideElem}>
-                        <div onClick={()=>{handleOnClick(value.id)}}>
+                        <div className={(idState[0] == value.id) ? styles.activeElem : ""} onClick={()=>{idState[1](value.id)}}>
                             <img src={value.mainImageURL} alt=""/>
                             <div className={styles.placeName}>{value.name}</div>
                         </div>
