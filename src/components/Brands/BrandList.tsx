@@ -25,7 +25,7 @@ const BrandList: FC<{handleClick(id: string): void, height?: number}> = ({handle
         return <div>Loading...</div>
 
     return (
-        <ArtistList type={"authors"} onClick={setActiveId} data={data?.companies ?? []} height={height}/>
+        <ArtistList type={"brand"} onClick={setActiveId} data={data?.companies ?? []} height={height}/>
     );
 };
 
