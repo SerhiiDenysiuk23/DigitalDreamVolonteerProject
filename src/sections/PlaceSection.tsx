@@ -5,15 +5,15 @@ import styles from "../components/Places/styles/placesSection.module.scss"
 
 
 const PlaceSection = () => {
-    const [id, setId] = useState<string>("test1")
-    const handleChangeId = (elemId: string) => {
-        setId(elemId)
-    }
-
+    // const [id, setId] = useState<string>("test1")
+    const idState = useState<string>("test1")
+    // const handleChangeId = (elemId: string) => {
+    //     setId(elemId)
+    // }
     return (
         <section className={styles.placeSection}>
-            <PlacesPhotoSlider id={id}/>
-            <PlaceInfo handlePlacePhotosChange={handleChangeId}/>
+            <PlacesPhotoSlider id={idState[0]}/>
+            <PlaceInfo idState={idState}/>
         </section>
     );
 };

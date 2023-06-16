@@ -7,6 +7,7 @@ import PlaceSection from "./sections/PlaceSection";
 import SolutionsSection from "./sections/SolutionsSection";
 import BrandsSection from "./sections/BrandsSection";
 import YouTubeVideos from "./components/YouTubeVideos/YouTubeVideos";
+import PlacesPhotoSlider from "./components/Places/PlacesPhotoSlider";
 
 function App() {
   return (

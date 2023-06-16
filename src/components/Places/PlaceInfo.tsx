@@ -7,17 +7,11 @@ import {default as testData} from "../../testDataPlaces.json";
 
 const googleMapURL = "https://www.google.com/maps/search/?api=1&query="
 
-const PlaceInfo: FC<{handlePlacePhotosChange(elemId: string): void}> = ({handlePlacePhotosChange}) => {
-    const [id, setId] = useState<string>("test1") //("")
+const PlaceInfo: FC<{idState: [string, React.Dispatch<React.SetStateAction<string>>]}> = ({idState}) => {
+    const [id] = idState //("")
     // const {data, loading, refetch} = useQuery(query, {variables: {id}})
 
     const [data, setData] = useState<Place | undefined>(testData.find(item => item.id == id)) //("")
-
-
-    const handlePlaceChange = (elemId: string) => {
-        setId(elemId)
-        handlePlacePhotosChange(elemId)
-    }
 
     useEffect(()=>{
         // refetch({id})
@@ -26,7 +20,7 @@ const PlaceInfo: FC<{handlePlacePhotosChange(elemId: string): void}> = ({handleP
 
     return (
         <div className={`${styles.placeInfoContainer} main-block`}>
-            <h3>Do you know about Ukrainian Places?</h3>
+            <h3>Do you know about Ukrainian <span>Places?</span></h3>
 
             <div className={styles.placeInfo}>
                 {
@@ -42,7 +36,7 @@ const PlaceInfo: FC<{handlePlacePhotosChange(elemId: string): void}> = ({handleP
                         </a>
                     </div>
                 }
-                <PlaceChangeSlider handleOnClick={handlePlaceChange}/>
+                <PlaceChangeSlider idState={idState}/>
             </div>
         </div>
     );
