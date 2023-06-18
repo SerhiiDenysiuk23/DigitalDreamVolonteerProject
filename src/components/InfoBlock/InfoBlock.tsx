@@ -48,7 +48,7 @@ export const InfoBlock = ({ type, id, loading }: InfoBlockProps) => {
           </div>
         </div>
       </div>
-      {showModal && <Popup data={data.artist} handleModal={handleModal} />}
+      {showModal && <Popup data={data.artist} handleModal={handleModal} isModalOpen={showModal}/>}
     </>
   );
 };
