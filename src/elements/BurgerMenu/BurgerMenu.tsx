@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import style from './BurgerMenu.module.scss';
-import { Context } from '../BannerBackground/Context';
+import { Context } from './Context';
 type BurgerProps = {
   isBurgerOpen: boolean;
   toggleBurgerMenu: () => void;
