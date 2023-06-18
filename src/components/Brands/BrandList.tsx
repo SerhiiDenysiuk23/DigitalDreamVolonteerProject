@@ -25,10 +25,6 @@ const BrandList: FC<{handleClick(id: string): void, height?: number}> = ({handle
 
 
     useEffect(()=>{
-        if (activeId == "f7e76e1d-8df2-4069-a98a-79307be21b26")
-            console.error(activeId)
-        else
-            console.warn(activeId)
         handleClick(activeId)
     }, [activeId])
 
@@ -36,7 +32,7 @@ const BrandList: FC<{handleClick(id: string): void, height?: number}> = ({handle
         return <div>Loading...</div>
 
     return (
-        <ArtistList type={"authors"} onClick={setActiveId} data={data?.companies ?? []} height={height}/>
+        <ArtistList type={"brand"} onClick={setActiveId} data={data?.companies ?? []} height={height}/>
     );
 };
 

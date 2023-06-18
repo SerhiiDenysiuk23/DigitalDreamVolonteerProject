@@ -2,7 +2,7 @@ import styles from "./ArtistList.module.scss";
 import React, { useEffect, useState } from "react";
 
 interface ExamplesListProps {
-  type: "authors" | "musicians";
+  type: "authors" | "musicians" | 'brand';
   onClick: (id: string) => void,
   data: {
     id?: string,
@@ -30,10 +30,10 @@ export const ArtistList = ({ type, onClick, data, height }: ExamplesListProps) =
     };
   }, [windowWidth]);
 
-  const blockHeight = windowWidth > 1024 ? (height ?? 835) : 'fit-content'
+  const blockHeight = type === 'brand' ? (windowWidth > 1024 ? (height ?? 835) : 'fit-content') : 'auto'
   
   return (
-    <div className={styles.block} style={{ height: blockHeight }}>
+    <div className={`${styles.block} ${styles[type]}`} style={{ height: blockHeight }}>
       <div className={styles.overlay}></div>
       <ul className={styles.list}>
         {data?.map((item, index) => (

@@ -7,7 +7,7 @@ import { getArtistsList } from "../../queries/artistQueries";
 import styles from './ArtistsSection.module.scss'
 import Loader from "../../components/Loader/Loader";
 
-const ArtistsSection = ({ kind }: { kind?: string }) => {
+const ArtistsSection = ({ kind, id }: { kind?: string, id?: string }) => {
   const { data, loading } = useQuery(getArtistsList, {
     variables: {
       data: {
@@ -15,7 +15,6 @@ const ArtistsSection = ({ kind }: { kind?: string }) => {
       }
     }
   });
-
   const defaultActiveId = data?.artists[0]?.id ?? null;
   const [activeId, setActiveId] = useState(defaultActiveId);
 
@@ -24,14 +23,17 @@ const ArtistsSection = ({ kind }: { kind?: string }) => {
     setActiveId(defaultActiveId);
   }, [data]);
 
+    
+
   if (loading)
     return <Loader/>
 
   return (
-    <section className={styles.section}>
+  <section className={styles.section} id={id}>
       <div className={styles.title}>
         <h3>Do you know about ukrainian <span>MUSIC</span>?</h3>
       </div>
+
       <InfoBlock type="musician" id={activeId} loading={loading}/>
       <MiddleSlider id={activeId} />
       <ArtistList
