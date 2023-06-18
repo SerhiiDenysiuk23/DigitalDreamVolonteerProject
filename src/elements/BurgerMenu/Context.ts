@@ -80,7 +80,7 @@ let initState: InitialState = {
     { src: "/assets/background3.png", className: "bg3", id: 3, opacity: 0 },
     { src: "/assets/background4.png", className: "bg4", id: 4, opacity: 0 },
     { src: "/assets/background5.png", className: "bg5", id: 5, opacity: 0 },
-    { src: "/assets/background3.png", className: "bg6", id: 6, opacity: 0 },
+    { src: "/assets/background3.png", className: "bg6", id: 7, opacity: 0 },
   ],
   girlImages: [
     { src: "/assets/girl/girl1.png", id: 0, opacity: 1, className: "girl" },
