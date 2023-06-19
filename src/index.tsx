@@ -19,3 +19,5 @@ root.render(
         <App />
     </ApolloProvider>
 );
+
+document.body.id = 'home';
