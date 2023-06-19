@@ -53,7 +53,7 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
 
     const settings: Settings = {
         dots: true,
-        swipe: true,
+        swipe: false,
         arrows: true,
         infinite: true,
         speed: 500,
@@ -99,9 +99,6 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
         <div className={`${style.container} middle-slider-container`}>
             <div className={style.heading}>
                 <h3 className={style.header}>Do you know about Ukrainian <span>ART</span>?</h3>
-                <div>
-                    {/* <Paginator dots={dots}/> */}
-                </div>
             </div>
             <div className={style.slide}>
                 <div className={style.slideCount}> {activeSlide + 1} / {artist.length}</div>
