@@ -1,11 +1,13 @@
 .placeInfoContainer {
-  flex: 743;
+  aspect-ratio: 743/769;
+  display: flex;
+  flex-direction: column;
 
   .placeInfo {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     position: relative;
-    //aspect-ratio: 743/769;
 
     .placeDescription{
       overflow: hidden;
@@ -16,43 +18,36 @@
 
     .geo {
       display: block;
-      margin: 30px 0;
+      margin-top: 30px;
       color: #015BBB;
       text-decoration: underline;
     }
 
     &__slider {
-      //margin-top: 3.5vw;
-      //max-width: 681px;
+      margin: auto -15px 0;
     }
 
     .slideElem {
       position: relative;
-      //height: 283px;
-      //width: 195px;
-      padding: 0 15px;
+      padding: 15px;
       border-radius: 20px;
+
+      .activeElem{
+        border: #015BBB 2px solid;
+      }
+
       >div{
         aspect-ratio: 195 / 283;
+        position: relative;
         max-width: 195px;
         height: 100%;
-        //max-height: 283px;
         cursor: pointer;
         border-radius: inherit;
         margin: auto;
-        //&:first-child{
-        //  margin-right: auto;
-        //  margin-left: 0;
-        //}
-        //&:last-child{
-        //  margin-left: auto;
-        //  margin-right: 0;
-        //}
       }
       .placeName {
         position: absolute;
-        bottom: 22px;
-        //left: calc(21px + 15px);
+        bottom: 0;
         left: 0;
         color: #FFFFFF;
         font-family: Hind, sans-serif;
@@ -61,7 +56,7 @@
         z-index: 100;
         overflow: hidden;
         width: 100%;
-        padding: 0 calc(15px + 21px);
+        padding: 21px;
       }
     }
 
@@ -74,14 +69,60 @@
   }
 }
 
-@media screen and (max-width: 1304px){
+@media screen and (max-width: 1285px){
+  .placeInfoContainer{
+    .placeInfo{
+      &__slider {
+        margin: auto -10px 0;
+      }
+      .slideElem{
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1285px) and (min-width: 1023px){
+  .placeInfoContainer{
+    .placeInfo{
+      &__slider {
+        margin: auto -5px 0;
+      }
+      .slideElem{
+        padding: 0 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1023px){
+  .placeInfoContainer{
+    .placeInfo{
+      .geo {
+        margin: 0.5em 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1064px)  and (min-width: 1023px){
+  .placeInfoContainer{
+    h3{
+      line-height: 1em;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
   .placeInfoContainer{
     background: none;
     padding-bottom: 0;
+    aspect-ratio: initial;
     .placeInfo{
       flex-direction: column-reverse;
+      flex-grow: initial;
       &__slider{
-        //margin: auto;
+        margin: initial;
       }
 
       .geo{
@@ -92,6 +133,7 @@
 }
 @media screen and (max-width: 770px){
   .placeInfoContainer{
+    aspect-ratio: initial;
     .placeInfo{
       &__slider{
         margin: initial;
