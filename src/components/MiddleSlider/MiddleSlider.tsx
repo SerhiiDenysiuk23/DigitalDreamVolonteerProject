@@ -13,18 +13,25 @@ import { Artwork } from "../../types/Artwork"
 
 
 
+
 interface Props {
     id: string
 }
 
-const MiddleSlider: React.FC<Props> = ({id}) => {
+const MiddleSlider: React.FC<Props> = ({ id }) => {
     const [showModal, setShowModal] = React.useState<boolean>(false);
-    const handleModal = () => setShowModal(prev => !prev);
+    const [activeSlide, setActiveSlide] = React.useState<number>(0);
+    const [artist, setArtist] = useState<Artwork[]>([])
+    const { data } = useQuery(getArts, { variables: { artistId: id } });
+    const handleModal = () => setShowModal(!showModal);
+
     let arts = {
         name: '',
         description: '',
         link: ''
     }
+
+
 
 
     function SampleNextArrow(props: any) {
@@ -42,12 +49,6 @@ const MiddleSlider: React.FC<Props> = ({id}) => {
             <img src="/assets/MiddleSliderImages/arts/Arrow.png" alt="" onClick={onClick} className={`${style.prevnext}, ${style.prev}`} />
         );
     }
-
-    const [activeSlide, setActiveSlide] = React.useState<number>(0);
-
-
-    const [slideCount, setSlideCount] = React.useState<number>(0);
-
 
 
     const settings: Settings = {
@@ -89,58 +90,29 @@ const MiddleSlider: React.FC<Props> = ({id}) => {
         ]
     };
 
-    
-    // const [hasScrolled, setHasScrolled] = useState(false);
-    // const handleSlideClick = () => {
-    //     if (!hasScrolled) {
-    //       setShowModal(true);
-    //     }
-    //   };
-    // const handleMouseDown = () => {
-    //     setHasScrolled(false);
-    //   };
-    
-    //   const handleScroll = () => {
-    //     setHasScrolled(true);
-    //   };
-   
-    // const data = useQuery(getExampleInfo, { variables: { artistId: id },});
-    console.log("ID -" +id );
-    
-      const{data}  = useQuery(getArts,{variables:{artistId: id}});
-      console.warn(data?.artist.artworks);
-    //   const artist = data?.artist as Artwork[]
-      const [artist, setArtist] = useState<Artwork[]>([])
-
-    useEffect(()=>{
-        data?.artist&&
-        setArtist(data?.artist.artworks);
-    },[data])
+    useEffect(() => {
+        data?.artist &&
+            setArtist(data?.artist.artworks);
+    }, [data])
 
     return (
         <div className={`${style.container} middle-slider-container`}>
             <div className={style.heading}>
                 <h3 className={style.header}>Do you know about Ukrainian <span>ART</span>?</h3>
+                <div>
+                    {/* <Paginator dots={dots}/> */}
+                </div>
             </div>
             <div className={style.slide}>
-
                 <div className={style.slideCount}> {activeSlide + 1} / {artist.length}</div>
-
                 <Slider className={`${style.slider} middle-slider `} {...settings}>
 
-                    {!!artist.length&&
-                        artist.map((item:Artwork) => (
+                    {!!artist.length &&
+                        artist.map((item: Artwork) => (
                             <SliderItem key={item.id} image={item.assetUrl} description={item.description} handleClick={handleModal} />
-                         ))
-                        // sliderItems.arts.map(item => (
-                        //    <SliderItem key={item.img} image={item.img} description={item.description} handleClick={handleModal} />
-                        // ))
+                        ))
                     }
-
-
                 </Slider>
-
-
             </div>
             {showModal && <Popup data={arts} handleModal={handleModal} />}
         </div>
