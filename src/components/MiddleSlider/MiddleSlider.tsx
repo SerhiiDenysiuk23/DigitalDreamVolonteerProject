@@ -105,12 +105,12 @@ const MiddleSlider: React.FC<Props> = ({ id, kind }) => {
     //   };
 
     // const data = useQuery(getExampleInfo, { variables: { artistId: id },});
-    console.log("ID -" + id);
+    // console.log("ID -" + id);
 
-    const { data } = useQuery(getArts, { variables: { artistId: id } });
-    console.warn(data?.artist.artworks);
+    // const { data } = useQuery(getArts, { variables: { artistId: id } });
+    // console.warn(data?.artist.artworks);
     //   const artist = data?.artist as Artwork[]
-    const [artist, setArtist] = useState<Artwork[]>([])
+    // const [artist, setArtist] = useState<Artwork[]>([])
 
 
     // const [hasScrolled, setHasScrolled] = useState(false);
@@ -128,12 +128,12 @@ const MiddleSlider: React.FC<Props> = ({ id, kind }) => {
     //   };
 
     // const data = useQuery(getExampleInfo, { variables: { artistId: id },});
-    console.log("ID -" + id);
+    // console.log("ID -" + id);
 
-    const { data } = useQuery(getArts, { variables: { artistId: id } });
-    console.warn(data?.artist.artworks);
+    // const { data } = useQuery(getArts, { variables: { artistId: id } });
+    // console.warn(data?.artist.artworks);
     //   const artist = data?.artist as Artwork[]
-    const [artist, setArtist] = useState<Artwork[]>([])
+    // const [artist, setArtist] = useState<Artwork[]>([])
 
     useEffect(() => {
         data?.artist &&
