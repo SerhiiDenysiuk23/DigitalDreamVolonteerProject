@@ -7,7 +7,8 @@ import { useQuery } from '@apollo/client';
 type Art = {
     handleClick(): void
     image: string,
-    description: string
+    description: string,
+
 }
 
 
@@ -17,7 +18,7 @@ const SliderItem: React.FC<Art> = ({handleClick: onClick, image, description}) =
 
     return (
         <div className={style.test} >
-            <div className={style.container} onClick={onClick} >
+            <div className={style.container} onClick={onClick}  >
                 {/* <div  > */}
                     <img className={style.art_image} src={image} alt="" />
                     <p className={style.description}>{description}</p>

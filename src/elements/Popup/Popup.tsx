@@ -4,7 +4,7 @@ import style from "./Popup.module.scss";
 interface PopupProps {
   data: {
     id?: string;
-    picture?: string;
+    imageUrl?: string;
     name?: string;
     description?: string;
     link?: string;
@@ -14,7 +14,7 @@ interface PopupProps {
 }
 
 const Popup: React.FC<PopupProps> = ({
-  data: { name, description, link, picture },
+  data: { name, description, link, imageUrl },
   handleModal,
   isModalOpen,
 }) => {
@@ -23,7 +23,7 @@ const Popup: React.FC<PopupProps> = ({
   //   const [showModal, setShowModal] = useState<boolean>(true);
   // 2. function that changes this state
   //  const handleModal = () => setShowModal(!showModal);
-  // 3. also this component needs props as data (contains id, picture, name, description, link), handleModal function and boolean state of madal isModalOpen
+  // 3. also this component needs props as data (contains id, imageUrl, name, description, link), handleModal function and boolean state of madal isModalOpen
   // {showModal && <Popup data={q.data?.artist} handleModal={handleModal} isModalOpen={showModal}/>}
 
   // it prevents scroll when popup is opened
@@ -53,7 +53,7 @@ const Popup: React.FC<PopupProps> = ({
               }`}
             >
               <img
-                src={picture}
+                src={imageUrl}
                 alt={name}
               />
             </div>
