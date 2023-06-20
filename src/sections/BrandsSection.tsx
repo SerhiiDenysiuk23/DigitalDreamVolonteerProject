@@ -14,7 +14,7 @@ const BrandsSection = () => {
 
     const [activeId, setActiveId] = useState<string | null>(null)
 
-    const [brandBlockHeight, setBrandBlockHeight] = useState(825)
+    const [brandBlockHeight, setBrandBlockHeight] = useState(835)
 
     const handleCompanyChange = (id: string) => {
         console.warn(id)

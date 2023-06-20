@@ -22,7 +22,7 @@ const BrandsBlock: FC<Props> = ({ handleCompanyChange, activeId, isShowArtists, 
         if (blockRef.current) {
             setHeight(blockRef?.current?.clientHeight);
         }
-    }, [blockRef?.current?.clientHeight])
+    }, [blockRef?.current?.clientHeight, data])
 
     return (
         <div className={`${styles.brandBlock} main-block`} ref={blockRef}>
