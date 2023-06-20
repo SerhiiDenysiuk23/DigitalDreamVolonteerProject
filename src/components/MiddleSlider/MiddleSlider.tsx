@@ -13,6 +13,7 @@ import { Artwork } from "../../types/Artwork"
 
 
 
+
 interface Props {
     id: string
     kind?: string
@@ -20,12 +21,18 @@ interface Props {
 
 const MiddleSlider: React.FC<Props> = ({ id, kind }) => {
     const [showModal, setShowModal] = React.useState<boolean>(false);
-    const handleModal = () => setShowModal(prev => !prev);
+    const [activeSlide, setActiveSlide] = React.useState<number>(0);
+    const [artist, setArtist] = useState<Artwork[]>([])
+    const { data } = useQuery(getArts, { variables: { artistId: id } });
+    const handleModal = () => setShowModal(!showModal);
+
     let arts = {
         name: '',
         description: '',
         link: ''
     }
+
+
 
 
     function SampleNextArrow(props: any) {
@@ -44,16 +51,10 @@ const MiddleSlider: React.FC<Props> = ({ id, kind }) => {
         );
     }
 
-    const [activeSlide, setActiveSlide] = React.useState<number>(0);
-
-
-    const [slideCount, setSlideCount] = React.useState<number>(0);
-
-
 
     const settings: Settings = {
         dots: true,
-        swipe: true,
+        swipe: false,
         arrows: true,
         infinite: true,
         speed: 500,
@@ -89,8 +90,6 @@ const MiddleSlider: React.FC<Props> = ({ id, kind }) => {
             },
         ]
     };
-
-
     // const [hasScrolled, setHasScrolled] = useState(false);
     // const handleSlideClick = () => {
     //     if (!hasScrolled) {
@@ -124,24 +123,19 @@ const MiddleSlider: React.FC<Props> = ({ id, kind }) => {
                 <h3 className={style.header}>Do you know about Ukrainian <span>{kind}</span>?</h3>
             </div>
             <div className={style.slide}>
-
                 <div className={style.slideCount}> {activeSlide + 1} / {artist.length}</div>
-
                 <Slider className={`${style.slider} middle-slider `} {...settings}>
 
                     {!!artist.length &&
                         artist.map((item: Artwork) => (
                             <SliderItem key={item.id} image={item.assetUrl} description={item.description} handleClick={handleModal} />
                         ))
+
                         // sliderItems.arts.map(item => (
                         //    <SliderItem key={item.img} image={item.img} description={item.description} handleClick={handleModal} />
                         // ))
                     }
-
-
                 </Slider>
-
-
             </div>
             {showModal && <Popup data={arts} handleModal={handleModal} />}
         </div>
