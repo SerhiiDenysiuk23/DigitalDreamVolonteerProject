@@ -19,7 +19,6 @@ interface Props {
     kind?: string
 }
 
-
 const MiddleSlider: React.FC<Props> = ({ id, kind }) => {
     const [showModal, setShowModal] = React.useState<boolean>(false);
     const [activeSlide, setActiveSlide] = React.useState<number>(0);
@@ -91,6 +90,27 @@ const MiddleSlider: React.FC<Props> = ({ id, kind }) => {
             },
         ]
     };
+    // const [hasScrolled, setHasScrolled] = useState(false);
+    // const handleSlideClick = () => {
+    //     if (!hasScrolled) {
+    //       setShowModal(true);
+    //     }
+    //   };
+    // const handleMouseDown = () => {
+    //     setHasScrolled(false);
+    //   };
+
+    //   const handleScroll = () => {
+    //     setHasScrolled(true);
+    //   };
+
+    // const data = useQuery(getExampleInfo, { variables: { artistId: id },});
+    console.log("ID -" + id);
+
+    const { data } = useQuery(getArts, { variables: { artistId: id } });
+    console.warn(data?.artist.artworks);
+    //   const artist = data?.artist as Artwork[]
+    const [artist, setArtist] = useState<Artwork[]>([])
 
 
     // const [hasScrolled, setHasScrolled] = useState(false);
@@ -133,10 +153,6 @@ const MiddleSlider: React.FC<Props> = ({ id, kind }) => {
                         artist.map((item: Artwork) => (
                             <SliderItem key={item.id} image={item.assetUrl} description={item.description} handleClick={handleModal} />
                         ))
-                        // sliderItems.arts.map(item => (
-                        //    <SliderItem key={item.img} image={item.img} description={item.description} handleClick={handleModal} />
-                        // ))
-
                     }
                 </Slider>
             </div>
