@@ -16,9 +16,11 @@ import { Artwork } from "../../types/Artwork"
 
 interface Props {
     id: string
+    kind?: string
 }
 
-const MiddleSlider: React.FC<Props> = ({ id }) => {
+
+const MiddleSlider: React.FC<Props> = ({ id, kind }) => {
     const [showModal, setShowModal] = React.useState<boolean>(false);
     const [activeSlide, setActiveSlide] = React.useState<number>(0);
     const [artist, setArtist] = useState<Artwork[]>([])
@@ -90,6 +92,29 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
         ]
     };
 
+
+    // const [hasScrolled, setHasScrolled] = useState(false);
+    // const handleSlideClick = () => {
+    //     if (!hasScrolled) {
+    //       setShowModal(true);
+    //     }
+    //   };
+    // const handleMouseDown = () => {
+    //     setHasScrolled(false);
+    //   };
+
+    //   const handleScroll = () => {
+    //     setHasScrolled(true);
+    //   };
+
+    // const data = useQuery(getExampleInfo, { variables: { artistId: id },});
+    console.log("ID -" + id);
+
+    const { data } = useQuery(getArts, { variables: { artistId: id } });
+    console.warn(data?.artist.artworks);
+    //   const artist = data?.artist as Artwork[]
+    const [artist, setArtist] = useState<Artwork[]>([])
+
     useEffect(() => {
         data?.artist &&
             setArtist(data?.artist.artworks);
@@ -98,7 +123,7 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
     return (
         <div className={`${style.container} middle-slider-container`}>
             <div className={style.heading}>
-                <h3 className={style.header}>Do you know about Ukrainian <span>ART</span>?</h3>
+                <h3 className={style.header}>Do you know about Ukrainian <span>{kind}</span>?</h3>
             </div>
             <div className={style.slide}>
                 <div className={style.slideCount}> {activeSlide + 1} / {artist.length}</div>
@@ -108,6 +133,10 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
                         artist.map((item: Artwork) => (
                             <SliderItem key={item.id} image={item.assetUrl} description={item.description} handleClick={handleModal} />
                         ))
+                        // sliderItems.arts.map(item => (
+                        //    <SliderItem key={item.img} image={item.img} description={item.description} handleClick={handleModal} />
+                        // ))
+
                     }
                 </Slider>
             </div>
