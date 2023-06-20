@@ -73,11 +73,17 @@
     .wrapperButton {
         width: 320px;
         height: 70px;
-        margin: 0 40px 0 0;
+        margin: 0 0 0 150px;
     }
 
     .buttonDonate {
         width: 250px;
+    }
+}
+
+@media (max-width:840px) {
+    .wrapperButton {
+        margin: 0 40px 0 0;
     }
 }
 
