@@ -17,7 +17,6 @@ const BrandsSection = () => {
     const [brandBlockHeight, setBrandBlockHeight] = useState(835)
 
     const handleCompanyChange = (id: string) => {
-        console.warn(id)
         setActiveId(id)
     }
 

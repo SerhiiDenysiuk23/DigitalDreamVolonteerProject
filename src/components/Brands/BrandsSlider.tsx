@@ -6,9 +6,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Popup from "../../elements/Popup/Popup";
 import {Company} from "../../types/Company";
+import SliderPagination from "../../elements/SliderPagination/SliderPagination";
+
+
+
 
 const BrandsSlider: FC<{company: Company}> = ({company})=> {
-    const [currentPugElem, setCurrentPugElem] = useState(2)
 
     const [showModal, setShowModal] = useState<boolean>(false);
     const [currentSlide, setCurrentSlide] = useState(0)
@@ -18,7 +21,7 @@ const BrandsSlider: FC<{company: Company}> = ({company})=> {
 
     const settings: Settings = {
         arrows: false,
-        infinite: true,
+        infinite: false,
         slidesToShow: 1,
         swipe: false,
         fade: true,
@@ -28,34 +31,13 @@ const BrandsSlider: FC<{company: Company}> = ({company})=> {
         customPaging(index: number): JSX.Element {
             return <img src={company.mediaSlides[index]}/>
         },
-        appendDots: (dots: JSX.Element[]) => {
-            const maxVisibleDots = 4;
-            const totalSlides = company.mediaSlides.length;
-            const startIndex = Math.max(currentSlide - currentPugElem, 0);
-            const endIndex = Math.min(startIndex + maxVisibleDots, totalSlides);
-
-            let visibleDots = dots.slice(startIndex, endIndex);
-
-            // Add additional dots if there are fewer than 4 on the last slide
-            if (visibleDots.length < maxVisibleDots && currentSlide === totalSlides - 1) {
-                const remainingDots = maxVisibleDots - visibleDots.length;
-                const additionalDots = dots.slice(0, remainingDots);
-                visibleDots = visibleDots.concat(additionalDots);
-            }
-
-            return (
-                <ul>
-                    {visibleDots.map((dot, index) => (
-                        <div key={index} onClick={() => {
-                            if (index == 3 || index == 2)
-                                setCurrentPugElem(2)
-                            else if (index == 0 || index == 1)
-                                setCurrentPugElem(1)
-                        }}>{dot}</div>
-                    ))}
-                </ul>
-            );
-        },
+        appendDots: (dots: JSX.Element[]) => <SliderPagination
+            dots={dots}
+            totalSlides={company.mediaSlides.length}
+            visibleSlides={4}
+            currentSlide={currentSlide}
+            className={`${styles.brandSliderPagination} brand-slider`}
+        />,
         beforeChange(currentSlide: number, nextSlide: number) {
             setCurrentSlide(nextSlide)
         },
