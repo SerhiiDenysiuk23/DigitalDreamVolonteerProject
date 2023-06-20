@@ -1,5 +1,5 @@
-import React from 'react';
-import style from './HeaderLogo.module.scss';
+import React from "react";
+import style from "./HeaderLogo.module.scss";
 
 interface HeaderLogoProps {
   onClick: () => void;
@@ -7,13 +7,16 @@ interface HeaderLogoProps {
 const HeaderLogo: React.FC<HeaderLogoProps> = ({ onClick }) => {
   return (
     <div onClick={onClick} className={style.header__logo}>
-      <div className={style['logo-img']}>
+      <a href="#home" className={style["logo-img"]}>
         <img src="/assets/logo.svg" alt="" />
-        <a href="#home">
-          <span>UA DNA</span>
-        </a>
-      </div>
-      <p>Web-project about Ukrainian culture that will make you fall in live with Ukraine</p>
+        <span>UA DNA</span>
+      </a>
+      <a href="#home" className={style["logo-img"]}>
+        <p>
+          Web-project about Ukrainian culture that will make you fall in live
+          with Ukraine
+        </p>
+      </a>
     </div>
   );
 };

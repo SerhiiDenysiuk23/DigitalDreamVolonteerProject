@@ -23,19 +23,19 @@ const ArtistsSection = ({ kind, id }: { kind?: string, id?: string }) => {
     setActiveId(defaultActiveId);
   }, [data]);
 
-    
+  const formattedKind = `${kind?.toUpperCase()}${kind !== 'Music' ? 's' : ''}`
 
   if (loading)
-    return <Loader/>
+    return <Loader />
 
   return (
-  <section className={styles.section} id={id}>
+    <section className={styles.section} id={id}>
       <div className={styles.title}>
-        <h3>Do you know about ukrainian <span>MUSIC</span>?</h3>
+        <h3>Do you know about ukrainian <span>{formattedKind}</span>?</h3>
       </div>
 
-      <InfoBlock type="musician" id={activeId} loading={loading}/>
-      <MiddleSlider id={activeId} />
+      <InfoBlock type="musician" id={activeId} loading={loading} />
+      <MiddleSlider id={activeId} kind={formattedKind} />
       <ArtistList
         type={"musicians"}
         onClick={setActiveId}
