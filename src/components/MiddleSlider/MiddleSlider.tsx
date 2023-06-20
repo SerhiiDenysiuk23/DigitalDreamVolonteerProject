@@ -15,9 +15,10 @@ import { Artwork } from "../../types/Artwork"
 
 interface Props {
     id: string
+    kind?: string
 }
 
-const MiddleSlider: React.FC<Props> = ({id}) => {
+const MiddleSlider: React.FC<Props> = ({ id, kind }) => {
     const [showModal, setShowModal] = React.useState<boolean>(false);
     const handleModal = () => setShowModal(prev => !prev);
     let arts = {
@@ -89,7 +90,7 @@ const MiddleSlider: React.FC<Props> = ({id}) => {
         ]
     };
 
-    
+
     // const [hasScrolled, setHasScrolled] = useState(false);
     // const handleSlideClick = () => {
     //     if (!hasScrolled) {
@@ -99,28 +100,28 @@ const MiddleSlider: React.FC<Props> = ({id}) => {
     // const handleMouseDown = () => {
     //     setHasScrolled(false);
     //   };
-    
+
     //   const handleScroll = () => {
     //     setHasScrolled(true);
     //   };
-   
-    // const data = useQuery(getExampleInfo, { variables: { artistId: id },});
-    console.log("ID -" +id );
-    
-      const{data}  = useQuery(getArts,{variables:{artistId: id}});
-      console.warn(data?.artist.artworks);
-    //   const artist = data?.artist as Artwork[]
-      const [artist, setArtist] = useState<Artwork[]>([])
 
-    useEffect(()=>{
-        data?.artist&&
-        setArtist(data?.artist.artworks);
-    },[data])
+    // const data = useQuery(getExampleInfo, { variables: { artistId: id },});
+    console.log("ID -" + id);
+
+    const { data } = useQuery(getArts, { variables: { artistId: id } });
+    console.warn(data?.artist.artworks);
+    //   const artist = data?.artist as Artwork[]
+    const [artist, setArtist] = useState<Artwork[]>([])
+
+    useEffect(() => {
+        data?.artist &&
+            setArtist(data?.artist.artworks);
+    }, [data])
 
     return (
         <div className={`${style.container} middle-slider-container`}>
             <div className={style.heading}>
-                <h3 className={style.header}>Do you know about Ukrainian <span>ART</span>?</h3>
+                <h3 className={style.header}>Do you know about Ukrainian <span>{kind}</span>?</h3>
             </div>
             <div className={style.slide}>
 
@@ -128,10 +129,10 @@ const MiddleSlider: React.FC<Props> = ({id}) => {
 
                 <Slider className={`${style.slider} middle-slider `} {...settings}>
 
-                    {!!artist.length&&
-                        artist.map((item:Artwork) => (
+                    {!!artist.length &&
+                        artist.map((item: Artwork) => (
                             <SliderItem key={item.id} image={item.assetUrl} description={item.description} handleClick={handleModal} />
-                         ))
+                        ))
                         // sliderItems.arts.map(item => (
                         //    <SliderItem key={item.img} image={item.img} description={item.description} handleClick={handleModal} />
                         // ))
