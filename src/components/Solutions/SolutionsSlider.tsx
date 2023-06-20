@@ -5,6 +5,7 @@ import ArrowSliderBtn from "../../elements/ArrowSliderBtn/ArrowSliderBtn";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Popup from "../../elements/Popup/Popup";
+import SliderPagination from "../../elements/SliderPagination/SliderPagination";
 
 const SolutionsSlider: FC<{ achievement: string }> = ({achievement}) => {
     const [showModal, setShowModal] = useState<boolean>(false);
@@ -13,13 +14,26 @@ const SolutionsSlider: FC<{ achievement: string }> = ({achievement}) => {
          setShowModal(!showModal)
      };
 
+    // const photos = [
+    //     'https://picsum.photos/450',
+    //     'https://picsum.photos/451',
+    //     'https://picsum.photos/452',
+    //     'https://picsum.photos/453',
+    //     'https://picsum.photos/454',
+    //     'https://picsum.photos/455',
+    //     'https://picsum.photos/456',
+    //     'https://picsum.photos/457'
+    // ];
+
     const photos = [
-        'https://picsum.photos/450',
-        'https://picsum.photos/451',
-        'https://picsum.photos/452',
-        'https://picsum.photos/453',
-        'https://picsum.photos/454',
-    ];
+        "https://www.pngall.com/wp-content/uploads/2/1-Number-PNG-Pic.png",
+        "https://www.freeiconspng.com/uploads/number-two-icon-18.jpg",
+        "https://clipart-library.com/images/8cGbedjKi.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/4_green.svg/1024px-4_green.svg.png",
+        "https://blognumbers.files.wordpress.com/2010/09/5.jpg",
+        "https://static8.depositphotos.com/1338574/829/i/600/depositphotos_8293014-stock-photo-the-number-0-in-gold.jpg",
+        "https://clipart-library.com/images/zTX5kpMpc.gif"
+    ]
 
     const settings: Settings = {
         arrows: true,
@@ -33,8 +47,15 @@ const SolutionsSlider: FC<{ achievement: string }> = ({achievement}) => {
         customPaging(index: number): JSX.Element {
             return <img src={photos[index]}/>
         },
-        afterChange(currentSlide: number) {
-            setCurrentSlide(currentSlide)
+        appendDots: (dots: JSX.Element[]) => <SliderPagination
+            dots={dots}
+            totalSlides={photos.length}
+            visibleSlides={5}
+            currentSlide={currentSlide}
+            className={`${styles.brandSliderPagination} brand-slider`}
+        />,
+        beforeChange(currentSlide: number, nextSlide: number) {
+            setCurrentSlide(nextSlide)
         },
         responsive: [
             {

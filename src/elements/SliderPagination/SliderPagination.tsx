@@ -29,19 +29,24 @@ const SliderPagination: FC<Props> = ({dots, totalSlides, visibleSlides, currentS
                 <div key={index}
                     onClick={()=> {
                         if (dot == dots[totalSlides - 1]){
-                            setState(3)
+                            setState(visibleSlides-1)
                             return
                         }
 
                         switch (index) {
                             case 0:
-                            case 1:
+                            case 1: {
                                 setState(1)
+                            }
                                 break;
-                            case 2:
-                            case 3:
-                                setState(2)
+                            case visibleSlides - 2:
+                            case visibleSlides - 1: {
+                                setState(visibleSlides - 2)
+                            }
                                 break;
+                            default: {
+                                setState(Math.floor(visibleSlides / 2))
+                            }
                         }
                     }}
                 >{dot}</div>

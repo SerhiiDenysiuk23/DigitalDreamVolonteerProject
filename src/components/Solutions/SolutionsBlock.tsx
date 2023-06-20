@@ -12,7 +12,7 @@ const SolutionsBlock: FC<{ artists: any[], isShowArtists: boolean }> = ({artists
 
     return (
         <div className={`${styles.solutionBlock} main-block`}>
-            <h3>Do you know about Ukrainian SOLUTIONS?</h3>
+            <h3>Do you know about Ukrainian <span>SOLUTIONS?</span></h3>
             {
                 isShowArtists &&
                 <ArtistList type={"authors"} onClick={() => {
