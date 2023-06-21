@@ -17,7 +17,7 @@
 .overlay {
   pointer-events: none;
   width: 100%;
-  height: 135px;
+  height: 50px;
   bottom: 0;
   left: 0;
   position: absolute;
@@ -27,13 +27,11 @@
 
 .list {
   overflow-y: scroll;
-  // padding-bottom: 95px;
+  padding-bottom: 20px;
   overflow-x: hidden;
   width: 100%;
-
   & li {
     display: flex;
-    background-color: #ffffff;
     align-items: center;
     gap: 16px;
     padding: 10px;
@@ -48,6 +46,8 @@
     &.active {
       box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
       transform: scale(1.05);
+    background-color: #ffffff;
+
     }
 
     &:hover {
@@ -107,7 +107,7 @@
     position: relative;
     order: 2;
     border-radius: 0;
-    min-height: 227px;
+    // min-height: 227px;
     margin-bottom: 20px;
 
     &.brand {

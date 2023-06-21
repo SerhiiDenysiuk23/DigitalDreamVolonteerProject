@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.wrapperLoader {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    min-height: 215px;
+    vertical-align: top;
+    margin: 1%;
+
+    .loader1 {
+        position: relative;
+        margin: 75px auto;
+        width: 150px;
+        height: 150px;
+        display: block;
+        overflow: hidden;
+
+        div {
+            height: 100%;
+        }
+    }
+
+    .loader2 div {
+        border-radius: 50%;
+        padding: 8px;
+        border: 2px solid transparent;
+        animation: rotate linear 3.5s infinite;
+        border-top-color: rgb(176, 10, 10);
+        border-left-color: rgb(0, 0, 0);
+        animation-timing-function: cubic-bezier(.55, .38, .21, .88);
+        animation-duration: 3s;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(180deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
