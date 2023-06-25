@@ -23,7 +23,6 @@ function App() {
       <ArtistsSection id="music"/>
       <DonateSectionSecond />
       <YouTubeVideos />
-      {/* <Error/> */}
     </div>
   );
 }
