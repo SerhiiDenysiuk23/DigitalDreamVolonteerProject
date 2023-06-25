@@ -14,13 +14,13 @@ function App() {
   return (
     <div className="app">
       <Banner />
-      <ArtistsSection kind='Illustrator' id="art"/>
+      <ArtistsSection kind='Painter' id="art" />
       <PlaceSection />
       <BrandsSection />
       <DonateSection />
-      <ArtistsSection kind='Painter' id="art" />
+      <ArtistsSection kind='Music' id="music" />
       <SolutionsSection />
-      <ArtistsSection id="music"/>
+      <ArtistsSection kind='Illustrator' id="art" />
       <DonateSectionSecond />
       <YouTubeVideos />
     </div>

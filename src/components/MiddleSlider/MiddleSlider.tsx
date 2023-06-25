@@ -15,9 +15,12 @@ import Error from "../Error/Error"
 
 
 
+
 interface Props {
     id: string
+    kind?: string
 }
+
 
 const MiddleSlider: React.FC<Props> = ({ id }) => {
     const [showModal, setShowModal] = React.useState<boolean>(false);
@@ -26,6 +29,7 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
     const { data ,error} = useQuery(getArtistInfo, { variables: { artistId: id } });
     const handleModal = () => setShowModal(!showModal);
     const sliderRef = useRef<Slider>(null)
+
 
     let arts = {
         name: '',
@@ -94,6 +98,29 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
             },
         ]
     };
+    // const [hasScrolled, setHasScrolled] = useState(false);
+    // const handleSlideClick = () => {
+    //     if (!hasScrolled) {
+    //       setShowModal(true);
+    //     }
+    //   };
+    // const handleMouseDown = () => {
+    //     setHasScrolled(false);
+    //   };
+
+    //   const handleScroll = () => {
+    //     setHasScrolled(true);
+    //   };
+
+    // const data = useQuery(getExampleInfo, { variables: { artistId: id },});
+    // console.log("ID -" + id);
+
+    // const { data } = useQuery(getArts, { variables: { artistId: id } });
+    // console.warn(data?.artist.artworks);
+    //   const artist = data?.artist as Artwork[]
+    // const [artist, setArtist] = useState<Artwork[]>([])
+
+
 
     useEffect(() => {
         
@@ -137,6 +164,7 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
             </div>
         )
     }
+
 
 }
 
