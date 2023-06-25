@@ -8,6 +8,7 @@ import SolutionsSection from "./sections/SolutionsSection";
 import BrandsSection from "./sections/BrandsSection";
 import YouTubeVideos from "./components/YouTubeVideos/YouTubeVideos";
 import PlacesPhotoSlider from "./components/Places/PlacesPhotoSlider";
+import Error from "./components/Error/Error";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <ArtistsSection id="music"/>
       <DonateSectionSecond />
       <YouTubeVideos />
+      {/* <Error/> */}
     </div>
   );
 }
