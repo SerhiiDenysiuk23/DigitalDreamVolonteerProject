@@ -11,7 +11,7 @@ const PlaceSection = () => {
     //     setId(elemId)
     // }
     return (
-        <section className={styles.placeSection}>
+        <section id={"places"} className={styles.placeSection}>
             <PlacesPhotoSlider id={idState[0]}/>
             <PlaceInfo idState={idState}/>
         </section>

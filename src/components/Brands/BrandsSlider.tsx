@@ -7,11 +7,10 @@ import "slick-carousel/slick/slick-theme.css";
 import Popup from "../../elements/Popup/Popup";
 import {Company} from "../../types/Company";
 import SliderPagination from "../../elements/SliderPagination/SliderPagination";
+import PopupSlider from "../../elements/Popup/PopupSlider";
 
 
-
-
-const BrandsSlider: FC<{company: Company}> = ({company})=> {
+const BrandsSlider: FC<{ company: Company }> = ({company}) => {
 
     const [showModal, setShowModal] = useState<boolean>(false);
     const [currentSlide, setCurrentSlide] = useState(0)
@@ -44,17 +43,18 @@ const BrandsSlider: FC<{company: Company}> = ({company})=> {
         responsive: [
             {
                 breakpoint: 995,
-                settings:{
+                settings: {
                     arrows: false
                 }
             }
         ]
     };
 
-    const data = { name: "", description: "", link: "" }
+    const data = {name: "", description: "", link: ""}
     return (
         <div className={styles.sliderSide}>
-            {showModal && <Popup data={data} handleModal={handleModal} />}
+            {showModal && <PopupSlider mediaList={company.mediaSlides.map(item => ({link: item, name: item}))}
+                                       handleModal={handleModal}/>}
             <h2>{company.name}</h2>
             <Slider className={styles.brandSlider} {...settings}>
                 {
