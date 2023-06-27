@@ -25,7 +25,7 @@ const BrandsSection = () => {
     }
 
     return (
-        <section>
+        <section id={"brend"}>
             <BrandsBlock isShowArtists={(winWidth < breakpoint)}
                 activeId={activeId ?? ""}
                 handleCompanyChange={handleCompanyChange} setHeight={handleBlockHeightChange} />
