@@ -12,7 +12,7 @@ const SolutionsSection = () => {
     const breakpoint = 1023
 
     return (
-        <section>
+        <section id={"solution"}>
             <SolutionsBlock isShowArtists={(winWidth < breakpoint)} artists={data?.artists}/>
             {
                 (winWidth > breakpoint) &&
