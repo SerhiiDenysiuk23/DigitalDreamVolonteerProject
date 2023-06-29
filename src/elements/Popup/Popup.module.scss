@@ -15,7 +15,10 @@
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-
+  :global(.p-large) {
+    font-size: calc(13px + (24 - 13) * ((100vw - 375px) / (1920 - 375)));
+    line-height: 1.4;
+  }
   h3 {
     line-height: 24px;
     text-align: center;
@@ -28,21 +31,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 40px;
   }
 
   .popupInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 19px;
-    width: 50%;
+    width: 60%;
     height: 100%;
 
     & ~ .popupText {
       width: 50%;
       height: 100%;
       display: flex;
+      align-items: center;
       overflow-y: scroll;
     }
   }
@@ -163,6 +168,8 @@
 
       & ~ .popupText {
         width: 100%;
+        align-items: start;
+
         p {
           padding: 5px;
           font-size: 14px;
