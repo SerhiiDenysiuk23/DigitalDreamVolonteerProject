@@ -6,6 +6,7 @@
   height: 80vh;
   max-width: 1600px;
   max-height: 550px;
+  padding: 0;
   z-index: 5;
   overflow: visible;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
@@ -31,7 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    // gap: 40px;
   }
 
   .popupInfo {
@@ -43,19 +44,23 @@
     width: 60%;
     height: 100%;
 
-    & ~ .popupText {
+    & ~ .popupText__container {
       width: 50%;
       height: 100%;
-      display: flex;
-      align-items: center;
-      overflow-y: scroll;
+      padding: 30px;
+      // display: flex;
+      // align-items: center;
+      .popupText {
+        height: 100%;
+        overflow-y: scroll;
+      }
     }
   }
 
   .popupAuthor {
     display: flex;
     flex-direction: column;
-    gap: 19px;
+    gap: 10px;
     align-items: center;
   }
 
@@ -64,13 +69,13 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 35vh;
+    height: 100%;
     overflow: hidden;
-    border-radius: 17px;
-    -webkit-border-radius: 17px;
-    -moz-border-radius: 17px;
-    -ms-border-radius: 17px;
-    -o-border-radius: 17px;
+    border-radius: 17px 0 0 17px;
+    -webkit-border-radius: 17px 0 0 17px;
+    -moz-border-radius: 17px 0 0 17px;
+    -ms-border-radius: 17px 0 0 17px;
+    -o-border-radius: 17px 0 0 17px;
 
     img {
       width: 100%;
@@ -162,31 +167,44 @@
 
     .popupInfo {
       width: 100%;
-      height: 70%;
+      height: 50%;
       align-items: center;
       gap: 10px;
 
-      & ~ .popupText {
-        width: 100%;
-        align-items: start;
 
-        p {
+      & ~ .popupText__container {
+        width: 100%;
+        height: 50%;
+        padding: 5px;
+        // display: flex;
+        // align-items: center;
+        .popupText {
+          height: 100%;
+          overflow-y: scroll;
+          p {
           padding: 5px;
           font-size: 14px;
           line-height: 1.4;
         }
+        }
       }
+
+        
+      
     }
 
     .popupImg {
       width: 100%;
       height: 100%;
+      border-radius: 17px;
+      -webkit-border-radius: 17px;
+      -moz-border-radius: 17px;
+      -ms-border-radius: 17px;
+      -o-border-radius: 17px;
     }
 
     .popupAuthor {
       display: flex;
-      width: 100%;
-      height: 30%;
       gap: 5px;
     }
   }
