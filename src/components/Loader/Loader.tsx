@@ -1,12 +1,13 @@
-import React from 'react'
-import style from "./Loader.module.scss"
+import React from "react";
+import style from "./Loader.module.scss";
+import Loader from "../../elements/Loader/Loader";
 
-const Loader = () => {
+const BigLoader = () => {
   return (
     <div className={style.loader}>
-      <img src="/assets/loader.svg" alt="" />
+      <Loader />
     </div>
-  )
-}
+  );
+};
 
-export default Loader
+export default BigLoader;
