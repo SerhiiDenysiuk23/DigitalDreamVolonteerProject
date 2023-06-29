@@ -172,7 +172,7 @@ const BannerBackground = () => {
               onMouseLeave={() => handleMouseLeave(item.id)}
               style={{
                 scale: `${item.scale}`,
-                // filter: item.scale === 1.2 ? 'drop-shadow(1px 1px 3px #ddd)' : ''
+                filter: item.scale === 1.2 ? 'drop-shadow(1px 1px 1px #cc8787)' : ''
               }}
               className={`${style.icons} ${style[item.className]}`}>
               <img src={item.src} alt={item.className} />
