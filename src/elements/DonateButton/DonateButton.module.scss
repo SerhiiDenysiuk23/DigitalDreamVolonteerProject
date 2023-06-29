@@ -1,12 +1,47 @@
 .wrapperButton {
     display: flex;
+    width: 350px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.buttonHeart {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #312F2F;
+    width: 270px;
+    border-radius: 20px 0 0 20px;
+    transition: 0.4s all;
+
+    & h4 {
+        color: white;
+        font-size: 32px;
+        font-style: normal;
+        margin: 0px;
+        line-height: 15.2px;
+        letter-spacing: 2px;
+    }
+
+    & img {
+        width: 20%;
+    }
+}
+
+.buttonLink {
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 370px;
-    height: 60px;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    background-color: rgb(226, 226, 6);
+    width: 80px;
+    border-radius: 0 20px 20px 0;
+    transition: 0.4s all;
+}
+
+.arrow {
+    font-size: 50px;
+    color: #233A5C;
+    transition: 0.4s all
 }
 
 .buttonDonate {
@@ -30,14 +65,31 @@
     }
 }
 
-.buttonDonate:hover {
-    background: #ffffff;
-    color: rgb(0, 0, 0);
-    box-shadow: 0px 0px 8px rgb(0, 0, 0);
-    transition: 0.4s all;
+.wrapperButton:hover {
+    .buttonHeart {
+        background: #ffffff;
+        color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 8px rgb(0, 0, 0);
+        transition: 0.4s all
+    }
+
+    .buttonLink {
+        box-shadow: 0px 0px 8px rgb(0, 0, 0);
+        transition: 0.4s all
+    }
+
+    .arrow {
+        color: #000000;
+        transition: 0.4s all
+    }
+
+    & h4 {
+        color: #101010;
+        transition: 0.4s all
+    }
 }
 
-.buttonDonate:hover .heartFlag {
+.buttonHeart:hover .heartFlag {
     animation: pulse 2s ease infinite;
 
     @keyframes pulse {
@@ -62,6 +114,11 @@
         }
     }
 }
+
+
+
+
+
 
 
 .buttonInfo {

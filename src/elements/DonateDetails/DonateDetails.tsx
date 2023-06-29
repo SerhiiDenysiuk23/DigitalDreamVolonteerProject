@@ -13,7 +13,7 @@ const DonateDetails = () => {
       <div className={style.supportList}>
         <div className={style.listItem}>
           <i>
-            <img src="/assets/icons/shield.svg" alt="" />
+            <img src="/assets/icons/donate/protection.png" alt="" />
           </i>
           <p>
             Protection and preservation of cultural values ​​that injured,
@@ -22,24 +22,38 @@ const DonateDetails = () => {
         </div>
         <div className={style.listItem}>
           <i>
-            <img src="/assets/icons/palette.svg" alt="" />
+            <img src="/assets/icons/donate/artisr.png" alt="" />
           </i>
           <p>
-            Support for the activities of cultural and artistic institutions
+            Support for the activities of
+            <br />
+            cultural and artistic institutions, young talents and new trends
           </p>
         </div>
         <div className={style.listItem}>
           <i>
-            <img src="/assets/icons/idea.svg" alt="" />
+            <img src="/assets/icons/donate/shield.png" alt="" />
           </i>
-          <p>Support for creative industries</p>
+          <p>
+            Support for creative industries, development of modern technologies,
+            digital implements
+          </p>
         </div>
         <div className={style.listItem}>
           <i>
-            <img src="/assets/icons/television.svg" alt="" />
+            <img src="/assets/icons/donate/tv.png" alt="" />
           </i>
-          <p>Support for television and radio broadcasting</p>
+          <p>
+            Support for television
+            <br />
+            and radio broadcasting, other
+            <br />
+            media
+          </p>
         </div>
+      </div>
+      <div className={style.helpRestoration}>
+        <h5>You can help in restoration of these cultural treasures</h5>
       </div>
     </div>
   );
