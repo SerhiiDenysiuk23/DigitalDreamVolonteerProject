@@ -1,4 +1,6 @@
 .solutionSlider {
+  //width: 448px;
+  //height: 387px;
   width: 577px;
   border-radius: 13px;
   height: 478px;
@@ -12,6 +14,12 @@
 
   &__elem {
     height: 478px;
+    //height: 387px;
+
+  }
+
+  @media screen and (min-width: 1614px){
+    margin-bottom: 110px;
   }
 }
 
@@ -24,6 +32,8 @@
   li {
     height: 70px;
     width: 103px;
+    //height: 70px;
+    //width: 80px;
 
     img {
       width: 100%;
