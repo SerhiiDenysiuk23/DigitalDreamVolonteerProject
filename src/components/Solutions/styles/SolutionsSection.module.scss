@@ -11,44 +11,79 @@
 
   .solutionContainer {
     display: flex;
-    justify-content: center;
-    margin: 91px 0 94px;
+    justify-content: space-between;
     border-radius: inherit;
-    gap: 63px;
+    gap: 34px;
   }
-}
 
-.starBefore {
-  padding-left: 44px;
-  position: relative;
-
-  &:before {
-    content: "★";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #FED501;
-    font-size: 28px;
-  }
-}
-
-
-@import "SoulutionsSlider";
-@import "SolutionsDescription";
-
-@media screen and (max-width: 1470px) {
-  .solutionBlock {
-    .solutionContainer {
-      gap: 34px;
+  .maxW1279 {
+    display: none;
+    @media screen and (max-width: 1275px){
+      display: flex;
+    }
+    @media screen and (max-width: 1275px) and (min-width: 1218px){
+      margin-top: 80px
+    }
+    @media screen and (max-width: 1218px) and (min-width: 1178px){
+      margin-top: 50px
     }
   }
 }
 
+.starBefore {
+  padding-left: 70px;
+  position: relative;
+  img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50px;
+    width: auto;
+  }
+}
+
+.moreDetails {
+  display: block;
+  width: fit-content;
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: auto;
+  margin-top: 25px;
+  div{
+    background: #A1C3D8;
+    border-radius: 15px;
+    padding: 10px;
+    width: 250px;
+    height: 41px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+      display: inline-block;
+      transform: rotate(45deg) translateY(-25%);
+      font-family: Consolas, sans-serif;
+      font-weight: bold;
+      font-size: 50px;
+      margin-left: 18px;
+      line-height: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.minW1279 {
+  @media screen and (max-width: 1275px){
+    display: none;
+  }
+}
+
+@import "SoulutionsSlider";
+@import "SolutionsDescription";
+
 @media screen and (max-width: 1023px) {
   .solutionBlock {
-    padding-bottom: 0;
-
     .solutionContainer {
       margin-top: 16px;
     }
@@ -66,6 +101,7 @@
 
 @media screen and (max-width: 832px) {
   .solutionBlock {
+    padding-bottom: 0;
     .solutionContainer {
       margin: 16px 0 48px;
     }

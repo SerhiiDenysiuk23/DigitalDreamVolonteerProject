@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useLayoutEffect, useState} from 'react';
 
 interface Props {
     dots: JSX.Element[],
@@ -11,6 +11,7 @@ interface Props {
 
 const SliderPagination: FC<Props> = ({dots, totalSlides, visibleSlides, currentSlide, className}) => {
     const [state, setState] = useState(2)
+    const [direction, setDirection] = useState(0)
 
     const startIndex = Math.max(currentSlide - state, 0);
     const endIndex = Math.min(startIndex + visibleSlides, totalSlides);
@@ -23,31 +24,28 @@ const SliderPagination: FC<Props> = ({dots, totalSlides, visibleSlides, currentS
         visibleDots = visibleDots.concat(additionalDots);
     }
 
+    useEffect(()=>{
+        switch (currentSlide){
+            case totalSlides - 1:
+                setState(visibleSlides - 1); break
+            case totalSlides - 2:
+                setState(visibleSlides - 2); break
+            case 0:
+            case 1:
+                setState(1); break
+            default: setState(Math.floor(visibleSlides / 2) - (visibleSlides % 2 == 0 ? direction : 0))
+        }
+    },[currentSlide])
+
     return (
         <ul className={className ?? ""}>
             {visibleDots.map((dot, index) => (
                 <div key={index}
                     onClick={()=> {
-                        if (dot == dots[totalSlides - 1]){
-                            setState(visibleSlides-1)
-                            return
-                        }
-
-                        switch (index) {
-                            case 0:
-                            case 1: {
-                                setState(1)
-                            }
-                                break;
-                            case visibleSlides - 2:
-                            case visibleSlides - 1: {
-                                setState(visibleSlides - 2)
-                            }
-                                break;
-                            default: {
-                                setState(Math.floor(visibleSlides / 2))
-                            }
-                        }
+                        if (index < (visibleSlides / 2))
+                            setDirection(1)
+                        else
+                            setDirection(0)
                     }}
                 >{dot}</div>
             ))}
