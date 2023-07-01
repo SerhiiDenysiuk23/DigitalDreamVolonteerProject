@@ -9,8 +9,8 @@ const DonateDetails = () => {
   return (
     <div className={style.wrapperDetails}>
       <div className={style.wrapperList}>
-        <div className={style.headerDetails}>
-          <h4>The funds will be directed to</h4>
+        <div className={style.wrapperHeaderDetails}>
+          <h4 className={style.headerDetails}>The funds will be directed to</h4>
         </div>
         <div className={style.supportList}>
           <div className={style.listItem}>

@@ -116,30 +116,16 @@
 }
 
 
-
-
-
-
-
 .buttonInfo {
     font-size: 16px;
     margin: 10px;
 }
 
-@media (max-width:1280px) {
-    .wrapperButton {
-        width: 320px;
-        height: 70px;
-        margin: 0 0 0 150px;
-    }
-
-    .buttonDonate {
-        width: 250px;
-    }
-}
 
 @media (max-width:840px) {
     .wrapperButton {
+        width: 300px;
+        height: 70px;
         margin: 0 40px 0 0;
     }
 }
@@ -156,7 +142,8 @@
 
 @media (max-width:680px) {
     .wrapperButton {
-        width: 65%;
+        width: 250px;
+        height: 55px;
         margin: 0 100px 0 0;
     }
 
@@ -181,7 +168,7 @@
 
 @media (max-width:600px) {
     .wrapperButton {
-        height: 50px;
+        height: 70px;
         margin: 0 75px 0 0;
     }
 
@@ -192,7 +179,7 @@
 
 @media (max-width:560px) {
     .wrapperButton {
-        margin: 0 65px 0 0;
+        margin: 0 0px 0 0;
     }
 
     .buttonInfo {
@@ -200,7 +187,6 @@
     }
 
     .buttonDonate {
-        width: 40%;
         border-radius: 8px;
 
         & img {
@@ -216,30 +202,26 @@
 
 @media (max-width:500px) {
     .wrapperButton {
-        width: 74%;
-        height: 50px;
+        width: 210px;
+        height: 55px;
         margin: 0 25px 0 0;
+
+        & h4 {
+            font-size: 24px;
+        }
     }
 
     .buttonDonate {
         height: 40px;
-
-        & p,
-        & span {
-            font-size: 14px;
-        }
     }
 }
 
 @media (max-width:450px) {
     .wrapperButton {
-        width: 65%;
-        height: 50px;
         margin: 0 45px 0 0;
     }
 
     .buttonDonate {
-        width: 60%;
         margin: 10px;
         height: 40px;
         border-radius: 8px;
@@ -257,14 +239,12 @@
 
 @media (max-width:400px) {
     .wrapperButton {
-        width: 60%;
         margin: 0 55px 0 0;
     }
 }
 
 @media (max-width:374px) {
     .wrapperButton {
-        width: 45%;
         margin: 0 105px 0 0;
     }
 }
