@@ -38,11 +38,12 @@ const SolutionsSlider: FC<{ achievement: string }> = ({achievement}) => {
 
     const settings: Settings = {
         arrows: true,
+        swipe: false,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        prevArrow: <ArrowSliderBtn direction={"left"}/>,
-        nextArrow: <ArrowSliderBtn direction={"right"}/>,
+        prevArrow: <ArrowSliderBtn btnType={"big"} direction={"left"}/>,
+        nextArrow: <ArrowSliderBtn btnType={"big"} direction={"right"}/>,
         dots: true,
         dotsClass: `${styles.solutionSliderPagination} solution-slider`,
         customPaging(index: number): JSX.Element {
@@ -60,9 +61,16 @@ const SolutionsSlider: FC<{ achievement: string }> = ({achievement}) => {
         },
         responsive: [
             {
+                breakpoint: 1023,
+                settings:{
+                    swipe: true
+                }
+            },
+            {
                 breakpoint: 995,
                 settings: {
-                    arrows: false
+                    arrows: false,
+                    swipe: true
                 }
             }
         ]
@@ -84,7 +92,6 @@ const SolutionsSlider: FC<{ achievement: string }> = ({achievement}) => {
                         </div>)
                 }
             </Slider>
-            <p className={"p-18-hind " + styles.starBefore}>{achievement}</p>
         </div>
     );
 };
