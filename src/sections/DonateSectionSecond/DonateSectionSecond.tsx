@@ -6,9 +6,22 @@ import DonateCulture from "../../elements/DonateCulture/DonateCulture";
 
 const DonateSectionSecond = () => {
   return (
-    <div className={`${style.donateSectionSecond}`}>
+    <div className={style.donateSectionSecond}>
+      <div className={style.tarasShevchenkoWrapper}>
+        <img
+          src="/assets/portret-1.png"
+          alt=""
+          className={style.objectDamage}
+        />
+      </div>
       <DonateCulture />
-      <DonateShevchenko />
+      <div className={style.tarasShevchenkoWrapper}>
+        <img
+          src="/assets/portret-2.png"
+          alt=""
+          className={style.objectDamage}
+        />
+      </div>
     </div>
   );
 };

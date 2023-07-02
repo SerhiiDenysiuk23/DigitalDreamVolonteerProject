@@ -121,18 +121,61 @@
     margin: 10px;
 }
 
+@media (max-width:1600px) {
+    .wrapperButton {
+        width: 290px;
+    }
+}
+
+@media (max-width:1400px) {
+    .wrapperButton {
+        width: 250px;
+        height: 70px;
+        border-radius: 15px;
+
+        & h4 {
+            font-size: 28px;
+        }
+    }
+
+    .arrow {
+        font-size: 40px;
+    }
+}
 
 @media (max-width:840px) {
     .wrapperButton {
-        width: 300px;
-        height: 70px;
-        margin: 0 40px 0 0;
+        width: 220px;
+        height: 60px;
+        border-radius: 5px;
+
+        & h4 {
+            font-size: 22px;
+        }
+    }
+
+    .arrow {
+        font-size: 30px;
     }
 }
 
 @media (max-width:768px) {
     .wrapperButton {
-        margin: 0 0 0 0;
+        width: 180px;
+        height: 50px;
+        border-radius: 2px;
+
+        & h4 {
+            font-size: 20px;
+        }
+    }
+
+    .buttonHeart {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .buttonLink {
+        border-radius: 0px 10px 10px 0px;
     }
 
     .buttonDonate .heartFlag {
@@ -144,7 +187,6 @@
     .wrapperButton {
         width: 250px;
         height: 55px;
-        margin: 0 100px 0 0;
     }
 
     .buttonDonate {
@@ -168,8 +210,7 @@
 
 @media (max-width:600px) {
     .wrapperButton {
-        height: 70px;
-        margin: 0 75px 0 0;
+        width: 220px;
     }
 
     .buttonDonate {
@@ -178,9 +219,6 @@
 }
 
 @media (max-width:560px) {
-    .wrapperButton {
-        margin: 0 0px 0 0;
-    }
 
     .buttonInfo {
         font-size: 14px;
@@ -204,11 +242,6 @@
     .wrapperButton {
         width: 210px;
         height: 55px;
-        margin: 0 25px 0 0;
-
-        & h4 {
-            font-size: 24px;
-        }
     }
 
     .buttonDonate {
@@ -218,7 +251,8 @@
 
 @media (max-width:450px) {
     .wrapperButton {
-        margin: 0 45px 0 0;
+        width: 190px;
+        height: 55px;
     }
 
     .buttonDonate {
@@ -231,20 +265,11 @@
         }
     }
 
-    .buttonInfo {
-        font-size: 12px;
-    }
-
 }
 
 @media (max-width:400px) {
     .wrapperButton {
-        margin: 0 55px 0 0;
-    }
-}
-
-@media (max-width:374px) {
-    .wrapperButton {
-        margin: 0 105px 0 0;
+        width: 170px;
+        height: 44px
     }
 }
