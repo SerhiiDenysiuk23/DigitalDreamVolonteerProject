@@ -7,9 +7,9 @@ const DonateHeader = () => {
       <h1 className={style.donateHeader}>
         MINISTRY OF CULTURE AND INFORMATION POLICY
       </h1>
-      <p className={style.donateSubheader}>
+      <h2 className={style.donateSubheader}>
         Opened multi-currency charity account for cultural support in Ukraine
-      </p>
+      </h2>
     </div>
   );
 };

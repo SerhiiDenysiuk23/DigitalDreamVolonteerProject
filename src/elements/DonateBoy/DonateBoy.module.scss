@@ -1,65 +1,71 @@
 .wrapperDonateBoy {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    width: 25%;
-    height: 0;
+    width: 35%;
+    height: 100%;
 
 
     & img {
-        width: 1480px;
-        height: 1120px;
-        margin: 0px 0px 245px 200px;
+        width: 120%;
+        margin: 110px 0 0 70px;
     }
 }
 
 
 @media (max-width:1280px) {
     .wrapperDonateBoy {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 25%;
-        height: 0;
-
 
         & img {
-            width: 1280px;
-            height: 920px;
-            margin: 230px 0px 245px 200px;
+            width: 170%;
+            margin: 110px 0 0 280px;
         }
     }
 }
 
-@media (max-width:768px) {
+@media (max-width:1140px) {
     .wrapperDonateBoy {
 
         & img {
-            width: 1280px;
-            height: 920px;
-            margin: 200px 0px 245px 535px;
+            width: 170%;
+            margin: 0 0 0 180px;
         }
     }
 }
 
-@media (max-width:680px) {
+@media (max-width:968px) {
     .wrapperDonateBoy {
 
         & img {
-            width: 920px;
-            height: 700px;
-            margin: 320px 0px 245px 560px;
+            width: 260%;
         }
     }
 }
 
-@media (max-width:560px) {
+@media (max-width:786px) {
     .wrapperDonateBoy {
 
         & img {
-            width: 920px;
-            height: 700px;
-            margin: 320px 0px 245px 550px;
+            width: 300%;
+        }
+    }
+}
+
+@media (max-width:740px) {
+    .wrapperDonateBoy {
+
+        & img {
+            width: 330%;
+            margin: 0 20px 0 180px;
+        }
+    }
+}
+
+@media (max-width:600px) {
+    .wrapperDonateBoy {
+
+        & img {
+            margin: 0 20px 0 340px;
         }
     }
 }
@@ -68,9 +74,8 @@
     .wrapperDonateBoy {
 
         & img {
-            width: 730px;
-            height: 520px;
-            margin: 290px 0px 245px 550px;
+            width: 270%;
+            margin: 0 20px 0 340px;
         }
     }
 }
@@ -79,9 +84,8 @@
     .wrapperDonateBoy {
 
         & img {
-            width: 730px;
-            height: 520px;
-            margin: 290px 0px 245px 640px;
+            width: 325%;
+            margin: 0 0px 0 380px;
         }
     }
 }

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 28%;
+    height: 40%;
 }
 
 .donateHeader {
@@ -10,7 +10,9 @@
 }
 
 .donateSubheader {
-    font-size: 18px;
+    width: 485px;
+    font-weight: 500;
+    font-size: 24px;
 }
 
 
@@ -28,58 +30,55 @@
 
 @media (max-width:840px) {
     .wrapperDonateHeader {
-        width: 100%;
-        margin: 0 100px 82px 100px;
+        margin: 0 0px 0px -190px;
     }
 }
 
-@media (max-width:768px) {
-    .wrapperDonateHeader {
-        width: 65%;
-        margin: 0 100px 40px 100px;
-    }
+// @media (max-width:768px) {
+//     // .wrapperDonateHeader {
+//     //     margin: 0px 0px 0px -190px;
+//     // }
+// }
 
-    .donateHeader {
-        width: 550px;
-    }
-}
+// @media (max-width:740px) {
+//     // .wrapperDonateHeader {
+//     //     margin: 0 60px 0px 0px;
+//     // }
 
-@media (max-width:640px) {
-    .wrapperDonateHeader {
-        margin: 30px 90px 40px 100px;
-    }
-
-    .donateHeader {
-        font-size: 36px;
-    }
-}
+// }
 
 @media (max-width:600px) {
 
     .wrapperDonateHeader {
-        margin: 30px 70px 40px 100px;
+        width: 80%;
+        height: 15%;
+        margin: 0 155px 0 0px;
+
     }
 
     .donateHeader {
         font-size: 24px;
-        width: 450px;
     }
 
     .donateSubheader {
         font-size: 14px;
-        width: 300px;
     }
 }
 
 @media (max-width:500px) {
     .wrapperDonateHeader {
-        margin: 30px 46px 40px 60px;
+        width: 70%;
+        margin: 0px 170px 0px 0px;
+
+        & h2 {
+            width: 70%;
+        }
     }
 }
 
 @media (max-width:460px) {
     .wrapperDonateHeader {
-        margin: 30px 46px 20px 60px;
+        margin: 0px 160px 0px 0px;
     }
 
     .donateSubheader {
@@ -89,12 +88,13 @@
 
 @media (max-width:390px) {
     .wrapperDonateHeader {
-        margin: 0px 38px 0px 60px;
+        margin: 0px 150px 0px 0px;
     }
 }
 
 @media (max-width:374px) {
     .wrapperDonateHeader {
-        margin: 0px 43px 0px 60px;
+        width: 60%;
+        margin: 0px 173px 0px 0px;
     }
 }

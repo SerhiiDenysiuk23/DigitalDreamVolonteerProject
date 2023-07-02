@@ -1,12 +1,47 @@
 .wrapperButton {
     display: flex;
+    width: 350px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.buttonHeart {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #312F2F;
+    width: 270px;
+    border-radius: 20px 0 0 20px;
+    transition: 0.4s all;
+
+    & h4 {
+        color: white;
+        font-size: 32px;
+        font-weight: 600;
+        font-style: normal;
+        margin: 0px;
+        letter-spacing: 2px;
+    }
+
+    & img {
+        width: 20%;
+    }
+}
+
+.buttonLink {
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 370px;
-    height: 60px;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    background-color: #FED501;
+    width: 80px;
+    border-radius: 0 20px 20px 0;
+    transition: 0.4s all;
+}
+
+.arrow {
+    font-size: 50px;
+    color: #233A5C;
+    transition: 0.4s all
 }
 
 .buttonDonate {
@@ -30,14 +65,31 @@
     }
 }
 
-.buttonDonate:hover {
-    background: #ffffff;
-    color: rgb(0, 0, 0);
-    box-shadow: 0px 0px 8px rgb(0, 0, 0);
-    transition: 0.4s all;
+.wrapperButton:hover {
+    .buttonHeart {
+        background: #ffffff;
+        color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 8px rgb(0, 0, 0);
+        transition: 0.4s all
+    }
+
+    .buttonLink {
+        box-shadow: 0px 0px 8px rgb(0, 0, 0);
+        transition: 0.4s all
+    }
+
+    .arrow {
+        color: #000000;
+        transition: 0.4s all
+    }
+
+    & h4 {
+        color: #101010;
+        transition: 0.4s all
+    }
 }
 
-.buttonDonate:hover .heartFlag {
+.buttonHeart:hover .heartFlag {
     animation: pulse 2s ease infinite;
 
     @keyframes pulse {
@@ -69,27 +121,61 @@
     margin: 10px;
 }
 
-@media (max-width:1280px) {
+@media (max-width:1600px) {
     .wrapperButton {
-        width: 320px;
+        width: 290px;
+    }
+}
+
+@media (max-width:1400px) {
+    .wrapperButton {
+        width: 250px;
         height: 70px;
-        margin: 0 0 0 150px;
+        border-radius: 15px;
+
+        & h4 {
+            font-size: 28px;
+        }
     }
 
-    .buttonDonate {
-        width: 250px;
+    .arrow {
+        font-size: 40px;
     }
 }
 
 @media (max-width:840px) {
     .wrapperButton {
-        margin: 0 40px 0 0;
+        width: 220px;
+        height: 60px;
+        border-radius: 5px;
+
+        & h4 {
+            font-size: 22px;
+        }
+    }
+
+    .arrow {
+        font-size: 30px;
     }
 }
 
 @media (max-width:768px) {
     .wrapperButton {
-        margin: 0 0 0 0;
+        width: 180px;
+        height: 50px;
+        border-radius: 2px;
+
+        & h4 {
+            font-size: 20px;
+        }
+    }
+
+    .buttonHeart {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .buttonLink {
+        border-radius: 0px 10px 10px 0px;
     }
 
     .buttonDonate .heartFlag {
@@ -99,8 +185,8 @@
 
 @media (max-width:680px) {
     .wrapperButton {
-        width: 65%;
-        margin: 0 100px 0 0;
+        width: 250px;
+        height: 55px;
     }
 
     .buttonDonate {
@@ -124,8 +210,7 @@
 
 @media (max-width:600px) {
     .wrapperButton {
-        height: 50px;
-        margin: 0 75px 0 0;
+        width: 220px;
     }
 
     .buttonDonate {
@@ -134,16 +219,12 @@
 }
 
 @media (max-width:560px) {
-    .wrapperButton {
-        margin: 0 65px 0 0;
-    }
 
     .buttonInfo {
         font-size: 14px;
     }
 
     .buttonDonate {
-        width: 40%;
         border-radius: 8px;
 
         & img {
@@ -159,30 +240,22 @@
 
 @media (max-width:500px) {
     .wrapperButton {
-        width: 74%;
-        height: 50px;
-        margin: 0 25px 0 0;
+        width: 210px;
+        height: 55px;
     }
 
     .buttonDonate {
         height: 40px;
-
-        & p,
-        & span {
-            font-size: 14px;
-        }
     }
 }
 
 @media (max-width:450px) {
     .wrapperButton {
-        width: 65%;
-        height: 50px;
-        margin: 0 45px 0 0;
+        width: 190px;
+        height: 55px;
     }
 
     .buttonDonate {
-        width: 60%;
         margin: 10px;
         height: 40px;
         border-radius: 8px;
@@ -192,22 +265,11 @@
         }
     }
 
-    .buttonInfo {
-        font-size: 12px;
-    }
-
 }
 
 @media (max-width:400px) {
     .wrapperButton {
-        width: 60%;
-        margin: 0 55px 0 0;
-    }
-}
-
-@media (max-width:374px) {
-    .wrapperButton {
-        width: 45%;
-        margin: 0 105px 0 0;
+        width: 170px;
+        height: 44px
     }
 }

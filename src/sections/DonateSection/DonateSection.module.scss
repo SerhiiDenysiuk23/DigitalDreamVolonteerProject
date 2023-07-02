@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    min-height: 876px;
+    height: 840px;
+    padding: 0;
 }
 
 @media (max-width:680px) {
@@ -17,4 +18,3 @@
         height: 560px;
     }
 }
-

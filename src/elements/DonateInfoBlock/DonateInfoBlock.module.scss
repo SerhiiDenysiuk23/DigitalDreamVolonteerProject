@@ -2,45 +2,44 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 706px;
-    height: 560px;
+    width: 754px;
+    height: 730px;
+    margin-top: 80px;
 }
 
 @media (max-width:1280px) {
     .wrapperDonate {
-        align-items: center;
-        height: 820px;
-        justify-content: space-around;
-
+        height: 720px;
     }
 }
 
-@media (max-width:840px) {
+@media (max-width:968px) {
     .wrapperDonate {
-        align-items: flex-end;
         justify-content: center;
-        height: 800px;
+        height: 100%;
     }
 }
+
+@media (max-width:840px) {}
 
 @media (max-width:768px) {
     .wrapperDonate {
         align-items: flex-end;
-        justify-content: space-evenly;
-        margin: 0 210px 0 0;
-        height: 750px;
+        justify-content: space-between;
+        margin: 0 0px 0 0;
+        height: 90%;
     }
 }
 
 @media (max-width:680px) {
     .wrapperDonate {
-        height: 700px;
-        margin: 0 210px 0 0;
+        height: 90%;
+        margin: 0 0px 0 0;
     }
 }
 
-@media (max-width:500px) {
+@media (max-width:374px) {
     .wrapperDonate {
-        height: 500px;
+        height: 95%;
     }
 }

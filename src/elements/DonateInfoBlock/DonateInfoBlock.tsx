@@ -10,7 +10,6 @@ const DonateInfo = () => {
     <div className={style.wrapperDonate}>
       <DonateHeader />
       <DonateDetails />
-      <DonateButton />
     </div>
   );
 };
