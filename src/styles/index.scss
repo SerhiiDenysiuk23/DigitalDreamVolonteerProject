@@ -109,7 +109,7 @@ span {
 section {
   display: flex;
   justify-content: space-between;
-  gap: calc(2px + (10 - 2) * ((100vw - 375px) / (1920 - 375)));
+  gap: calc(2px + (27 - 2) * ((100vw - 375px) / (1920 - 375)));
 }
 
 .main-block {
@@ -125,7 +125,7 @@ section {
   max-width: 1920px;
   display: flex;
   flex-direction: column;
-  gap: calc(2px + (10 - 2) * ((100vw - 375px) / (1920 - 375)));
+  gap: calc(2px + (27 - 2) * ((100vw - 375px) / (1920 - 375)));
 }
 
 // classes to hide and show elements

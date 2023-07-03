@@ -1,14 +1,15 @@
 .block {
   display: flex;
   flex-direction: column;
-  padding: 2.08vw 1.5vw;
   border-radius: 20px;
-  background-color: #ffffff;
-  overflow-y: scroll;
+  background-color: #FFFDF2;
+  overflow-y: overlay;
   overflow-x: hidden;
   height: 100%;
   width: 100%;
-  background-image: url(../../../public/assets/bg.jpg);
+  background-image: url(../../../public/assets/texture.png);
+  align-items: center;
+  justify-content: center;
 }
 
 .blockWrapper {
@@ -43,14 +44,9 @@
   width: 100%;
   padding-top: 100%;
   margin-bottom: 23px;
-  border-radius: 17px;
   overflow: hidden;
   background-color: #b4bec2;
   position: relative;
-
-  &.musician {
-    border-radius: 100%;
-  }
 }
 
 .picture {
@@ -64,8 +60,10 @@
 
 .title {
   margin-bottom: 12px;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1.2;
+  margin-left: 45px;
+  margin-right: 45px;
 
   &.band {
     margin-bottom: 7px;
@@ -77,12 +75,14 @@
 }
 
 .paragraph {
-  font-size: 14px;
+  font-size: 16px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 15;
   overflow: hidden;
   white-space: pre-wrap;
+  margin-left: 45px;
+  margin-right: 45px;
 }
 
 .socialLinks {
