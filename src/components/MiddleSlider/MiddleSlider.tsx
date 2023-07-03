@@ -143,7 +143,7 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
         )
     }else{
         return (
-            <div className={`${style.container} middle-slider-container`}>
+            <div className={`${style.container} middle-slider-container main-block`}>
                 <div className={style.heading}>
                     <h3 className={style.header}>Do you know about Ukrainian <span>ART</span>?</h3>
                 </div>

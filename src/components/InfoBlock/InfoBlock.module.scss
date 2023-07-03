@@ -1,21 +1,21 @@
+@import "../../styles/variables";
+
 .block {
   display: flex;
   flex-direction: column;
   border-radius: 20px;
-  background-color: #FFFDF2;
   overflow-y: overlay;
   overflow-x: hidden;
   height: 100%;
   width: 100%;
-  background-image: url(../../../public/assets/texture.png);
   align-items: center;
   justify-content: center;
+  @include background-main-block;
 }
 
 .blockWrapper {
   position: relative;
   overflow-y: overlay;
-  width: max-content;
   width: 15vw;
   border-radius: 20px;
 }
@@ -59,11 +59,9 @@
 }
 
 .title {
-  margin-bottom: 12px;
   font-size: 24px;
   line-height: 1.2;
-  margin-left: 45px;
-  margin-right: 45px;
+  margin: 0 45px 12px;
 
   &.band {
     margin-bottom: 7px;
@@ -81,8 +79,7 @@
   -webkit-line-clamp: 15;
   overflow: hidden;
   white-space: pre-wrap;
-  margin-left: 45px;
-  margin-right: 45px;
+  margin: 0 45px;
 }
 
 .socialLinks {
@@ -102,7 +99,7 @@
   .blockWrapper {
     width: 100%;
     overflow: hidden;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     order: 3;
   }
   .block {
