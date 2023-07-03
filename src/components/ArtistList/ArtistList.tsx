@@ -48,7 +48,7 @@ export const ArtistList = ({ type, onClick, data, height }: ExamplesListProps) =
             <div className={`${styles.pictureWrapper} ${styles[type]} ${activeAuthor === index ? styles.active : ""}`}>
               <img src={item.imageUrl} alt={`${item.name}`} loading="lazy" />
             </div>
-            <div style={{ whiteSpace: "nowrap", overflow: "hidden" }}>
+            <div className={styles.infoWrapper} style={{ whiteSpace: "nowrap", overflow: "hidden" }}>
               <h5 className={`${styles.title} ${styles[type]} ${activeAuthor === index ? styles.active : ""}`}>{item.name?.split(' ').join('\n')}</h5>
               {item.description && (
                 <p className={`p-small ${styles.description}`}>
