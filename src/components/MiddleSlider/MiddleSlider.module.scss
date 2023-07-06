@@ -1,136 +1,128 @@
+@import "../../styles/variables";
+
 .container {
+  position: relative;
+  // order: 2;
+  width: 58%;
+  //padding: 50px;
+  //border-radius: 20px;
+  //@include background-main-block;
+
+  .slideCount {
+
+    // color: transparent;
+    display: none;
+  }
+
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .paginator {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .slide {
+
+    width: 100%;
+
+  }
+
+  .slider {
+    margin: 0 -10px;
     position: relative;
-    // order: 2;
-    width: 58%;
-    // background: #fff;
-    background-image: url(../../../public/assets/bg.jpg);
-    padding: 50px;
-    border-radius: 20px;
 
-
-    .slideCount {
-
-        // color: transparent;
-        display: none;
+    .prevnext {
+      cursor: pointer;
     }
+
+    .next {
+      cursor: pointer;
+      position: absolute;
+      bottom: 47%;
+      right: -15px;
+
+      z-index: 2;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .prev {
+      cursor: pointer;
+      position: absolute;
+      bottom: 47%;
+      left: -15px;
+      z-index: 2;
+      transition: transform 0.3s ease-in-out;
+
+    }
+
+    .next:hover {
+      transform: scale(1.5);
+    }
+
+    .prev:hover {
+      transform: scale(1.5);
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .container {
+    order: 3;
+    width: 100%;
+    padding: 0 10px 30px;
+    background: transparent;
 
     .heading {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
+      display: none;
     }
 
-    .paginator {
-        width: 180px;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .slide {
-
-        width: 100%;
+    .header {
+      display: none;
 
     }
 
-    .slider {
-        margin: 0 -10px;
-        position: relative;
-
-        .prevnext {
-            cursor: pointer;
-        }
-
-        .next {
-            cursor: pointer;
-            position: absolute;
-            bottom: 47%;
-            right: -15px;
-
-            z-index: 2;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .prev {
-            cursor: pointer;
-            position: absolute;
-            bottom: 47%;
-            left: -15px;
-            z-index: 2;
-            transition: transform 0.3s ease-in-out;
-
-        }
-
-        .next:hover {
-            transform: scale(1.5);
-        }
-
-        .prev:hover {
-            transform: scale(1.5);
-        }
-    }
-}
-
-@media (max-width:1023px) {
-    .container {
-
-        order: 3;
-        width: 100%;
-        padding: 0 10px;
-        padding-bottom: 30px;
-        background: transparent;
-
-        .heading {
-            display: none;
-        }
-
-      
-
-            .header {
-                display: none;
-
-            }
-
-            .prev {
-                bottom: -40px !important;
-                left: 17px !important;
-                
-            }
-
-            .next {
-                bottom: -40px !important;
-                
-                right: 17px !important;
-            }
-        
+    .prev {
+      bottom: -25px !important;
+      left: 17px !important;
 
     }
+
+    .next {
+      bottom: -25px !important;
+
+      right: 17px !important;
+    }
+  }
 }
 
 
-@media(max-width:500px) {
-    .container{
+@media(max-width: 500px) {
+  .container {
 
-        .slideCount {
-            display: block !important;
-            color: black;
-            position: absolute;
-            font-size: 20px;
-            bottom: -12px;
-            left: 43%;
-        }
-    
-        .prev {
-            bottom: -40px !important;
-            left: 90px !important;
-        }
-    
-        .next {
-            bottom: -40px !important;
-            right: 86px !important;
-        }
-
+    .slideCount {
+      display: block !important;
+      color: black;
+      position: absolute;
+      font-size: 20px;
+      bottom: 2px;
+      left: 43%;
     }
 
+    .prev {
+      bottom: -25px !important;
+      left: 90px !important;
+    }
 
+    .next {
+      bottom: -25px !important;
+      right: 86px !important;
+    }
+
+  }
 }

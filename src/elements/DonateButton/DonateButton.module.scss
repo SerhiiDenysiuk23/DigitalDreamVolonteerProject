@@ -19,7 +19,7 @@
         font-size: 32px;
         font-weight: 600;
         font-style: normal;
-        margin: 0px;
+        margin: 0;
         letter-spacing: 2px;
     }
 
@@ -36,6 +36,15 @@
     width: 80px;
     border-radius: 0 20px 20px 0;
     transition: 0.4s all;
+    span{
+        display: inline-block;
+        transform: rotate(45deg) translateY(-25%);
+        font-family: Consolas, sans-serif;
+        font-weight: 200;
+        font-size: 80px;
+        line-height: 24px;
+        height: 24px;
+    }
 }
 
 .arrow {
@@ -69,12 +78,12 @@
     .buttonHeart {
         background: #ffffff;
         color: rgb(255, 255, 255);
-        box-shadow: 0px 0px 8px rgb(0, 0, 0);
+        box-shadow: 0 0 8px rgb(0, 0, 0);
         transition: 0.4s all
     }
 
     .buttonLink {
-        box-shadow: 0px 0px 8px rgb(0, 0, 0);
+        box-shadow: 0 0 8px rgb(0, 0, 0);
         transition: 0.4s all
     }
 
@@ -175,7 +184,7 @@
     }
 
     .buttonLink {
-        border-radius: 0px 10px 10px 0px;
+        border-radius: 0 10px 10px 0;
     }
 
     .buttonDonate .heartFlag {

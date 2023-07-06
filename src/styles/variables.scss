@@ -1,9 +1,9 @@
-$background-color: #E5E5E5;
+$background-color: #FFFDF2;
 $dark-background:#212628;
 
 @mixin background-main-block {
   background-color: $background-color;
-  background-image: url(../../public/assets/bg.jpg);
+  background-image: url(../../public/assets/texture.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
