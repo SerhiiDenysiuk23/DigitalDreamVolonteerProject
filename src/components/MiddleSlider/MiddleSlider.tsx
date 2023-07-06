@@ -10,6 +10,7 @@ import { getArts,getArtistInfo } from "../../queries/artistQueries";
 import Popup from "../../elements/Popup/Popup";
 import { Artwork } from "../../types/Artwork";
 import Error from "../Error/Error"
+import PopupSlider from "../../elements/Popup/PopupSlider"
 
 
 
@@ -158,7 +159,8 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
                         }
                     </Slider>
                 </div>
-                {showModal && <Popup data={arts} handleModal={handleModal} />}
+                {showModal && <PopupSlider mediaList={artist.map(item => ({link: item.assetUrl, name: item.description}))}
+                                       handleModal={handleModal}/>}
                 
                 
             </div>
