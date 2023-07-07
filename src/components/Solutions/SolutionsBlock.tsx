@@ -22,6 +22,14 @@ const SolutionsBlock: FC<{ artists: any[], isShowArtists: boolean }> = ({artists
                 <SolutionsSlider achievement={achievement}/>
                 <SolutionsDescription achievement={achievement}/>
             </div>
+
+            <div className={`${styles.solutionContainer} ${styles.maxW1279}`}>
+                <p className={"p-18-hind " + styles.starBefore}><img src="./assets/icons/star.svg" alt=""/>{achievement}
+                </p>
+                <a className={styles.moreDetails} href="#">
+                    <div>More details <span>→</span></div>
+                </a>
+            </div>
         </div>
     );
 };

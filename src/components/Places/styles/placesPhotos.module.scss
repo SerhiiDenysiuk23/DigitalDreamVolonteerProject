@@ -2,7 +2,7 @@
   aspect-ratio: 1174 / 769;
   padding: 20px;
   &__slider {
-    border-radius: inherit;
+    border-radius: 30px;
     overflow: hidden;
     height: 100%;
     z-index: 1;
@@ -13,8 +13,6 @@
   .imgContainer{
     border-radius: 30px;
     height: 100%;
-    //display: flex !important;
-    //aspect-ratio: 1174 / 769;
     img{
 
       object-fit: cover;
@@ -31,9 +29,6 @@
     background: none;
     padding: 40px;
     aspect-ratio: 664 / 368;
-    .imgContainer{
-      //aspect-ratio: 1.54 / 1;
-    }
   }
 }
 @media screen and (max-width: 500px){

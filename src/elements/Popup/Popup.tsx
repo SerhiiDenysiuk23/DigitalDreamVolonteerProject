@@ -52,23 +52,22 @@ const Popup: React.FC<PopupProps> = ({
                 description ? "" : style.fullImg
               }`}
             >
-              <img
-                src={imageUrl}
-                alt={name}
-              />
-            </div>
-            <div className={style.popupAuthor}>
-              <h3>{name}</h3>
-              <ul>
-                <li>
-                  <a href={link}>link</a>
-                </li>
-              </ul>
+              <img src={imageUrl} alt={name} />
             </div>
           </div>
           {description && (
-            <div className={style.popupText}>
-              <p className="p-large">{description}</p>
+            <div className={style.popupText__container}>
+              <div className={style.popupText}>
+                <div className={style.popupAuthor}>
+                  <h3>{name}</h3>
+                  <ul>
+                    <li>
+                      <a href={link}>link</a>
+                    </li>
+                  </ul>
+                </div>
+                <p className="p-large">{description}</p>
+              </div>
             </div>
           )}
         </div>
