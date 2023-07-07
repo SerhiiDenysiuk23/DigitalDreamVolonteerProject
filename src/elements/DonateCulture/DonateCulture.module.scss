@@ -8,7 +8,7 @@
     justify-content: space-between;
     width: 34%;
     height: 860px;
-    margin-left: 0.5%;
+    margin-left: 0.8%;
 }
 
 .infoCulture {
@@ -122,7 +122,7 @@
     .donateCulture {
         width: 36%;
         justify-content: space-around;
-        margin-left: 1.1%;
+        margin-left: 0.9%;
     }
 
     .headerCulture {
@@ -308,6 +308,8 @@
     }
 
     .locationButton {
+        width: 120%;
+
         & p {
             font-size: 12px;
             width: 30%;
@@ -360,6 +362,10 @@
         & p {
             font-size: 12px;
         }
+    }
+
+    .locationButton {
+        width: 110%;
     }
 
     .tabletShevchenko {
