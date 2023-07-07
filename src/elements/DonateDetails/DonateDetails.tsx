@@ -57,7 +57,9 @@ const DonateDetails = () => {
       </div>
       <div className={style.wrapperRestoration}>
         <div className={style.restoration}>
-          <h4>You can help in restoration of these cultural treasures</h4>
+          <h4 className={style.headerButton}>
+            You can help in restoration of these cultural treasures
+          </h4>
         </div>
         <DonateButton />
       </div>

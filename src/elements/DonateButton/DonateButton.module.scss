@@ -131,7 +131,6 @@
     .wrapperButton {
         width: 250px;
         height: 70px;
-        border-radius: 15px;
 
         & h4 {
             font-size: 28px;
@@ -147,7 +146,6 @@
     .wrapperButton {
         width: 220px;
         height: 60px;
-        border-radius: 5px;
 
         & h4 {
             font-size: 22px;
@@ -155,26 +153,27 @@
     }
 
     .arrow {
-        font-size: 30px;
+        font-size: 25px;
     }
 }
 
 @media (max-width:768px) {
     .wrapperButton {
-        width: 180px;
-        height: 50px;
-        border-radius: 2px;
+        width: 150px;
+        height: 40px;
 
         & h4 {
-            font-size: 20px;
+            font-size: 15px;
         }
     }
 
     .buttonHeart {
+        width: 80%;
         border-radius: 10px 0 0 10px;
     }
 
     .buttonLink {
+        width: 20%;
         border-radius: 0px 10px 10px 0px;
     }
 
@@ -184,10 +183,6 @@
 }
 
 @media (max-width:680px) {
-    .wrapperButton {
-        width: 250px;
-        height: 55px;
-    }
 
     .buttonDonate {
         width: 40%;
@@ -209,9 +204,6 @@
 }
 
 @media (max-width:600px) {
-    .wrapperButton {
-        width: 220px;
-    }
 
     .buttonDonate {
         height: 40px;
@@ -239,22 +231,12 @@
 }
 
 @media (max-width:500px) {
-    .wrapperButton {
-        width: 210px;
-        height: 55px;
-    }
-
     .buttonDonate {
         height: 40px;
     }
 }
 
 @media (max-width:450px) {
-    .wrapperButton {
-        width: 190px;
-        height: 55px;
-    }
-
     .buttonDonate {
         margin: 10px;
         height: 40px;
@@ -268,8 +250,12 @@
 }
 
 @media (max-width:400px) {
+    .locationButton {
+        width: 100%;
+    }
+
     .wrapperButton {
-        width: 170px;
-        height: 44px
+        width: 150px;
+        height: 40px
     }
 }
