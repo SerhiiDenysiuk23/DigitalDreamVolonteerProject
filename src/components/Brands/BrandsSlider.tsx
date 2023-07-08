@@ -50,10 +50,9 @@ const BrandsSlider: FC<{ company: Company }> = ({company}) => {
         ]
     };
 
-    const data = {name: "", description: "", link: ""}
     return (
         <div className={styles.sliderSide}>
-            {showModal && <PopupSlider mediaList={company.mediaSlides.map(item => ({link: item, name: item}))}
+            {showModal && <PopupSlider mediaList={company.mediaSlides.map(item => ({link: item}))}
                                        handleModal={handleModal}/>}
             <h2>{company.name}</h2>
             <Slider className={styles.brandSlider} {...settings}>

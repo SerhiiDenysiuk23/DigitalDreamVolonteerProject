@@ -268,15 +268,16 @@
     &:hover {
       background-color: #cc8787;
       border: 3px solid #dd3c4980;
+      img{
+          scale: 1.1;
+      }
     }
     img {
       max-width: 100%;
       max-height: 100%;
       transition: all 0.2s ease-in-out;
 
-      &:hover {
-        scale: 1.1;
-      }
+      
     }
   }
 

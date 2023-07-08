@@ -125,7 +125,7 @@ section {
   max-width: 1920px;
   display: flex;
   flex-direction: column;
-  gap: calc(2px + (27 - 2) * ((100vw - 375px) / (1920 - 375)));
+  gap: calc(5px + (50 - 5) * ((100vw - 375px) / (1920 - 375)));
 }
 
 // classes to hide and show elements
@@ -245,7 +245,7 @@ section {
         position: relative;
         width: 90%;
         margin: 0 auto;
-        bottom: -40px;
+        bottom: -25px;
         // position: absolute;
         // top:-20px;
         // right: 20px;
