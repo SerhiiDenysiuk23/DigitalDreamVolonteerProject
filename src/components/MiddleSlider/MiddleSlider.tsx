@@ -159,7 +159,7 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
                         }
                     </Slider>
                 </div>
-                {showModal && <PopupSlider mediaList={artist.map(item => ({link: item.assetUrl, name: item.description}))}
+                {showModal && <PopupSlider mediaList={artist.map(item => ({link: item.assetUrl, name: item.title}))}
                                        handleModal={handleModal}/>}
                 
                 
