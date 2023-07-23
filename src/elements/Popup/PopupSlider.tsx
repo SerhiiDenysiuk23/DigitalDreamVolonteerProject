@@ -8,13 +8,14 @@ interface Props {
         link: string
         name?: string
     }[]
+    currentMedia: number
     handleModal: () => void;
     isModalOpen?: boolean;
 }
 
 type SliderRef = Slider | null;
 
-const PopupSlider: React.FC<Props> = ({mediaList, handleModal, isModalOpen}) => {
+const PopupSlider: React.FC<Props> = ({mediaList, currentMedia, handleModal, isModalOpen}) => {
     const [nav1, setNav1] = useState<SliderRef>(null);
     const [nav2, setNav2] = useState<SliderRef>(null);
     const slider1 = useRef<SliderRef>(null);
@@ -35,6 +36,10 @@ const PopupSlider: React.FC<Props> = ({mediaList, handleModal, isModalOpen}) => 
             body.classList.remove("lock");
         };
     }, [isModalOpen]);
+
+    useEffect(()=>{
+        nav2?.slickGoTo(currentMedia)
+    },[nav2])
 
     const settings: Settings = {
         infinite: false,
