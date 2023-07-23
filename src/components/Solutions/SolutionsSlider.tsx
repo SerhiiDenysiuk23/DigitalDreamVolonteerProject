@@ -76,12 +76,11 @@ const SolutionsSlider: FC<{ achievement: string }> = ({achievement}) => {
         ]
     };
 
-    const data = { name: "", description: "", link: photos[currentSlide] }
     const title = "Grammarly"
     const shortDesc = "Service for spell checking and correct communication"
     return (
         <div className={styles.sliderSide}>
-            {showModal && <PopupSlider mediaList={photos.map(item => ({link: item, name: item}))} handleModal={handleModal} />}
+            {showModal && <PopupSlider currentMedia={currentSlide} mediaList={photos.map(item => ({link: item, name: item}))} handleModal={handleModal} />}
             <h2>{title}</h2>
             <h5>{shortDesc}</h5>
             <Slider className={styles.solutionSlider} {...settings}>
