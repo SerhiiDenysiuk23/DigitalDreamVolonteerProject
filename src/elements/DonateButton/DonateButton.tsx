@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./DonateButton.module.scss";
-// import { PiArrowDownRightBold } from "react-icons";
+import { PiArrowDownRightBold } from "react-icons/pi";
 
 const DonateButton = () => {
   return (
@@ -15,8 +15,7 @@ const DonateButton = () => {
           <h4>DONATE</h4>
         </div>
         <div className={style.buttonLink}>
-          {/*<PiArrowDownRightBold className={style.arrow} />*/}
-          <span>→</span>
+          <PiArrowDownRightBold className={style.arrow} />
         </div>
       </div>
     </>
