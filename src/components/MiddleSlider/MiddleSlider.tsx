@@ -1,20 +1,16 @@
-import SliderItem from "./SliderItem/SliderItem"
 import style from './MiddleSlider.module.scss'
+import sliderItemStyle from './SliderItem.module.scss'
 import React from "react"
 import { useState, useEffect, useRef, useCallback, RefObject } from "react"
 import Slider, { InnerSlider, Settings } from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useQuery } from "@apollo/client";
-import { getArts,getArtistInfo } from "../../queries/artistQueries";
+import { getArts, getArtistInfo } from "../../queries/artistQueries";
 import Popup from "../../elements/Popup/Popup";
 import { Artwork } from "../../types/Artwork";
 import Error from "../Error/Error"
 import PopupSlider from "../../elements/Popup/PopupSlider"
-
-
-
-
 
 
 interface Props {
@@ -22,16 +18,25 @@ interface Props {
     kind?: string
 }
 
+interface InnerSliderState {
+    state: {
+        currentSlide: number
+    }
 
+}
 const MiddleSlider: React.FC<Props> = ({ id }) => {
     const [showModal, setShowModal] = React.useState<boolean>(false);
     const [activeSlide, setActiveSlide] = React.useState<number>(0);
     const [artist, setArtist] = useState<Artwork[]>([])
-    const { data ,error} = useQuery(getArtistInfo, { variables: { artistId: id } });
+    const { data, error } = useQuery(getArtistInfo, { variables: { artistId: id } });
     const handleModal = () => setShowModal(!showModal);
-    const sliderRef = useRef<Slider>(null)
+    const sliderRef = useRef<Slider>(null);
+    const [currentSlide, setCurrentSlide] = React.useState<number>(0)
+    const [index, setIndex] = React.useState<number>(0)
 
 
+
+    console.log(sliderRef.current?.innerSlider)
     let arts = {
         name: '',
         description: '',
@@ -39,13 +44,12 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
     }
 
 
-
-
     function SampleNextArrow(props: any) {
         const { onClick } = props;
         return (
 
-            <img src="/assets/MiddleSliderImages/arts/Arrow-1.png" alt="" onClick={onClick} className={`${style.prevnext}, ${style.next}`} />
+            <img src="/assets/MiddleSliderImages/arts/Arrow-1.png" alt="" onClick={onClick}
+                className={`${style.prevnext}, ${style.next}`} />
         );
     }
 
@@ -53,10 +57,16 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
         const { onClick } = props;
         return (
 
-            <img src="/assets/MiddleSliderImages/arts/Arrow.png" alt="" onClick={onClick} className={`${style.prevnext}, ${style.prev}`} />
+            <img src="/assets/MiddleSliderImages/arts/Arrow.png" alt="" onClick={onClick}
+                className={`${style.prevnext}, ${style.prev}`} />
         );
     }
 
+    const handleClick = (index:number)=>{
+        
+        setIndex(index);
+        handleModal()
+    }
 
     const settings: Settings = {
         dots: true,
@@ -99,50 +109,29 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
             },
         ]
     };
-    // const [hasScrolled, setHasScrolled] = useState(false);
-    // const handleSlideClick = () => {
-    //     if (!hasScrolled) {
-    //       setShowModal(true);
-    //     }
-    //   };
-    // const handleMouseDown = () => {
-    //     setHasScrolled(false);
-    //   };
-
-    //   const handleScroll = () => {
-    //     setHasScrolled(true);
-    //   };
-
-    // const data = useQuery(getExampleInfo, { variables: { artistId: id },});
-    // console.log("ID -" + id);
-
-    // const { data } = useQuery(getArts, { variables: { artistId: id } });
-    // console.warn(data?.artist.artworks);
-    //   const artist = data?.artist as Artwork[]
-    // const [artist, setArtist] = useState<Artwork[]>([])
-
 
 
     useEffect(() => {
-        
+
         data?.artist &&
             setArtist(data?.artist.artworks);
-            setActiveSlide(0)
+        setActiveSlide(0)
     }, [data])
 
     useEffect(() => {
         if (sliderRef.current) {
-          sliderRef.current.slickGoTo(activeSlide); 
+            sliderRef.current.slickGoTo(activeSlide);
+            setCurrentSlide((sliderRef.current.innerSlider as InnerSliderState).state.currentSlide)
         }
-      }, [activeSlide]);
+    }, [activeSlide]);
 
-    if(error){
-        return(
+    if (error) {
+        return (
             <div className={`${style.container} middle-slider-container`}>
-                <Error/>
+                <Error />
             </div>
         )
-    }else{
+    } else {
         return (
             <div className={`${style.container} middle-slider-container main-block`}>
                 <div className={style.heading}>
@@ -151,18 +140,25 @@ const MiddleSlider: React.FC<Props> = ({ id }) => {
                 <div className={style.slide}>
                     <div className={style.slideCount}> {activeSlide + 1} / {artist.length}</div>
                     <Slider ref={sliderRef} className={`${style.slider} middle-slider `} {...settings}>
-    
+
                         {!!artist.length &&
-                            artist.map((item: Artwork) => (
-                                <SliderItem  key={item.id} image={item.assetUrl} description={item.title} handleClick={handleModal} />
+                            artist.map((item: Artwork, index) => (
+                                <div className={sliderItemStyle.test} >
+                                    <div className={sliderItemStyle.container} onClick={()=>handleClick(index)} >
+
+                                        <img className={sliderItemStyle.art_image} src={item.assetUrl} alt="" />
+                                        <p className={sliderItemStyle.description}>{item.title}</p>
+                                    </div>
+                                </div>
                             ))
                         }
                     </Slider>
                 </div>
-                {showModal && <PopupSlider mediaList={artist.map(item => ({link: item.assetUrl, name: item.title}))}
-                                       handleModal={handleModal}/>}
-                
-                
+                {showModal && <PopupSlider mediaList={artist.map(item => ({ link: item.assetUrl, name: item.title }))}
+                    currentMedia={index}
+                    handleModal={handleModal} />}
+
+
             </div>
         )
     }
