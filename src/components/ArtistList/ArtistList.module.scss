@@ -10,7 +10,6 @@
   position: relative;
   @include background-main-block;
 
-
   // &.brand {
   //   min-height: 835px;
   // }
@@ -42,34 +41,45 @@
     cursor: pointer;
     margin: 0 auto;
     transition: 250ms ease all;
+    position: relative;
 
     &.active {
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.20), 0 4px 4px 0 rgba(0, 0, 0, 0.10);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.1);
       transform: scale(1.05);
       transform-origin: center;
       background-color: #ffffff;
-      padding: 0;
+      // padding: 0;
       // height: 94px;
-      overflow: hidden;
+      // overflow: hidden;
 
       & .infoWrapper {
         // margin-left: 20px;
         margin-right: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        transition: 0.1s all ease;
+        transform-origin: center;
+        margin-left: 90px;
       }
 
-     & .pictureWrapper {
-        height: 94px;
-        min-width: 88px;
+      & .pictureWrapper {
+        height: 89px;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+        transition: 0.1s all ease;
+        left: 0px;
+        top: 0px;
       }
-
     }
 
     &:hover {
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
   }
+}
+
+.infoWrapper {
+  margin-left: 65px;
 }
 
 .pictureWrapper {
@@ -79,6 +89,7 @@
   min-height: 3vw;
   overflow: hidden;
   background-color: #b4bec2;
+  position: absolute;
 
   & img {
     width: 100%;
@@ -108,6 +119,18 @@
   line-height: 130%;
 }
 
+@media screen and (min-width: 1024px) {
+  .list {
+    & li {
+      &.active {
+        & .pictureWrapper {
+          min-width: 88px;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1023px) {
   .block {
     background-color: transparent;
@@ -116,7 +139,6 @@
     position: relative;
     order: 2;
     border-radius: 0;
-    // min-height: 227px;
     margin-bottom: 20px;
 
     &.brand {
@@ -142,6 +164,12 @@
         transform: none;
         background: none;
         box-shadow: none;
+
+        & .pictureWrapper {
+          width: 13vw;
+          height: 13vw;
+          border-radius: 10px;
+        }
       }
     }
   }
@@ -165,8 +193,8 @@
     border-radius: 10px;
     width: 13vw;
     height: 13vw;
-    margin-bottom: 16px;
     transition: 150ms all ease;
+    position: static;
 
     &.musicians {
       border-radius: 10px;
@@ -192,6 +220,10 @@
       rgba(255, 255, 255, 0) 0%,
       #ffffff 100%
     );
+  }
+
+  .infoWrapper {
+    display: none;
   }
 }
 
