@@ -10,6 +10,7 @@
   width: 100%;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   @include background-main-block;
 }
 
@@ -61,7 +62,7 @@
 .title {
   font-size: 24px;
   line-height: 1.2;
-  margin: 0 45px 12px;
+  // margin: 0 45px 12px;
 
   &.band {
     margin-bottom: 7px;
@@ -79,7 +80,7 @@
   -webkit-line-clamp: 15;
   overflow: hidden;
   white-space: pre-wrap;
-  margin: 0 45px;
+  // margin: 0 45px;
 }
 
 .socialLinks {
@@ -92,6 +93,15 @@
     height: 36px;
     width: 36px;
     padding: 8px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .title {
+    margin: 0 2.3vw 10px 2.3vw;
+  }
+  .paragraph {
+    margin: 0 2.3vw;
   }
 }
 
