@@ -5,7 +5,12 @@ import DonateInfo from "../../elements/DonateInfoBlock/DonateInfoBlock";
 
 const DonateSection = () => {
   return (
-    <section className={`${style.donateSection} main-block`}>
+    <section
+      style={{
+        background: ` linear-gradient(to right, transparent, 5%, #ffffff), url('/assets/backgroundDonateSection.png')`,
+      }}
+      className={`${style.donateSection} main-block`}
+    >
       <DonateBoy />
       <DonateInfo />
     </section>
