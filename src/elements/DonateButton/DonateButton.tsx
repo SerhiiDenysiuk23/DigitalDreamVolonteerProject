@@ -5,19 +5,19 @@ import { PiArrowDownRightBold } from "react-icons/pi";
 const DonateButton = () => {
   return (
     <>
-      <div className={style.wrapperButton}>
+      <a href="https://restore.mkip.gov.ua/" className={style.wrapperButton}>
         <div className={style.buttonHeart}>
           <img
             className={style.heartFlag}
             src="/assets/icons/flag.svg"
-            alt=""
+            alt="heart"
           />
           <h4>DONATE</h4>
         </div>
         <div className={style.buttonLink}>
           <PiArrowDownRightBold className={style.arrow} />
         </div>
-      </div>
+      </a>
     </>
   );
 };

@@ -212,6 +212,10 @@
         }
     }
 
+    .headerDetails {
+        font-size: 16px;
+    }
+
     .headerButton {
         font-size: 10px;
     }
@@ -230,6 +234,10 @@
 @media (max-width:374px) {
     .wrapperDetails {
         margin: 40px 0px 0 105px;
+    }
+
+    .headerDetails {
+        font-size: 14px;
     }
 
     .listItem {
