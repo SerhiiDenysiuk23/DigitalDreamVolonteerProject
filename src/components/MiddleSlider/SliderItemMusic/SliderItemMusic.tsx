@@ -18,29 +18,11 @@ const SliderItemMusic = () => {
   const [currentTime, setCurrentTime] = useState("0:0");
   const [volume, setVolume] = useState(80);
 
-  // setMusic(musicRef.current);
-  // setSeekbar(seekbarRef.current);
-  // setDuration("0:0");
-  // setCurrentTime("0:0");
-
   useEffect(() => {
     setMusic(musicRef.current);
     setSeekbar(seekbarRef.current);
     setDuration("0:0");
     setCurrentTime("0:0");
-
-    // if (music && seekbar) {
-    //   music.ontimeupdate = () => {
-    //     seekbar.value = music.currentTime.toString();
-    //     seekbar.max = music.duration.toString();
-    //     const cs = parseInt((music.currentTime % 60).toString(), 10);
-    //     const cm = parseInt(((music.currentTime / 60) % 60).toString(), 10);
-    //     const ds = parseInt((music.duration % 60).toString(), 10);
-    //     const dm = parseInt(((music.duration / 60) % 60).toString(), 10);
-    //     setDuration(`${dm}:${ds}`);
-    //     setCurrentTime(`${cm}:${cs}`);
-    //   };
-    // }
   }, [seekbar]);
 
   const handleSeekbar = () => {
@@ -60,10 +42,6 @@ const SliderItemMusic = () => {
 
   const handleChangeSeekbar = () => {
     if (music && seekbar) {
-      // const cs = parseInt((music.currentTime % 60).toString(), 10);
-      // const cm = parseInt(((music.currentTime / 60) % 60).toString(), 10);
-      // setCurrentTime(`${cm}:${cs}`);
-      // seekbar.value = music.currentTime.toString();
       music.currentTime = parseInt(seekbar.value);
     }
   };
@@ -83,45 +61,6 @@ const SliderItemMusic = () => {
   const handleVolume = () => {
     setVolume((prevVolume) => (prevVolume === 0 ? 80 : 0));
   };
-  // useEffect(() => {
-  //   const music = musicRef.current;
-  //   const seekbar = seekbarRef.current;
-  //   const currentTimeElement = currentTimeRef.current;
-  //   const durationElement = durationRef.current;
-
-  // music.onloadeddata = () => {
-  //   if (music && durationElement) {
-  //     seekbar.max = music.duration.toString();
-  //     const ds = parseInt((music.duration % 60).toString(), 10);
-  //     const dm = parseInt(((music.duration / 60) % 60).toString(), 10);
-  //     setDuration(`${dm}:${ds}`);
-  //   }
-  // };
-
-  //   music.ontimeupdate = () => {
-  //     if (music && seekbar) {
-  //       seekbar.value = music.currentTime.toString();
-  //     }
-  //   };
-
-  //   music.addEventListener(
-  //     "timeupdate",
-  //     () => {
-  //       if (music && currentTimeElement) {
-  //         const cs = parseInt((music.currentTime % 60).toString(), 10);
-  //         const cm = parseInt(((music.currentTime / 60) % 60).toString(), 10);
-  //         setCurrentTime(`${cm}:${cs}`);
-  //       }
-  //     },
-  //     false
-  //   );
-
-  //   return () => {
-  //     if (music) {
-  //       music.removeEventListener("timeupdate", () => {});
-  //     }
-  //   };
-  // }, []);
 
   return (
     <div className={styles.wrapperPlayer}>
